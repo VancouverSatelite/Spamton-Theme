@@ -9,7 +9,7 @@ For original skin:
 
 For further information, check out the wiki here: https://osmc.tv/wiki/general/the-osmc-skin/
 
-## This skin is shipped with official releases of OSMC (https://osmc.tv/download/).
+## This skin is a modified version of the shipped with official release of OSMC (https://osmc.tv/download/).
 
 Follow these instructions to install the OSMC Skin on other platforms: https://osmcsk.in/
 
