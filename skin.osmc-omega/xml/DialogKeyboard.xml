@@ -1,0 +1,579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- virtualkeyboard -->
+	<defaultcontrol always="true">312</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+
+		<control type="group">
+			<include>DialogDepth</include>
+
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$INFO[Control.GetLabel(311)]</param>
+				<param name="secondary">False</param>
+			</include>
+
+			<control type="label" id="311">
+				<font></font>
+				<label>13406</label>
+			</control>
+
+			<!-- Left grouplist -->
+			<control type="grouplist" id="9000">
+				<include>DialogKeyboard_coords1</include>
+				<itemgap>6</itemgap>
+				<onup>noop</onup>
+				<ondown>312</ondown>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<animation effect="slide" end="0,200" time="200" condition="Integer.IsEqual(Container(6000).NumItems,0)">Conditional</animation>
+
+				<!-- Layout -->
+				<control type="button" id="309">
+					<include>DialogKeyboard_coords2</include>
+					<onleft>noop</onleft>
+					<onright>100</onright>
+					<font>Font48</font>
+					<label>20177</label>
+				</control>
+
+				<!-- Shift -->
+				<control type="radiobutton" id="302">
+					<include>DialogKeyboard_coords3</include>
+					<onleft>noop</onleft>
+					<onright>120</onright>
+					<font>Font48</font>
+					<label>20178</label>
+				</control>
+
+				<!-- Caps lock -->
+				<control type="radiobutton" id="303">
+					<include>DialogKeyboard_coords3</include>
+					<onleft>noop</onleft>
+					<onright>140</onright>
+					<font>Font48</font>
+					<label>20179</label>
+				</control>
+
+				<!-- Symbols -->
+				<control type="radiobutton" id="304">
+					<include>DialogKeyboard_coords3</include>
+					<onleft>noop</onleft>
+					<onright>160</onright>
+					<font>Font48</font>
+					<label>20180</label>
+				</control>
+
+				<!-- IP address -->
+				<control type="button" id="307">
+					<include>DialogKeyboard_coords2</include>
+					<onleft>noop</onleft>
+					<onright>32</onright>
+					<font>Font48</font>
+					<label>1006</label>
+				</control>
+				
+				<!-- Show/Hide password -->
+				<control type="button" id="310">
+					<include>DialogKeyboard_coords2</include>
+					<onleft>noop</onleft>
+					<onright>312</onright>
+					<font>Font48</font>
+					<label>12308</label>
+				</control>
+
+			</control>
+
+			<!-- Keys -->
+			<control type="group">
+				<include>DialogKeyboard_coords4</include>
+				<animation effect="slide" end="0,200" time="200" condition="Integer.IsEqual(Container(6000).NumItems,0)">Conditional</animation>
+
+				<!-- First row -->
+				<control type="grouplist" id="1000">
+					<include>DialogKeyboard_coords5</include>
+					<itemgap>0</itemgap>
+					<onleft>309</onleft>
+					<onright>noop</onright>
+					<onup>noop</onup>
+					<orientation>horizontal</orientation>
+
+					<!-- (0,0) key button -->
+					<control type="button" id="100">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>120</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,1) key button -->
+					<control type="button" id="101">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>121</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,2) key button -->
+					<control type="button" id="102">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>122</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,3) key button -->
+					<control type="button" id="103">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>123</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,4) key button -->
+					<control type="button" id="104">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>124</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,5) key button -->
+					<control type="button" id="105">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>125</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,6) key button -->
+					<control type="button" id="106">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>126</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,7) key button -->
+					<control type="button" id="107">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>127</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,8) key button -->
+					<control type="button" id="108">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>128</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,9) key button -->
+					<control type="button" id="109">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>129</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,10) key button -->
+					<control type="button" id="110">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>130</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (0,11) key button -->
+					<control type="button" id="111">
+						<include>DialogKeyboard_coords6</include>
+						<ondown>131</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+
+				</control>
+
+				<!-- Second row -->
+				<control type="grouplist" id="2000">
+					<include>DialogKeyboard_coords7</include>
+					<itemgap>0</itemgap>
+					<onleft>302</onleft>
+					<onright>noop</onright>
+					<orientation>horizontal</orientation>
+
+					<!-- (1,0) key button -->
+					<control type="button" id="120">
+						<include>DialogKeyboard_coords6</include>
+						<onup>100</onup>
+						<ondown>140</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,1) key button -->
+					<control type="button" id="121">
+						<include>DialogKeyboard_coords6</include>
+						<onup>101</onup>
+						<ondown>141</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,2) key button -->
+					<control type="button" id="122">
+						<include>DialogKeyboard_coords6</include>
+						<onup>102</onup>
+						<ondown>142</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,3) key button -->
+					<control type="button" id="123">
+						<include>DialogKeyboard_coords6</include>
+						<onup>103</onup>
+						<ondown>143</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,4) key button -->
+					<control type="button" id="124">
+						<include>DialogKeyboard_coords6</include>
+						<onup>104</onup>
+						<ondown>144</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,5) key button -->
+					<control type="button" id="125">
+						<include>DialogKeyboard_coords6</include>
+						<onup>105</onup>
+						<ondown>145</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,6) key button -->
+					<control type="button" id="126">
+						<include>DialogKeyboard_coords6</include>
+						<onup>106</onup>
+						<ondown>146</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,7) key button -->
+					<control type="button" id="127">
+						<include>DialogKeyboard_coords6</include>
+						<onup>107</onup>
+						<ondown>147</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,8) key button -->
+					<control type="button" id="128">
+						<include>DialogKeyboard_coords6</include>
+						<onup>108</onup>
+						<ondown>148</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,9) key button -->
+					<control type="button" id="129">
+						<include>DialogKeyboard_coords6</include>
+						<onup>109</onup>
+						<ondown>149</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,10) key button -->
+					<control type="button" id="130">
+						<include>DialogKeyboard_coords6</include>
+						<onup>110</onup>
+						<ondown>150</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (1,11) key button -->
+					<control type="button" id="131">
+						<include>DialogKeyboard_coords6</include>
+						<onup>111</onup>
+						<ondown>151</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+
+				</control>
+
+				<!-- Third row -->
+				<control type="grouplist" id="3000">
+					<include>DialogKeyboard_coords8</include>
+					<itemgap>0</itemgap>
+					<onleft>303</onleft>
+					<onright>noop</onright>
+					<orientation>horizontal</orientation>
+
+					<!-- (2,0) key button -->
+					<control type="button" id="140">
+						<include>DialogKeyboard_coords6</include>
+						<onup>120</onup>
+						<ondown>160</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,1) key button -->
+					<control type="button" id="141">
+						<include>DialogKeyboard_coords6</include>
+						<onup>121</onup>
+						<ondown>161</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,2) key button -->
+					<control type="button" id="142">
+						<include>DialogKeyboard_coords6</include>
+						<onup>122</onup>
+						<ondown>162</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,3) key button -->
+					<control type="button" id="143">
+						<include>DialogKeyboard_coords6</include>
+						<onup>123</onup>
+						<ondown>163</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,4) key button -->
+					<control type="button" id="144">
+						<include>DialogKeyboard_coords6</include>
+						<onup>124</onup>
+						<ondown>164</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,5) key button -->
+					<control type="button" id="145">
+						<include>DialogKeyboard_coords6</include>
+						<onup>125</onup>
+						<ondown>165</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,6) key button -->
+					<control type="button" id="146">
+						<include>DialogKeyboard_coords6</include>
+						<onup>126</onup>
+						<ondown>166</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,7) key button -->
+					<control type="button" id="147">
+						<include>DialogKeyboard_coords6</include>
+						<onup>127</onup>
+						<ondown>167</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,8) key button -->
+					<control type="button" id="148">
+						<include>DialogKeyboard_coords6</include>
+						<onup>128</onup>
+						<ondown>168</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,9) key button -->
+					<control type="button" id="149">
+						<include>DialogKeyboard_coords6</include>
+						<onup>129</onup>
+						<ondown>169</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,10) key button -->
+					<control type="button" id="150">
+						<include>DialogKeyboard_coords6</include>
+						<onup>130</onup>
+						<ondown>170</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (2,11) key button -->
+					<control type="button" id="151">
+						<include>DialogKeyboard_coords6</include>
+						<onup>131</onup>
+						<ondown>171</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+
+				</control>
+
+				<!-- Forth row -->
+				<control type="grouplist" id="4000">
+					<include>DialogKeyboard_coords9</include>
+					<itemgap>0</itemgap>
+					<onleft>304</onleft>
+					<onright>noop</onright>
+					<orientation>horizontal</orientation>
+
+					<!-- (3,0) key button -->
+					<control type="button" id="160">
+						<include>DialogKeyboard_coords6</include>
+						<onup>140</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,1) key button -->
+					<control type="button" id="161">
+						<include>DialogKeyboard_coords6</include>
+						<onup>141</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,2) key button -->
+					<control type="button" id="162">
+						<include>DialogKeyboard_coords6</include>
+						<onup>142</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,3) key button -->
+					<control type="button" id="163">
+						<include>DialogKeyboard_coords6</include>
+						<onup>143</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,4) key button -->
+					<control type="button" id="164">
+						<include>DialogKeyboard_coords6</include>
+						<onup>144</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,5) key button -->
+					<control type="button" id="165">
+						<include>DialogKeyboard_coords6</include>
+						<onup>145</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,6) key button -->
+					<control type="button" id="166">
+						<include>DialogKeyboard_coords6</include>
+						<onup>146</onup>
+						<ondown>32</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,7) key button -->
+					<control type="button" id="167">
+						<include>DialogKeyboard_coords6</include>
+						<onup>147</onup>
+						<ondown>8</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,8) key button -->
+					<control type="button" id="168">
+						<include>DialogKeyboard_coords6</include>
+						<onup>148</onup>
+						<ondown>8</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,9) key button -->
+					<control type="button" id="169">
+						<include>DialogKeyboard_coords6</include>
+						<onup>148</onup>
+						<ondown>8</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,10) key button -->
+					<control type="button" id="170">
+						<include>DialogKeyboard_coords6</include>
+						<onup>150</onup>
+						<ondown>305</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- (3,11) key button -->
+					<control type="button" id="171">
+						<include>DialogKeyboard_coords6</include>
+						<onup>151</onup>
+						<ondown>306</ondown>
+						<include>KeyboardButtons</include>
+					</control>
+
+				</control>
+
+				<!-- Fifth row -->
+				<control type="grouplist" id="5000">
+					<include>DialogKeyboard_coords10</include>
+					<itemgap>0</itemgap>
+					<onleft>307</onleft>
+					<onright>noop</onright>
+					<ondown>312</ondown>
+					<orientation>horizontal</orientation>
+
+					<!-- SPACE -->
+					<control type="button" id="32">
+						<include>DialogKeyboard_coords11</include>
+						<onup>163</onup>
+						<label>20182</label>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- BACKSPACE -->
+					<control type="button" id="8">
+						<include>DialogKeyboard_coords12</include>
+						<onup>168</onup>
+						<label>20181</label>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- Previous -->
+					<control type="button" id="305">
+						<include>DialogKeyboard_coords6</include>
+						<onup>170</onup>
+						<label>&lt;</label>
+						<include>KeyboardButtons</include>
+					</control>
+					<!-- Next -->
+					<control type="button" id="306">
+						<include>DialogKeyboard_coords6</include>
+						<onup>171</onup>
+						<label>&gt;</label>
+						<include>KeyboardButtons</include>
+					</control>
+
+				</control>
+
+				<!-- Edit -->
+				<control type="edit" id="312">
+					<include>DialogKeyboard_coords13</include>
+					<onup>32</onup>
+					<ondown>6000</ondown>
+					<onleft condition="Control.IsVisible(310)">310</onleft>
+					<scroll>True</scroll>
+					<font>Font48</font>
+					<textoffsetx>20</textoffsetx>
+					<texturefocus colordiffuse="$VAR[TextColorFO]" border="2">common/Border.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[TextColorNF]" border="2">common/Border.png</texturenofocus>
+				</control>
+
+			</control>
+
+			<!-- Autocompletion -->
+			<control type="panel" id="6000">
+				<include>DialogKeyboard_coords14</include>
+				<onleft>6000</onleft>
+				<onright>6000</onright>
+				<onup>312</onup>
+				<ondown>9001</ondown>
+				<onback>noop</onback>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="sine" easing="out">200</scrolltime>
+				<animation type="conditional" reversible="true" condition="Integer.IsEqual(Container(6000).NumItems,0)">
+					<effect type="slide" end="0,200" time="200" />
+					<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+				
+				<include>DialogKeyboard_coords15</include>
+				
+				<include>DialogKeyboard_coords16</include>
+				
+				<content>$VAR[keyboard-autocompletion]</content>
+				
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9001">
+				<include>DialogButtons</include>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>30</itemgap>
+				<onup>6000</onup>
+				<defaultcontrol always="true">0</defaultcontrol>
+
+				<!-- Done -->
+				<control type="button" id="300">
+					<width>auto</width>
+					<label>20177</label>
+					<onclick>SetFocus(100)</onclick>
+				</control>
+
+				<!-- Cancel Button -->
+				<control type="button" id="301">
+					<width>auto</width>
+					<label>222</label>
+				</control>
+
+			</control>
+
+		</control>
+		
+		<include>MaskingBars</include>
+		
+	</controls>
+
+</window>

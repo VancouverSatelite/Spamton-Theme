@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- yesnodialog -->
+	<defaultcontrol always="true">9001</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+	
+	<controls>
+
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+
+		<control type="group">
+			<include>DialogDepth</include>
+		
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time" condition="String.IsEmpty(System.Progressbar)">
+				<param name="heading">$INFO[Control.GetLabel(1)]</param>
+				<param name="secondary">False</param>
+				<param name="busyspinner">False</param>
+			</include>
+			<include content="Time" condition="!String.IsEmpty(System.Progressbar)">
+				<param name="heading">$INFO[Control.GetLabel(1)]</param>
+				<param name="secondary">False</param>
+				<param name="busyspinner">True</param>
+			</include>
+
+			<!-- Heading -->
+			<control type="label" id="1">
+				<font></font>
+			</control>
+
+			<!-- Details -->
+			<control type="textbox" id="9">
+				<include>DialogConfirm_coords1</include>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>Font36</font>
+				<autoscroll delay="10000" time="1700" repeat="12000">True</autoscroll>
+				<textcolor>$VAR[TextColorFO]</textcolor>
+			</control>
+
+			<!-- Progress -->
+			<control type="progress" id="20">
+				<include>DialogConfirm_coords2</include>
+				<info>System.Progressbar</info>
+				<texturebg border="5,0,5,0" colordiffuse="$VAR[OverlayColorNF]">common/ScrollBackgroundHorizontal.png</texturebg>
+				<midtexture colordiffuse="$VAR[OverlayColorFO]">common/white.png</midtexture>
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9001">
+				<include>DialogButtons</include>
+				<height>66</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>30</itemgap>
+				<defaultcontrol always="true">0</defaultcontrol>
+				
+				<!-- No Button -->
+				<control type="button" id="10">
+					<width>auto</width>
+					<font>Font36</font>
+					<align>center</align>
+				</control>
+				
+				<!-- Yes Button -->
+				<control type="button" id="11">
+					<width>auto</width>
+					<font>Font36</font>
+					<align>center</align>
+				</control>
+				
+				<!-- Button for future use -->
+				<control type="button" id="12">
+					<width>auto</width>
+					<font>Font36</font>
+					<align>center</align>
+				</control>
+				
+			</control>
+			
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

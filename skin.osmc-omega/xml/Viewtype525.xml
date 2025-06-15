@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype525">
+		
+		<!-- Wide low info (videos) -->
+		<control type="group">
+			<visible>Control.IsVisible(525)</visible>
+
+			<!-- List -->
+			<control type="fixedlist" id="525">
+				<include>Viewtype525_coords1</include>
+				<ondown>62</ondown>
+				<onleft>525</onleft>
+				<onright>525</onright>
+				<pagecontrol>62</pagecontrol>
+				<preloaditems>6</preloaditems>
+				<focusposition>5</focusposition>
+				<orientation>horizontal</orientation>
+				<viewtype label="$LOCALIZE[31392]">biginfo</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible>[Container.Content(episodes) | Container.Content(movies)] + String.StartsWith(Container.FolderPath,plugin://plugin.video) | Container.Content(videos)</visible>
+				<include>DefaultView</include>
+
+				<include>Viewtype525_coords2</include>
+
+				<include>Viewtype525_coords3</include>
+
+			</control>
+			
+			<!-- Video info -->
+			<control type="group">
+				<include>Viewtype525_coords4</include>
+				<visible>[Container.Content(episodes) | Container.Content(movies)] + String.StartsWith(Container.FolderPath,plugin://plugin.video) | Container.Content(videos)</visible>
+				
+				<!-- Title -->
+				<control type="fadelabel">
+					<include>Viewtype525_coords5</include>
+					<font>Font72</font>
+					<align>center</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[Label1]</label>
+					<scrollspeed>120</scrollspeed>
+				</control>
+				
+				<!-- Details -->
+				<control type="fadelabel">
+					<include>Viewtype525_coords6</include>
+					<font>Font27</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$VAR[Label2]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				
+				<!-- Plot -->
+				<control type="group">
+					<include>Viewtype525_coords7</include>
+					<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)</visible>
+					<control type="textbox">
+						<include>Viewtype525_coords8</include>
+						<align>left</align>
+						<font>Font27</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.525)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,S)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype525_coords9</include>
+						<align>left</align>
+						<font>Font30</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.525)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1300" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,M)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype525_coords10</include>
+						<align>left</align>
+						<font>Font33</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.525)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1200" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,L)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype525_coords11</include>
+						<align>left</align>
+						<font>Font36</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.525)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1100" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,XL)</visible>
+					</control>
+				</control>
+			
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

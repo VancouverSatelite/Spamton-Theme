@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- musicosd -->
+	<defaultcontrol always="true">5</defaultcontrol>
+	<onload>ClearProperty(MusicOSDFresh,12006)</onload>
+	<onload>ClearProperty(MusicOSDSlider,12006)</onload>
+	<onload condition="!Window.IsVisible(seekbar) + !Player.ShowInfo + !Skin.HasSetting(MusicOSD)">SetProperty(MusicOSDFresh,True,12006)</onload>
+	<onunload>ClearProperty(MusicOSDFresh,12006)</onunload>
+	<onunload>ClearProperty(MusicOSDSlider,12006)</onunload>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+	
+		<!-- Seek slider -->
+		<control type="slider">
+			<include>MusicOSD_coords1</include>
+			<texturesliderbar />
+			<texturesliderbardisabled />
+			<textureslidernib />
+			<textureslidernibfocus />
+			<textureslidernibdisabled />
+			<action>seek</action>
+		</control>
+		
+		<control type="button" id="100">
+			<include>MusicOSD_coords1</include>
+			<onup>5</onup>
+			<ondown>5</ondown>
+			<onleft>StepBack</onleft>
+			<onright>StepForward</onright>
+			<onfocus>SetProperty(MusicOSDSlider,True,12006)</onfocus>
+			<onunfocus>ClearProperty(MusicOSDSlider,12006)</onunfocus>
+			<texturefocus />
+			<texturenofocus />
+		</control>
+
+		<control type="group">
+			<include>DialogDepth</include>
+			<include>MusicOSD_coords2</include>
+			<visible>!Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(PVRChannelGuide) + !Window.IsVisible(pvrosdchannels) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(playerprocessinfo) + !Window.IsVisible(shutdownmenu)</visible>
+			<include>OSDVisibleHiddenAnimation</include>
+			<animation effect="fade" start="100" end="0" time="200" condition="Window.IsTopMost(DialogSelect.xml)">Conditional</animation>
+			<animation type="WindowOpen" condition="Window.IsVisible(seekbar) | Player.ShowInfo + !Skin.HasSetting(MusicOSD) | Skin.HasSetting(MusicOSD)">
+				<effect type="zoom" start="90" end="100" center="auto" tween="back" easing="out" time="200" delay="200" />
+				<effect type="fade" start="0" end="100" time="200" delay="200" />
+			</animation>
+			<animation type="WindowOpen" condition="!Window.IsVisible(seekbar) + !Player.ShowInfo + !Skin.HasSetting(MusicOSD)">
+				<effect type="zoom" start="90" end="100" center="auto" tween="back" easing="out" time="200" />
+				<effect type="fade" start="0" end="100" time="200" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="zoom" start="100" end="90" center="auto" easing="in" time="200" />
+				<effect type="fade" start="100" end="0" time="200" />
+			</animation>
+
+			<!-- Background -->
+			<control type="image">
+				<include>MusicOSD_coords3</include>
+				<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+			</control>
+
+			<!-- Controls -->
+			<control type="grouplist">
+				<include>MusicOSD_coords4</include>
+				<itemgap>0</itemgap>
+				<onleft>20</onleft>
+				<onright>12</onright>
+				<onup condition="!Player.SeekEnabled">30</onup>
+				<onup condition="Player.SeekEnabled">100</onup>
+				<ondown>30</ondown>
+				<orientation>horizontal</orientation>
+
+				<!-- Spacer -->
+				<control type="image" id="40">
+					<include>MusicOSD_coords5</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Skip Back -->
+				<control type="button" id="1">
+					<include>MusicOSD_coords6</include>
+					<onleft>2</onleft>
+					<onright>4</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackwardEnd.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickBackwardEnd.png</texturenofocus>
+					<onclick>PlayerControl(Previous)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				
+				<!-- Rewind -->
+				<control type="togglebutton" id="2">
+					<include>MusicOSD_coords7</include>
+					<onleft>8</onleft>
+					<onright>10</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickBackward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(1)</usealttexture>
+					<onclick>PlayerControl(Rewind)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				
+				<!-- Tempo Down -->
+				<control type="togglebutton" id="3">
+					<include>MusicOSD_coords7</include>
+					<onleft>8</onleft>
+					<onright>10</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickBackward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(1) | Control.HasFocus(2)</usealttexture>
+					<onclick>PlayerControl(TempoDown)</onclick>
+					<visible>Player.SeekEnabled</visible>
+					<enable>Player.TempoEnabled</enable>
+				</control>
+
+				<!-- Spacer -->
+				<control type="image" id="41">
+					<include>MusicOSD_coords5</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Up -->
+				<control type="button" id="4">
+					<include>MusicOSD_coords8</include>
+					<onleft>4</onleft>
+					<onright>6</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDUpNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDUpNF.png</texturenofocus>
+					<onclick>Action(ChannelUp)</onclick>
+					<visible>Pvr.IsPlayingRadio</visible>
+				</control>
+
+				<!-- Play/Pause -->
+				<include condition="Player.PauseEnabled">OSDPlayStopButtons</include>
+				<!-- Stop -->
+				<include condition="!Player.PauseEnabled">OSDStopButton</include>
+
+				<!-- Down -->
+				<control type="button" id="7">
+					<include>MusicOSD_coords8</include>
+					<onleft>5</onleft>
+					<onright>7</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDDownNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDDownNF.png</texturenofocus>
+					<onclick>Action(ChannelDown)</onclick>
+					<visible>Pvr.IsPlayingRadio</visible>
+				</control>
+
+				<!-- Spacer -->
+				<control type="image" id="42">
+					<include>MusicOSD_coords5</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Tempo Up -->
+				<control type="togglebutton" id="8">
+					<include>MusicOSD_coords7</include>
+					<onleft>8</onleft>
+					<onright>10</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickForward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(9) | Control.HasFocus(10)</usealttexture>
+					<onclick>PlayerControl(TempoUp)</onclick>
+					<visible>Player.SeekEnabled</visible>
+					<enable>Player.TempoEnabled</enable>
+				</control>
+				
+				<!-- Fast Forward -->
+				<control type="togglebutton" id="9">
+					<include>MusicOSD_coords7</include>
+					<onleft>8</onleft>
+					<onright>10</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickForward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(10)</usealttexture>
+					<onclick>PlayerControl(Forward)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				
+				<!-- Next -->
+				<control type="button" id="10">
+					<include>MusicOSD_coords6</include>
+					<onleft>7</onleft>
+					<onright>9</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForwardEnd.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickForwardEnd.png</texturenofocus>
+					<onclick>PlayerControl(Next)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				
+				<!-- Spacer -->
+				<control type="image" id="43">
+					<include>MusicOSD_coords5</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Record -->
+				<control type="togglebutton" id="11">
+					<include>MusicOSD_coords8</include>
+					<onleft>8</onleft>
+					<onright>10</onright>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDRecordOffNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDRecordOffNF.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDRecordOnNF.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDRecordOnNF.png</alttexturenofocus>
+					<usealttexture>PVR.IsRecordingPlayingChannel</usealttexture>
+					<onclick>PVR.ToggleRecordPlayingChannel</onclick>
+					<visible>PVR.CanRecordPlayingChannel</visible>
+				</control>
+
+			</control>
+
+			<!-- Options -->
+			<control type="grouplist" id="30">
+				<include>MusicOSD_coords9</include>
+				<align>right</align>
+				<itemgap>0</itemgap>
+				<onleft>11</onleft>
+				<onright>1</onright>
+				<onup condition="!Player.SeekEnabled">4</onup>
+				<onup condition="Player.SeekEnabled">100</onup>
+				<ondown>4</ondown>
+				<orientation>horizontal</orientation>
+
+				<!-- Repeat -->
+				<control type="button" id="12">
+					<include>MusicOSD_coords8</include>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>PlayerControl(Repeat)</onclick>
+					<visible>!Pvr.IsPlayingRadio</visible>
+				</control>
+				
+				<!-- Random -->
+				<control type="togglebutton" id="13">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDRandomOffNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDRandomOffNF.png</texturenofocus>
+					<usealttexture>Playlist.IsRandom</usealttexture>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDRandomOnNF.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDRandomOnNF.png</alttexturenofocus>
+					<onclick>PlayerControl(Random)</onclick>
+					<visible>!Pvr.IsPlayingRadio</visible>
+					<visible>Integer.IsGreater(MusicPlayer.PlaylistLength,1)</visible>
+				</control>
+				
+				<!-- More information -->
+				<control type="button" id="14">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDInfoNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDInfoNF.png</texturenofocus>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + !Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),none)">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + !Player.ShowInfo">Info</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + !String.IsEmpty(MusicPlayer.Property(Artist_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,artist,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(MusicPlayer.Property(Artist_Description)) + !String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,album,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),artist) + !String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,album,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(MusicPlayer.Property(Artist_Description)) + String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(MusicPlayer.Property(Artist_Description)) + String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(MusicPlayer.Property(Artist_Description)) + String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),artist) + String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),artist) + String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),artist) + String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),album) + !Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),album) + !Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),album) + !Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + !String.IsEmpty(VideoPlayer.Plot) + Pvr.IsPlayingRadio">SetProperty(extended,plotnow,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + !String.IsEmpty(VideoPlayer.NextPlot) + Pvr.IsPlayingRadio">SetProperty(extended,plotnext,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + String.IsEmpty(VideoPlayer.NextPlot) + ![String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment)] + Pvr.IsPlayingRadio">SetProperty(extended,rds,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),plotnow) + !String.IsEmpty(VideoPlayer.NextPlot) + Pvr.IsPlayingRadio">SetProperty(extended,plotnext,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),plotnow) + String.IsEmpty(VideoPlayer.NextPlot) + ![String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment)] + Pvr.IsPlayingRadio">SetProperty(extended,rds,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),plotnext) + ![String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment)] + Pvr.IsPlayingRadio">SetProperty(extended,rds,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + String.IsEmpty(VideoPlayer.NextPlot) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + String.IsEmpty(VideoPlayer.NextPlot) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + String.IsEmpty(VideoPlayer.NextPlot) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),plotnow) + String.IsEmpty(VideoPlayer.NextPlot) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),plotnow) + String.IsEmpty(VideoPlayer.NextPlot) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),plotnow) + String.IsEmpty(VideoPlayer.NextPlot) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),plotnext) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),plotnext) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),plotnext) + String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment) + Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),rds) + Pvr.IsPlayingRadio">Info</onclick>
+					<onclick condition="!Skin.HasSetting(MusicOSD) + Player.ShowInfo + String.IsEqual(Window(12006).Property(extended),rds) + Pvr.IsPlayingRadio">SetProperty(extended,none,12006)</onclick>
+					<onclick condition="Skin.HasSetting(MusicOSD) + String.IsEqual(Window(12006).Property(extended),rds) + Pvr.IsPlayingRadio">SetProperty(extended,basic,12006)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + !String.IsEmpty(MusicPlayer.Property(Artist_Description)) + !Pvr.IsPlayingRadio">SetProperty(ResetScroll.12006Artist," ",Home)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + !String.IsEmpty(MusicPlayer.Property(Artist_Description)) + !Pvr.IsPlayingRadio">AlarmClock(ResetScrollClear14,ClearProperty(ResetScroll.12006Artist,Home),00:01,silent)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(MusicPlayer.Property(Artist_Description)) + !String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(ResetScroll.12006Album," ",Home)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(MusicPlayer.Property(Artist_Description)) + !String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">AlarmClock(ResetScrollClear15,ClearProperty(ResetScroll.12006Album,Home),00:01,silent)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),artist) + !String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">SetProperty(ResetScroll.12006Album," ",Home)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),artist) + !String.IsEmpty(MusicPlayer.Property(Album_Description)) + !Pvr.IsPlayingRadio">AlarmClock(ResetScrollClear15,ClearProperty(ResetScroll.12006Album,Home),00:01,silent)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + !String.IsEmpty(VideoPlayer.Plot) + Pvr.IsPlayingRadio">SetProperty(ResetScroll.12006PlotNow," ",Home)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + !String.IsEmpty(VideoPlayer.Plot) + Pvr.IsPlayingRadio">AlarmClock(ResetScrollClear16,ClearProperty(ResetScroll.12006PlotNow,Home),00:01,silent)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + !String.IsEmpty(VideoPlayer.NextPlot) + Pvr.IsPlayingRadio">SetProperty(ResetScroll.12006PlotNext," ",Home)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),basic) + String.IsEmpty(VideoPlayer.Plot) + !String.IsEmpty(VideoPlayer.NextPlot) + Pvr.IsPlayingRadio">AlarmClock(ResetScrollClear17,ClearProperty(ResetScroll.12006PlotNext,Home),00:01,silent)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),plotnow) + !String.IsEmpty(VideoPlayer.NextPlot) + Pvr.IsPlayingRadio">SetProperty(ResetScroll.12006PlotNext," ",Home)</onclick>
+					<onclick condition="[!Skin.HasSetting(MusicOSD) + Player.ShowInfo | Skin.HasSetting(MusicOSD)] + String.IsEqual(Window(12006).Property(extended),plotnow) + !String.IsEmpty(VideoPlayer.NextPlot) + Pvr.IsPlayingRadio">AlarmClock(ResetScrollClear17,ClearProperty(ResetScroll.12006PlotNext,Home),00:01,silent)</onclick>
+					<visible>!Skin.HasSetting(MusicOSD) | [!String.IsEmpty(MusicPlayer.Property(Album_Description)) | !String.IsEmpty(MusicPlayer.Property(Artist_Description))] + [!Pvr.IsPlayingRadio | Pvr.IsPlayingRadio + !VideoPlayer.HasEpg] | [!String.IsEmpty(VideoPlayer.Plot) | !String.IsEmpty(VideoPlayer.NextPlot) | ![String.IsEmpty(RDS.Artist) + String.IsEmpty(RDS.Composer) + String.IsEmpty(RDS.Band) + String.IsEmpty(RDS.Conductor) + String.IsEmpty(RDS.Album) + String.IsEmpty(RDS.Title) + String.IsEmpty(RDS.ProgHost) + String.IsEmpty(RDS.ProgStyle) + String.IsEmpty(RDS.ChannelCountry) + String.IsEmpty(RDS.Comment)]] + Pvr.IsPlayingRadio</visible>
+				</control>
+				
+				<!-- Channels -->
+				<control type="button" id="15">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDChannelNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDChannelNF.png</texturenofocus>
+					<onclick>ActivateWindow(PVROSDChannels)</onclick>
+					<visible>Pvr.IsPlayingRadio</visible>
+				</control>
+				
+				<!-- Channel EPG -->
+				<control type="button" id="16">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDEPGNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDEPGNF.png</texturenofocus>
+					<onclick>ActivateWindow(PVRChannelGuide)</onclick>
+					<visible>Pvr.IsPlayingRadio + VideoPlayer.HasEpg</visible>
+				</control>
+				
+				<!-- Lyrics -->
+				<control type="button" id="17">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDLyricsNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDLyricsNF.png</texturenofocus>
+					<onclick condition="String.IsEmpty(Skin.String(LyricAddon))">Skin.SetAddon(LyricAddon,xbmc.python.lyrics)</onclick>
+					<onclick condition="!String.IsEmpty(Skin.String(LyricAddon))">RunScript($INFO[Skin.String(LyricAddon)])</onclick>
+				</control>
+				
+				<!-- Playlist -->
+				<control type="button" id="18">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDPlaylistNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDPlaylistNF.png</texturenofocus>
+					<onclick>Dialog.Close(all, true)</onclick>
+					<onclick>ActivateWindow(MusicPlaylist)</onclick>
+					<visible>Integer.IsGreater(Playlist.Length(music),0)</visible>
+				</control>
+				
+				<!-- Visualisation -->
+				<control type="button" id="500">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDVizNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDVizNF.png</texturenofocus>
+				</control>
+				
+				<!-- Visualisation settings -->
+				<control type="button" id="19">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDVizSettingsNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDVizSettingsNF.png</texturenofocus>
+					<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+					<visible>Visualisation.Enabled</visible>
+				</control>
+				
+				<!-- Visualisation presets list -->
+				<control type="button" id="20">
+					<include>MusicOSD_coords8</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDVizPreNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDVizPreNF.png</texturenofocus>
+					<onclick>ActivateWindow(VisualisationPresetlist)</onclick>
+					<visible>Visualisation.Enabled + Visualisation.HasPresets</visible>
+				</control>
+
+			</control>
+
+			<!-- Repeat images -->
+			<control type="group">
+				<include>MusicOSD_coords10</include>
+				<visible>!Pvr.IsPlayingRadio</visible>
+				<animation effect="slide" end="60,0" time="0" condition="!Control.IsVisible(13)">Conditional</animation>
+				<animation effect="slide" end="60,0" time="0" condition="!Control.IsVisible(14)">Conditional</animation>
+				<animation effect="slide" end="60,0" time="0" condition="!Control.IsVisible(18)">Conditional</animation>
+				<animation effect="slide" end="60,0" time="0" condition="!Control.IsVisible(19)">Conditional</animation>
+				<animation effect="slide" end="60,0" time="0" condition="!Control.IsVisible(20)">Conditional</animation>
+
+				<control type="image">
+					<include>MusicOSD_coords8</include>
+					<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDRepeatNF.png</texture>
+					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					<visible>!Control.HasFocus(12)</visible>
+				</control>
+				<control type="image">
+					<include>MusicOSD_coords8</include>
+					<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDRepeatNF.png</texture>
+					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					<visible>Control.HasFocus(12)</visible>
+				</control>
+				<control type="image">
+					<include>MusicOSD_coords8</include>
+					<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDRepeatOneNF.png</texture>
+					<visible>Playlist.IsRepeatOne</visible>
+					<visible>!Control.HasFocus(12)</visible>
+				</control>
+				<control type="image">
+					<include>MusicOSD_coords8</include>
+					<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDRepeatOneNF.png</texture>
+					<visible>Playlist.IsRepeatOne</visible>
+					<visible>Control.HasFocus(12)</visible>
+				</control>
+				<control type="image">
+					<include>MusicOSD_coords8</include>
+					<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDRepeatAllNF.png</texture>
+					<visible>Playlist.IsRepeat</visible>
+					<visible>!Control.HasFocus(12)</visible>
+				</control>
+				<control type="image">
+					<include>MusicOSD_coords8</include>
+					<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDRepeatAllNF.png</texture>
+					<visible>Playlist.IsRepeat</visible>
+					<visible>Control.HasFocus(12)</visible>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

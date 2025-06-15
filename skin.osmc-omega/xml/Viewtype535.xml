@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype535">
+
+		<!-- Wall (music/videos) -->
+		<control type="group">
+			<visible>Control.IsVisible(535)</visible>
+
+			<!-- Thumbs -->
+			<control type="panel" id="535">
+				<include>Viewtype535_coords1</include>
+				<onleft>63</onleft>
+				<onup>535</onup>
+				<ondown>535</ondown>
+				<pagecontrol>63</pagecontrol>
+				<viewtype label="$LOCALIZE[31078]">bigicon</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible>Container.Content(albums) | Container.Content(addons) | Container.Content(artists) | Container.Content(images) | Container.Content(games) | [Container.Content(episodes) | Container.Content(movies)] + String.StartsWith(Container.FolderPath,plugin://plugin.video) | Container.Content(videos) | Container.Content(favourites)</visible>
+				<include>DefaultView</include>
+
+				<include>Viewtype535_coords2</include>
+
+				<include>Viewtype535_coords3</include>
+				
+			</control>
+
+			<control type="group">
+				<include>Viewtype535_coords4</include>
+
+				<!-- Title -->
+				<control type="fadelabel">
+					<include>Viewtype535_coords5</include>
+					<font>Font42</font>
+					<align>center</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[Label1]</label>
+				</control>
+
+				<!-- Details -->
+				<control type="fadelabel">
+					<include>Viewtype535_coords6</include>
+					<font>Font27</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$VAR[Label2]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

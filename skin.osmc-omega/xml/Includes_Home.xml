@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Home">
+		<!-- Widget control -->
+		<include>skinshortcuts-template-widgetControl</include>
+
+		<!-- Main list -->
+		<control type="list" id="9000">
+			<include>Home_coords1</include>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<onleft>9001</onleft>
+			<onright condition="Control.IsVisible(9006)">9006</onright>
+			<focusposition>7</focusposition>
+			<orientation>vertical</orientation>
+			<viewtype label="$LOCALIZE[535]">list</viewtype>
+			<scrolltime tween="sine" easing="out">240</scrolltime>
+
+			<include>Home_coords2</include>
+
+			<include>Home_coords3</include>
+
+			<content>
+				<include>skinshortcuts-mainmenu</include>
+				<item>
+					<label>$LOCALIZE[10004]</label>
+					<icon>DefaultShortcut.png</icon>
+					<thumb />
+					<onclick>ActivateWindow(Settings)</onclick>
+					<visible>System.HasAddon(script.skinshortcuts) + !Skin.HasSetting(AlwaysShowSettingsLink) + !Skin.HasSetting(HasSettingsLink)</visible>
+				</item>
+			</content>
+
+		</control>
+
+		<!-- Indicators -->
+		<include>Home_coords4</include>
+
+		<!-- Widgets -->
+		<control type="group" id="9002">
+			<include>skinshortcuts-template-vertical</include>
+		</control>
+		
+		<!-- Sub menu indicator -->
+		<control type="group">
+			<include>WindowDepth</include>
+			<visible>Control.HasFocus(9000) + !Window.IsVisible(shutdownmenu)</visible>
+			<include>VisibleFadeAnimation</include>
+			<animation effect="slide" time="200" start="0,0" end="-200,0" condition="Integer.IsEqual(Container(9001).NumItems,0)">Conditional</animation>
+			<animation effect="slide" time="200" start="-200,0" end="0,0" condition="Integer.IsGreater(Container(9001).NumItems,0)">WindowOpen</animation>
+			<animation effect="slide" time="200" start="0,0" end="-200,0" condition="Integer.IsGreater(Container(9001).NumItems,0)">WindowClose</animation>
+			<control type="image">
+				<include>SubMenu_coords13</include>
+				<texture colordiffuse="$VAR[OverlayColorNF]">sub-menu-left.png</texture>
+			</control>
+		</control>
+
+		<!-- Sub menu -->
+		<control type="group" id="9010">
+			<include>NotificationDepth</include>
+			
+			<!-- Window dim overlay -->
+			<control type="image">
+				<include>BackgroundDepth</include>
+				<include>FullscreenDimensions</include>
+				<texture colordiffuse="$VAR[DarkenColor]">common/DimOverlay.png</texture>
+				<visible>ControlGroup(9010).HasFocus</visible>
+				<include>VisibleFadeAnimation</include>
+			</control>
+			
+			<control type="group">
+				<include>SubMenu_coords1</include>
+				<animation effect="slide" start="0,0" end="460,0" time="200" condition="ControlGroup(9010).HasFocus">Conditional</animation>
+				
+				<!-- Hidden button for mouse control -->
+				<control type="button">
+					<include>SubMenu_coords2</include>
+					<texturefocus>noop</texturefocus>
+				</control>
+				
+				<!-- Background -->
+				<control type="image">
+					<include>SubMenu_coords2</include>
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+
+				<control type="list" id="9001">
+					<include>SubMenu_coords3</include>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onback>9000</onback>
+					<include>SubMenuResetScroll</include>
+					<orientation>vertical</orientation>
+					<defaultcontrol always="true">1</defaultcontrol>
+
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,20)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,19)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,18)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,17)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,16)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,15)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,14)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,13)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,12)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,11)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,10)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,9)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,8)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,7)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,6)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,5)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,4)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,3)">Conditional</animation>
+					<animation effect="slide" time="0" end="0,26" condition="Integer.IsLess(Container(9001).NumItems,2)">Conditional</animation>
+
+					<include>HomeSubMenu_coords1</include>
+					
+					<include>HomeSubMenu_coords2</include>
+
+					<content>
+						<include>skinshortcuts-submenu</include>
+					</content>
+
+				</control>
+			</control>
+		</control>
+
+	</include>
+</includes>

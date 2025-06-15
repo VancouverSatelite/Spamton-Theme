@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- PVRGuideControls -->
+	<defaultcontrol always="true">7000</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+	
+		<control type="group">
+			<include>NotificationDepth</include>
+
+			<!-- Background image -->
+			<include>DialogFadeBackgroundImage</include>
+			<control type="group">
+				<animation effect="slide" start="-460,0" time="200">WindowOpen</animation>
+				<animation effect="slide" end="-460,0" time="200">WindowClose</animation>
+
+				<control type="image">
+					<include>DialogPVRGuideControls_coords1</include>
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+
+				<control type="grouplist" id="7000">
+					<include>DialogPVRGuideControls_coords2</include>
+					<onright>Close</onright>
+					<onleft>Close</onleft>
+					<orientation>vertical</orientation>
+					<itemgap>0</itemgap>
+
+					<include content="SubMenuAnimation">
+						<param name="containerID">7000</param>
+					</include>
+					
+					<control type="button" id="600">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19063</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(FirstProgramme)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="601">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19317</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(-12)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="602">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19070</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(CurrentProgramme)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="603">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19318</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(+12)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="604">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19064</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(LastProgramme)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="605">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19288</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(SelectDate)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="606">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19322</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(FirstChannel)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="607">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19323</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(PlayingChannel)</onclick>
+						<align>center</align>
+						<visible>PVR.IsPlayingTV | PVR.IsPlayingRadio | PVR.IsPlayingEpgTag</visible>
+					</control>
+					
+					<control type="button" id="608">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19324</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(LastChannel)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="609">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19319</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(PreviousGroup)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="610">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19320</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(NextGroup)</onclick>
+						<align>center</align>
+					</control>
+					
+					<control type="button" id="611">
+						<include>DialogPVRGuideControls_coords3</include>
+						<label>19321</label>
+						<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus52c.png</texturefocus>
+						<onclick>PVR.EpgGridControl(SelectGroup)</onclick>
+						<align>center</align>
+					</control>
+
+				</control>
+			</control>
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- fullscreeninfo -->
+	<defaultcontrol always="true">100</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+
+		<control type="group">
+			<include>DialogDepth</include>
+			
+			<!-- Info -->
+			<control type="group">
+				<include>DialogPlayerProcessInfo_coords1</include>
+				<visible>!Window.IsVisible(shutdownmenu)</visible>
+				<include>OSDVisibleHiddenAnimation</include>
+				<include>OSDOpenCloseAnimation</include>
+
+				<!-- Background -->
+				<control type="image">
+					<include>DialogPlayerProcessInfo_coords2</include>
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+
+				<!-- Icon -->
+				<control type="image">
+					<include>DialogPlayerProcessInfo_coords3</include>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>200</fadetime>
+					<texture background="true">$VAR[PlayerIcon]</texture>
+					<visible>!VideoPlayer.Content(LiveTV) + !MusicPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="image">
+					<include>DialogPlayerProcessInfo_coords3</include>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>200</fadetime>
+					<texture background="true" fallback="DefaultLiveTV.png">$VAR[PlayerIcon]</texture>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="image">
+					<include>DialogPlayerProcessInfo_coords3</include>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<fadetime>200</fadetime>
+					<texture background="true" fallback="DefaultRadio.png">$VAR[PlayerIcon]</texture>
+					<visible>MusicPlayer.Content(LiveTV)</visible>
+				</control>
+
+				<!-- Video/Audio info -->
+				<control type="grouplist">
+					<include>DialogPlayerProcessInfo_coords4</include>
+					<itemgap>0</itemgap>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(videodecoder),[LIGHT]$LOCALIZE[31087]:[/LIGHT] [UPPERCASE],[/UPPERCASE]]$VAR[VideoHWDecoder,[LIGHT] ([UPPERCASE],[/UPPERCASE])[/LIGHT]]</label>
+						<font>Font25</font>
+						<visible>Player.HasVideo</visible>				
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(pixformat),[LIGHT]$LOCALIZE[31088]:[/LIGHT] [UPPERCASE],[/UPPERCASE]]</label>
+						<font>Font25</font>
+						<visible>Player.HasVideo</visible>					
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(deintmethod),[LIGHT]$LOCALIZE[16038]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]</label>
+						<font>Font25</font>
+						<visible>Player.HasVideo</visible>					
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(VideoDecoder),[LIGHT]$LOCALIZE[38031]:[/LIGHT] [UPPERCASE],[/UPPERCASE]][LIGHT] ($INFO[Player.Process(videowidth)]$INFO[Player.Process(videoheight),x,]$INFO[Player.Process(videoscantype)]$INFO[Player.Process(videodar),$COMMA ,:1]$INFO[Player.Process(videofps),$COMMA , fps])[/LIGHT]</label>
+						<font>Font25</font>
+						<visible>Player.HasVideo</visible>					
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<label>$INFO[Player.Process(audiodecoder),[LIGHT]$LOCALIZE[460]:[/LIGHT] [UPPERCASE],[/UPPERCASE]][LIGHT] ($INFO[Player.Process(audiochannels),,]$INFO[Player.Process(audiobitspersample),$COMMA , bits]$INFO[Player.Process(audiosamplerate),$COMMA , Hz])[/LIGHT]</label>
+						<font>Font25</font>
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<label>$INFO[System.Memory(used.percent),[LIGHT]$LOCALIZE[31089]:[/LIGHT] ,]$INFO[System.CpuUsage,  [LIGHT]$LOCALIZE[13271][/LIGHT] ,]</label>
+						<font>Font25</font>
+					</control>
+				</control>
+
+				<!-- PVR info -->
+				<control type="grouplist">
+					<include>DialogPlayerProcessInfo_coords4</include>
+					<itemgap>0</itemgap>
+					<visible>VideoPlayer.Content(LiveTV) | MusicPlayer.Content(LiveTV)</visible>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<align>right</align>
+						<label>$INFO[PVR.ActStreamServiceName,[LIGHT]$LOCALIZE[19099]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]$INFO[PVR.ActStreamProviderName,  [LIGHT]$LOCALIZE[19101]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]</label>
+						<font>Font25</font>			
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<align>right</align>
+						<label>$INFO[PVR.ActStreamDevice,[LIGHT]$LOCALIZE[19006]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]$INFO[PVR.ActStreamStatus, [LIGHT]([CAPITALIZE],[/CAPITALIZE])[/LIGHT]]</label>
+						<font>Font25</font>				
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<align>right</align>
+						<label>$INFO[PVR.ActStreamClient,[LIGHT]$LOCALIZE[19012]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]</label>
+						<font>Font25</font>				
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<align>right</align>
+						<label>$INFO[PVR.ActStreamEncryptionName,[LIGHT]$LOCALIZE[19015]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]</label>
+						<font>Font25</font>			
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<align>right</align>
+						<label>$INFO[PVR.ActStreamBer,[LIGHT]$LOCALIZE[19010]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]$INFO[PVR.ActStreamUnc,  [LIGHT]$LOCALIZE[19011]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]$INFO[PVR.ActStreamMux,  [LIGHT]$LOCALIZE[19100]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]</label>
+						<font>Font25</font>			
+					</control>
+					<control type="label">
+						<include>DialogPlayerProcessInfo_coords5</include>
+						<aligny>bottom</aligny>
+						<align>right</align>
+						<label>$INFO[PVR.ActStreamSignal,[LIGHT]$LOCALIZE[19008]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]$INFO[PVR.ActStreamSNR,  [LIGHT]$LOCALIZE[19009]:[/LIGHT] [CAPITALIZE],[/CAPITALIZE]]</label>
+						<font>Font25</font>
+					</control>
+				</control>
+				
+			</control>
+			
+			<!-- Player debug overlay shortcut -->
+			<control type="group">
+				<include>DialogPlayerProcessInfo_coords6</include>
+				<visible>Player.HasVideo</visible>
+				<visible>!Window.IsVisible(shutdownmenu)</visible>
+				<include>OSDVisibleHiddenAnimation</include>
+				<include>OSDOpenCloseAnimation</include>
+				
+				<!-- Background -->
+				<control type="image">
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+
+				<control type="label">
+					<include>DialogPlayerProcessInfo_coords7</include>
+					<label>$LOCALIZE[31156]</label>
+					<font>Font25-light</font>
+				</control>
+				
+			</control>
+
+			<control type="button" id="100">
+				<left>-10000</left>
+				<top>-10000</top>
+				<width>1</width>
+				<height>1</height>
+				<label>noop</label>
+				<onclick>PlayerDebug</onclick>
+				<oninfo>noop</oninfo>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

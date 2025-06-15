@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- pictureinfo -->
+	<defaultcontrol always="true">5</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+
+		<control type="group">
+			<include>DialogDepth</include>
+
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$LOCALIZE[13406]</param>
+				<param name="secondary">False</param>
+			</include>
+			
+			<!-- Image -->
+			<control type="image">
+				<include>DialogPictureInfo_coords1</include>
+				<fadetime>100</fadetime>
+				<texture>$INFO[ListItem.FileNameAndPath]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>!Window.IsActive(Slideshow)</visible>
+			</control>
+			
+			<control type="image">
+				<include>DialogPictureInfo_coords1</include>
+				<fadetime>100</fadetime>
+				<texture>$INFO[Slideshow.Path]$INFO[Slideshow.Filename]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>Window.IsActive(Slideshow)</visible>
+			</control>
+
+			<!-- List -->
+			<control type="list" id="5">
+				<include>DialogPictureInfo_coords2</include>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<onleft>60</onleft>
+				<onright>9000</onright>
+				<orientation>vertical</orientation>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<include>DialogPictureInfo_coords3</include>
+
+				<include>DialogPictureInfo_coords4</include>
+
+			</control>
+			
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="60">
+				<include>DialogPictureInfo_coords5</include>
+				<onleft>9000</onleft>
+				<onright>5</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+				<include>VisibleFadeAnimation</include>
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9000">
+				<include>DialogButtons</include>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>30</itemgap>
+				<onup>5</onup>
+				<defaultcontrol always="true">9001</defaultcontrol>
+
+				<!-- Close button -->
+				<control type="button" id="9001">
+					<width>auto</width>
+					<onclick>Close</onclick>
+					<label>15067</label>
+				</control>
+				
+			</control>
+			
+			<!-- Button indicator -->
+			<include content="dialogButtonIndicator">
+				<param name="visibility">!ControlGroup(9000).HasFocus + !Window.IsVisible(shutdownmenu)</param>
+			</include>
+
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="MyMusicPlaylistEditor_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords1_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords1_16:9">
+		<left>120</left>
+		<top>228</top>
+		<width>640</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords1_21:9">
+		<left>120</left>
+		<top>228</top>
+		<width>960</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords1_21:9_masked">
+		<left>120</left>
+		<top>408</top>
+		<width>960</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords1_4:3">
+		<left>120</left>
+		<top>228</top>
+		<width>400</width>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords2_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords2_16:9">
+		<width>640</width>
+		<height>66</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords2_21:9">
+		<width>960</width>
+		<height>66</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords2_21:9_masked">
+		<width>960</width>
+		<height>66</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords2_4:3">
+		<width>400</width>
+		<height>66</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords3">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords3_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords3_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords3_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords3_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords3_16:9">
+		<top>82</top>
+		<width>640</width>
+		<height>595</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords3_21:9">
+		<top>82</top>
+		<width>960</width>
+		<height>595</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords3_21:9_masked">
+		<top>82</top>
+		<width>960</width>
+		<height>595</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords3_4:3">
+		<top>82</top>
+		<width>400</width>
+		<height>595</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords4">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords4_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords4_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords4_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords4_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords4_16:9">
+		<itemlayout height="85" width="640">
+			<control type="label">
+				<width>640</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>640</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>640</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords4_21:9">
+		<itemlayout height="85" width="960">
+			<control type="label">
+				<width>960</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>960</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>960</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords4_21:9_masked">
+		<itemlayout height="85" width="960">
+			<control type="label">
+				<width>960</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>960</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>960</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords4_4:3">
+		<itemlayout height="85" width="400">
+			<control type="label">
+				<width>400</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>400</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>400</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords5">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords5_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords5_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords5_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords5_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords5_16:9">
+		<focusedlayout height="85" width="640">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">50</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>640</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>640</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>640</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>640</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>640</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords5_21:9">
+		<focusedlayout height="85" width="960">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">50</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>960</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords5_21:9_masked">
+		<focusedlayout height="85" width="960">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">50</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>960</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords5_4:3">
+		<focusedlayout height="85" width="400">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">50</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>400</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>400</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>400</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>400</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>400</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords6">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords6_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords6_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords6_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords6_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords6_16:9">
+		<left>650</left>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords6_21:9">
+		<left>970</left>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords6_21:9_masked">
+		<left>970</left>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords6_4:3">
+		<left>410</left>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords7">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords7_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords7_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords7_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords7_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords7_16:9">
+		<top>698</top>
+		<width>640</width>
+		<height>44</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords7_21:9">
+		<top>698</top>
+		<width>960</width>
+		<height>44</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords7_21:9_masked">
+		<top>698</top>
+		<width>960</width>
+		<height>44</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords7_4:3">
+		<top>698</top>
+		<width>400</width>
+		<height>44</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords8">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords8_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords8_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords8_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords8_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords8_16:9">
+		<centerleft>50%</centerleft>
+		<top>228</top>
+		<width>320</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords8_21:9">
+		<centerleft>50%</centerleft>
+		<top>228</top>
+		<width>320</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords8_21:9_masked">
+		<centerleft>50%</centerleft>
+		<top>408</top>
+		<width>320</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords8_4:3">
+		<centerleft>50%</centerleft>
+		<top>228</top>
+		<width>320</width>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords9">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords9_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords9_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords9_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords9_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords9_16:9">
+		<width>320</width>
+		<height>66</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords9_21:9">
+		<width>320</width>
+		<height>66</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords9_21:9_masked">
+		<width>320</width>
+		<height>66</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords9_4:3">
+		<width>320</width>
+		<height>66</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords10">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords10_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords10_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords10_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords10_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords10_16:9">
+		<left>10</left>
+		<top>82</top>
+		<width>300</width>
+		<height>300</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords10_21:9">
+		<left>10</left>
+		<top>82</top>
+		<width>300</width>
+		<height>300</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords10_21:9_masked">
+		<left>10</left>
+		<top>82</top>
+		<width>300</width>
+		<height>300</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords10_4:3">
+		<left>10</left>
+		<top>82</top>
+		<width>300</width>
+		<height>300</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords11">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords11_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords11_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords11_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords11_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords11_16:9">
+		<top>392</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords11_21:9">
+		<top>392</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords11_21:9_masked">
+		<top>392</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords11_4:3">
+		<top>392</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords12">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords12_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords12_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords12_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords12_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords12_16:9">
+		<top>432</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords12_21:9">
+		<top>432</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords12_21:9_masked">
+		<top>432</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords12_4:3">
+		<top>432</top>
+		<width>320</width>
+		<height>27</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords13">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords13_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords13_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords13_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords13_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords13_16:9">
+		<top>479</top>
+		<width>320</width>
+		<height>198</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords13_21:9">
+		<top>479</top>
+		<width>320</width>
+		<height>198</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords13_21:9_masked">
+		<top>479</top>
+		<width>320</width>
+		<height>198</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords13_4:3">
+		<top>479</top>
+		<width>320</width>
+		<height>198</height>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords14">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords14_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords14_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords14_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords14_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords14_16:9">
+		<width>320</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords14_21:9">
+		<width>320</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords14_21:9_masked">
+		<width>320</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords14_4:3">
+		<width>320</width>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords15">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords15_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords15_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords15_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords15_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords15_16:9">
+		<right>120</right>
+		<top>228</top>
+		<width>640</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords15_21:9">
+		<right>120</right>
+		<top>228</top>
+		<width>960</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords15_21:9_masked">
+		<right>120</right>
+		<top>408</top>
+		<width>960</width>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords15_4:3">
+		<right>120</right>
+		<top>228</top>
+		<width>400</width>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords16">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords16_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords16_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords16_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords16_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords16_16:9">
+		<itemlayout height="85" width="640">
+			<control type="label">
+				<width>640</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>640</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>640</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords16_21:9">
+		<itemlayout height="85" width="960">
+			<control type="label">
+				<width>960</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>960</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>960</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords16_21:9_masked">
+		<itemlayout height="85" width="960">
+			<control type="label">
+				<width>960</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>960</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>960</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords16_4:3">
+		<itemlayout height="85" width="400">
+			<control type="label">
+				<width>400</width>
+				<height>85</height>
+				<font>Font36-light</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>String.IsEmpty(ListItem.Label2)</visible>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Label2)</visible>
+				<control type="label">
+					<width>400</width>
+					<height>36</height>
+					<font>Font36-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+				<control type="label">
+					<top>58</top>
+					<width>400</width>
+					<height>27</height>
+					<font>Font27-light</font>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label2]</label>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords17">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords17_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords17_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords17_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords17_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords17_16:9">
+		<focusedlayout height="85" width="640">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">100</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>640</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>640</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>640</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>640</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>640</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords17_21:9">
+		<focusedlayout height="85" width="960">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">100</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>960</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords17_21:9_masked">
+		<focusedlayout height="85" width="960">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">100</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>960</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords17_4:3">
+		<focusedlayout height="85" width="400">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">100</param>
+				</include>
+				<control type="group">
+					<visible>String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>85</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<centertop>50%</centertop>
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!String.IsEmpty(ListItem.Label2)</visible>
+					<control type="label">
+						<width>960</width>
+						<height>58</height>
+						<font>Font36-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>True</scroll>
+					</control>
+					<control type="image">
+						<width>960</width>
+						<height>58</height>
+						<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus58]</texture>
+					</control>
+					<control type="label">
+						<top>58</top>
+						<width>960</width>
+						<height>27</height>
+						<font>Font27-bold</font>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<scroll>True</scroll>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="MyMusicPlaylistEditor_coords18">
+		<include condition="$EXP[NonMaskedCoordinates]">MyMusicPlaylistEditor_coords18_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">MyMusicPlaylistEditor_coords18_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">MyMusicPlaylistEditor_coords18_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">MyMusicPlaylistEditor_coords18_4:3</include>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords18_16:9">
+		<right>650</right>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords18_21:9">
+		<right>970</right>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords18_21:9_masked">
+		<right>970</right>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+	<include name="MyMusicPlaylistEditor_coords18_4:3">
+		<right>410</right>
+		<top>102</top>
+		<width>20</width>
+		<height>555</height>
+	</include>
+
+</includes>

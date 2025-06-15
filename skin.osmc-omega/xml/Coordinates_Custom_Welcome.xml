@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Custom_Welcome_coords">
+		<include condition="$EXP[NonMaskedCoordinates]">Custom_Welcome_coords_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Custom_Welcome_coords_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Custom_Welcome_coords_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Custom_Welcome_coords_4:3</include>
+	</include>
+	<include name="Custom_Welcome_coords_16:9">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>1620</width>
+		<height>559</height>
+	</include>
+	<include name="Custom_Welcome_coords_21:9">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>2260</width>
+		<height>559</height>
+	</include>
+	<include name="Custom_Welcome_coords_21:9_masked">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>2260</width>
+		<height>559</height>
+	</include>
+	<include name="Custom_Welcome_coords_4:3">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>1140</width>
+		<height>559</height>
+	</include>
+
+</includes>

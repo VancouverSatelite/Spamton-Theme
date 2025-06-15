@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- fullscreenvideo -->
+	<defaultcontrol></defaultcontrol>
+	<onload>ClearProperty(VideoOSDFresh,12005)</onload>
+	<onload>ClearProperty(VideoOSDBookmarksFresh,12005)</onload>
+	<onunload>ClearProperty(SeekBar,12005)</onunload>
+	<onload>ClearProperty(VideoOSDBookmarksSeekBar,12005)</onload>
+	<onload>ClearProperty(FullScreenInfo,True,12005)</onload>
+	<onload condition="!String.IsEmpty(Window(12005).Property(shownext))">ClearProperty(shownext,12005)</onload>
+	<onload condition="!String.IsEmpty(Window(12005).Property(videoinfostart))">ClearProperty(videoinfostart,12005)</onload>
+	<onload condition="Skin.HasSetting(videoinfostart) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles) | VideoPlayer.Content(livetv) + Skin.HasSetting(videoinfostartlivetv)]">SetProperty(videoinfostart,True,12005)</onload>
+	<onload condition="Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),5s)">AlarmClock(videoplaybackinfo,ClearProperty(videoinfostart,12005),00:05,silent)</onload>
+	<onload condition="Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),10s)">AlarmClock(videoplaybackinfo,ClearProperty(videoinfostart,12005),00:10,silent)</onload>
+	<onload condition="Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),15s)">AlarmClock(videoplaybackinfo,ClearProperty(videoinfostart,12005),00:15,silent)</onload>
+	<onload condition="Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),20s)">AlarmClock(videoplaybackinfo,ClearProperty(videoinfostart,12005),00:20,silent)</onload>
+	<onunload>ClearProperty(videoinfostart,12005)</onunload>
+	<onunload>ClearProperty(VideoOSDFresh,12005)</onunload>
+	<onunload>ClearProperty(VideoOSDBookmarksFresh,12005)</onunload>
+	<onunload>ClearProperty(SeekBar,12005)</onunload>
+	<onunload>ClearProperty(FullScreenInfo,12005)</onunload>
+	<onunload>ClearProperty(VideoOSDBookmarksSeekBar,12005)</onunload>
+	<onunload>ClearProperty(VideoOSDBookmarksVideoInfo,12005)</onunload>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+		
+		<!-- Built-in labels -->
+		<control type="group">
+			<include>DialogDepth</include>
+			<include>VideoFullScreen_coords1</include>
+
+			<!-- Row 1 label -->
+			<control type="label" id="10">
+				<include>VideoFullScreen_coords2</include>
+				<font>Font25</font>
+				<textcolor>$VAR[TextColorFO]</textcolor>
+				<label></label>
+			</control>
+
+			<!-- Row 2 label -->
+			<control type="label" id="11">
+				<include>VideoFullScreen_coords3</include>
+				<font>Font25</font>
+				<textcolor>$VAR[TextColorFO]</textcolor>
+				<label></label>
+			</control>
+
+			<!-- Row 3 label -->
+			<control type="label" id="12">
+				<include>VideoFullScreen_coords4</include>
+				<font>Font25</font>
+				<textcolor>$VAR[TextColorFO]</textcolor>
+				<label></label>
+			</control>
+
+		</control>
+		
+		<!-- Main group -->
+		<control type="group" id="1">
+			<include>DialogDepth</include>
+			<include>VideoFullScreen_coords5</include>
+			
+			<!-- Playback progress information -->
+			<control type="group" id="1">
+				<include>VideoFullScreen_coords6</include>
+				<animation effect="slide" start="0,0" end="0,-75" time="200" reversible="false" condition="Window.IsVisible(VideoOSD) + String.IsEmpty(Window(12005).Property(VideoOSDFresh)) | Window.IsVisible(videobookmarks) + !Window.IsVisible(VideoOSD) + String.IsEmpty(Window(12005).Property(VideoOSDBookmarksFresh))">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,-75" time="0" reversible="false" condition="Window.IsVisible(VideoOSD) + !String.IsEmpty(Window(12005).Property(VideoOSDFresh)) | Window.IsVisible(videobookmarks) + !Window.IsVisible(VideoOSD) + !String.IsEmpty(Window(12005).Property(VideoOSDBookmarksFresh))">Conditional</animation>
+				<animation effect="slide" start="0,-75" end="0,0" time="200" reversible="false" condition="!Window.IsVisible(VideoOSD)">Conditional</animation>
+				<animation effect="slide" start="0,-75" end="0,0" time="200" reversible="false" condition="!Window.IsVisible(videobookmarks) + !String.IsEmpty(Window(12005).Property(VideoOSDBookmarksVideoInfo))">Conditional</animation>
+				<animation effect="slide" start="0,-75" end="0,0" time="200" reversible="false" condition="!Window.IsVisible(videobookmarks) + !String.IsEmpty(Window(12005).Property(VideoOSDBookmarksSeekBar))">Conditional</animation>
+				<visible>Window.IsActive(seekbar) | Window.IsActive(fullscreeninfo) | Window.IsActive(VideoOSD) | Window.IsActive(videobookmarks)</visible>
+				<visible>!Window.IsActive(playerprocessinfo) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(PVRChannelGuide) + !Window.IsVisible(pvrosdchannels) + !Window.IsVisible(teletext) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(1105) + String.IsEmpty(Window(home).Property(service.upnext.dialog))</visible>
+				<include>OSDVisibleHiddenAnimation</include>
+				<include>WindowFadeAnimation</include>
+
+				<!-- Player forwarding/rewinding -->
+				<control type="group" id="1">
+					<include>VideoFullScreen_coords7</include>
+					<visible>!Window.IsVisible(VideoBookmarks)</visible>
+					<visible>[Player.Forwarding | Player.Rewinding | Player.IsTempo | Player.HasPerformedSeek(3)] + !Player.HasGame + !Player.Seeking | Player.Paused</visible>
+					<include>OSDVisibleHiddenAnimation</include>
+					<include>WindowFadeAnimation</include>
+
+					<!-- Background -->
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords7</include>
+						<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+					</control>
+
+					<!-- Status -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords8</include>
+						<font>Font36-bold</font>
+						<align>center</align>
+						<label>$VAR[PlayerStatus]</label>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<visible>Player.Forwarding | Player.Rewinding | Player.IsTempo</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+					<!-- Pause -->
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords9</include>
+						<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDPauseNF.png</texture>
+						<visible>Player.Paused</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<!-- Play after seek -->
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords9</include>
+						<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDPlayNF.png</texture>
+						<visible>Player.HasPerformedSeek(3) + ![Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo]</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+				</control>
+				
+				<!-- Player skipping -->
+				<control type="group" id="1">
+					<include>VideoFullScreen_coords10</include>
+					<visible>[Integer.IsGreater(Player.ChapterCount,0) | !String.IsEmpty(Player.SeekStepSize) | !String.IsEmpty(Player.SeekNumeric)] + !Player.HasGame</visible>
+					<visible>!Window.IsVisible(visualisation) + !Window.IsVisible(VideoBookmarks)</visible>
+					<include>OSDVisibleHiddenAnimation</include>
+					<include>WindowFadeAnimation</include>
+
+					<!-- Background -->
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords7</include>
+						<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+					</control>
+
+					<!-- Status -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords8</include>
+						<font>Font27-bold</font>
+						<align>center</align>
+						<label>$INFO[Player.Chapter,, / ]$INFO[Player.ChapterCount]</label>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<visible>Integer.IsGreater(Player.ChapterCount,0) + String.IsEmpty(Player.SeekStepSize) + [String.IsEmpty(Player.SeekNumeric) | !String.IsEmpty(Player.SeekNumeric) + Window.IsVisible(fullscreeninfo)]</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+					<!-- Status -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords8</include>
+						<font>Font27</font>
+						<align>center</align>
+						<label>$INFO[Player.SeekStepSize]</label>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<visible>!String.IsEmpty(Player.SeekStepSize) + String.IsEmpty(Player.SeekNumeric)</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<!-- Status -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords8</include>
+						<font>Font27-bold</font>
+						<align>center</align>
+						<label>$INFO[Player.SeekNumeric]</label>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<visible>!String.IsEmpty(Player.SeekNumeric) + !Window.IsVisible(fullscreeninfo)</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+				</control>
+
+				<!-- Timeshift status -->
+				<control type="group" id="1">
+					<include>VideoFullScreen_coords11</include>
+					<visible>!Window.IsVisible(VideoBookmarks)</visible>
+					<visible>Pvr.IsTimeShift</visible>
+					<animation effect="slide" end="155,0" time="200" condition="Player.Forwarding | Player.Rewinding | Player.Paused | Player.IsTempo | Player.HasPerformedSeek(3)">Conditional</animation>
+					<include>OSDVisibleHiddenAnimation</include>
+					<include>WindowFadeAnimation</include>
+					
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords11</include>
+						<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+					</control>
+					
+					<control type="group" id="1">
+						<control type="image" id="1">
+							<include>VideoFullScreen_coords12</include>
+							<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDTimeShift.png</texture>
+						</control>
+						
+						<control type="label" id="1">
+							<include>VideoFullScreen_coords13</include>
+							<font>Font27</font>
+							<align>center</align>
+							<textcolor>$VAR[TextColorNF]</textcolor>
+							<label>$INFO[PVR.TimeshiftOffset,[B]-,[/B]] ($LOCALIZE[335]: $INFO[PVR.TimeShiftStart])</label>
+						</control>
+					</control>
+					
+				</control>
+				
+				<!-- Progress -->
+				<control type="group" id="1">
+					<include>VideoFullScreen_coords14</include>
+					<include>OSDVisibleHiddenAnimation</include>
+					<include>WindowFadeAnimation</include>
+
+					<!-- Background -->
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords15</include>
+						<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+						<visible>Pvr.IsPlayingTv + VideoPlayer.HasEpg | !Pvr.IsPlayingTv + Integer.IsGreater(Player.Duration,0)</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords16</include>
+						<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+						<visible>!Pvr.IsPlayingTv + !Integer.IsGreater(Player.Duration,0) | !VideoPlayer.HasEpg + Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<control type="image" id="1">
+						<include>VideoFullScreen_coords17</include>
+						<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+						<visible>!Pvr.IsPlayingTv + !Integer.IsGreater(Player.Duration,0) | !VideoPlayer.HasEpg + Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+					<!-- Current position/Time remaining -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords18</include>
+						<font>Font27</font>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<label>$INFO[Player.Time]$INFO[Player.Duration, / ,]</label>
+						<visible>!Pvr.IsPlayingTv + Integer.IsGreater(Player.Duration,0)</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords19</include>
+						<font>Font27</font>
+						<align>center</align>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<label>$INFO[Player.Time]</label>
+						<visible>!Pvr.IsPlayingTv + !Integer.IsGreater(Player.Duration,0) | !VideoPlayer.HasEpg + Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<!-- PVR current position/Time remaining -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords18</include>
+						<font>Font27</font>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<label>$INFO[PVR.EpgEventElapsedTime]$INFO[PVR.EpgEventDuration, / ,]</label>
+						<visible>Pvr.IsPlayingTv + VideoPlayer.HasEpg</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+					<!-- Progress bar -->
+					<control type="progress" id="1">
+						<include>VideoFullScreen_coords20</include>
+						<info>Player.Progress</info>
+						<texturebg colordiffuse="$VAR[OverlayColorNF]">osd/OSDProgressBack.png</texturebg>
+						<lefttexture></lefttexture>
+						<midtexture colordiffuse="$VAR[OverlayColorFO]">osd/OSDProgressBar.png</midtexture>
+						<righttexture></righttexture>
+						<overlaytexture></overlaytexture>
+						<visible>!Pvr.IsPlayingTv + Integer.IsGreater(Player.Duration,0)</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<!-- PVR progress bar -->
+					<control type="progress" id="1">
+						<include>VideoFullScreen_coords20</include>
+						<info>PVR.EpgEventProgress</info>
+						<texturebg colordiffuse="$VAR[OverlayColorNF]">osd/OSDProgressBack.png</texturebg>
+						<lefttexture></lefttexture>
+						<midtexture colordiffuse="$VAR[OverlayColorFO]">osd/OSDProgressBar.png</midtexture>
+						<righttexture></righttexture>
+						<overlaytexture></overlaytexture>
+						<visible>Pvr.IsPlayingTv + VideoPlayer.HasEpg</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+					<!-- Cache bar -->
+					<control type="progress" id="1">
+						<include>VideoFullScreen_coords20</include>
+						<info>Player.ProgressCache</info>
+						<texturebg colordiffuse="$VAR[OverlayColorNF]">osd/OSDProgressBack.png</texturebg>
+						<lefttexture></lefttexture>
+						<midtexture colordiffuse="$VAR[OSDCacheColor]">osd/OSDProgressBar.png</midtexture>
+						<righttexture></righttexture>
+						<overlaytexture></overlaytexture>
+						<visible>!Pvr.IsTimeShift + Pvr.IsPlayingTv + VideoPlayer.HasEpg | Integer.IsGreater(Player.Duration,0) + !Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<!-- Commercial break marker -->
+					<control type="ranges" id="1">
+						<include>VideoFullScreen_coords21</include>
+						<texturebg></texturebg>
+						<lefttexture colordiffuse="$VAR[MenuOSDColor]">osd/OSDProgressRanges.png</lefttexture>
+						<midtexture colordiffuse="$VAR[MenuOSDColor]">osd/OSDProgressRanges.png</midtexture>
+						<righttexture colordiffuse="$VAR[MenuOSDColor]">osd/OSDProgressRanges.png</righttexture>
+						<info>Player.Editlist</info>
+					</control>
+					
+					<!-- Chapter marker -->
+					<control type="ranges" id="1">
+						<include>VideoFullScreen_coords22</include>
+						<texturebg></texturebg>
+						<righttexture colordiffuse="$VAR[MenuOSDColor]">osd/OSDProgressRanges.png</righttexture>
+						<info>Player.Chapters</info>
+					</control>
+					
+					<!-- Seek slider -->
+					<control type="slider" id="1">
+						<include>VideoFullScreen_coords23</include>
+						<info>Player.Seekbar</info>
+						<texturesliderbar colordiffuse="00FFFFFF">osd/OSDSliderBack.png</texturesliderbar>
+						<textureslidernib colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernib>
+						<textureslidernibfocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernibfocus>
+						<visible>Player.Seeking + !Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<control type="slider" id="1">
+						<include>VideoFullScreen_coords23</include>
+						<info>PVR.TimeShiftSeekbar</info>
+						<texturesliderbar colordiffuse="00FFFFFF">osd/OSDSliderBack.png</texturesliderbar>
+						<textureslidernib colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernib>
+						<textureslidernibfocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernibfocus>
+						<visible>Player.Seeking + Pvr.IsPlayingTv + VideoPlayer.HasEpg</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<control type="slider" id="1">
+						<include>VideoFullScreen_coords23</include>
+						<info>Player.Progress</info>
+						<texturesliderbar colordiffuse="00FFFFFF">osd/OSDSliderBack.png</texturesliderbar>
+						<textureslidernib colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernib>
+						<textureslidernibfocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernibfocus>
+						<visible>!String.IsEmpty(Window(12005).Property(VideoOSDSlider)) + Player.SeekEnabled + !Player.Seeking + !Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<control type="slider" id="1">
+						<include>VideoFullScreen_coords23</include>
+						<info>PVR.TimeshiftProgressPlayPos</info>
+						<texturesliderbar colordiffuse="00FFFFFF">osd/OSDSliderBack.png</texturesliderbar>
+						<textureslidernib colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernib>
+						<textureslidernibfocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDSliderNibBig.png</textureslidernibfocus>
+						<visible>!String.IsEmpty(Window(12005).Property(VideoOSDSlider)) + Player.SeekEnabled + !Player.Seeking + Pvr.IsPlayingTv + VideoPlayer.HasEpg</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+					<!-- Current Time/End Time -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords24</include>
+						<align>right</align>
+						<font>Font27</font>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<label>$INFO[System.Time,$LOCALIZE[555]: ,]$INFO[Player.FinishTime, / $LOCALIZE[19081]: ,]</label>
+						<visible>!Pvr.IsPlayingTv + Integer.IsGreater(Player.Duration,0)</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords25</include>
+						<align>center</align>
+						<font>Font27</font>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<label>$INFO[System.Time,$LOCALIZE[555]: ,]</label>
+						<visible>!Pvr.IsPlayingTv + !Integer.IsGreater(Player.Duration,0) | !VideoPlayer.HasEpg + Pvr.IsPlayingTv</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+					
+					<!-- PVR current Time/End Time -->
+					<control type="label" id="1">
+						<include>VideoFullScreen_coords24</include>
+						<align>right</align>
+						<font>Font27</font>
+						<textcolor>$VAR[TextColorNF]</textcolor>
+						<label>$INFO[System.Time,$LOCALIZE[555]: ,]$INFO[PVR.EpgEventFinishTime, / $LOCALIZE[19081]: ,]</label>
+						<visible>Pvr.IsPlayingTv + VideoPlayer.HasEpg</visible>
+						<include>VisibleFadeAnimation</include>
+					</control>
+
+				</control>
+				
+			</control>
+			
+			<!-- Now playing information -->
+			<control type="group" id="1">
+				<include>VideoFullScreen_coords26</include>
+				<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !String.IsEmpty(Window(12005).Property(videoinfostart)) | [!Pvr.IsPlayingTv + [[Integer.IsLessOrEqual(Player.TimeRemaining(secs),20) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),20s)] | [Integer.IsLessOrEqual(Player.TimeRemaining(secs),15) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),15s)] | [Integer.IsLessOrEqual(Player.TimeRemaining(secs),10) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),10s)] | [Integer.IsLessOrEqual(Player.TimeRemaining(secs),5) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),5s)] | [Integer.IsLessOrEqual(Player.Time(secs),20) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),20s)] | [Integer.IsLessOrEqual(Player.Time(secs),15) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),15s)] | [Integer.IsLessOrEqual(Player.Time(secs),10) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),10s)] | [Integer.IsLessOrEqual(Player.Time(secs),5) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),5s)]]]</visible>
+				<visible>!Window.IsVisible(videobookmarks) + !Window.IsActive(playerprocessinfo) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(PVRChannelGuide) + !Window.IsVisible(pvrosdchannels) + !Window.IsVisible(teletext) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(1105) + String.IsEmpty(Window(home).Property(service.upnext.dialog))</visible>
+				<include>OSDVisibleHiddenAnimation</include>
+				<include>WindowFadeAnimation</include>
+
+				<!-- Background -->
+				<control type="image" id="1">
+					<include>VideoFullScreen_coords26</include>
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+
+				<!-- Title -->
+				<control type="fadelabel" id="1">
+					<include>VideoFullScreen_coords27</include>
+					<font>Font33</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[VideoPlayerTitle]</label>
+					<visible>!Pvr.IsPlayingTv</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+				
+				<!-- Live TV Title -->
+				<control type="fadelabel" id="1">
+					<include>VideoFullScreen_coords28</include>
+					<font>Font33</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[VideoPlayerTitle]</label>
+					<visible>Pvr.IsPlayingTv</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+
+				<!-- Live TV Channel -->
+				<control type="fadelabel" id="1">
+					<include>VideoFullScreen_coords29</include>
+					<font>Font33-bold</font>
+					<align>right</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[VideoPlayerChannelNumber]</label>
+					<visible>Pvr.IsPlayingTv</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+
+				<!-- Plot -->
+				<control type="group" id="1">
+					<include>VideoFullScreen_coords30</include>
+					<visible>!VideoPlayer.Content(musicvideos)</visible>
+					<include>VisibleFadeAnimation</include>
+					
+					<control type="textbox" id="1">
+						<include>VideoFullScreen_coords31</include>
+						<align>left</align>
+						<font>Font27</font>
+						<label>$VAR[VideoPlayerPlot]$INFO[Window(Home).Property(ResetScroll.12005)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="8000" time="1800" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,S)</visible>
+					</control>
+					
+					<control type="textbox" id="1">
+						<include>VideoFullScreen_coords32</include>
+						<align>left</align>
+						<font>Font30</font>
+						<label>$VAR[VideoPlayerPlot]$INFO[Window(Home).Property(ResetScroll.12005)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="8000" time="1700" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,M)</visible>
+					</control>
+					
+					<control type="textbox" id="1">
+						<include>VideoFullScreen_coords33</include>
+						<align>left</align>
+						<font>Font33</font>
+						<label>$VAR[VideoPlayerPlot]$INFO[Window(Home).Property(ResetScroll.12005)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="8000" time="1600" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,L)</visible>
+					</control>
+					
+					<control type="textbox" id="1">
+						<include>VideoFullScreen_coords34</include>
+						<align>left</align>
+						<font>Font36</font>
+						<label>$VAR[VideoPlayerPlot]$INFO[Window(Home).Property(ResetScroll.12005)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="8000" time="1500" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,XL)</visible>
+					</control>
+					
+				</control>
+				
+				<!-- Music video information -->
+				<control type="group" id="1">
+					<include>VideoFullScreen_coords30</include>
+					<visible>VideoPlayer.Content(musicvideos)</visible>
+					<include>VisibleFadeAnimation</include>
+					
+					<control type="grouplist" id="1">
+						
+						<!-- Artist + Album + Year -->
+						<control type="fadelabel" id="1">
+							<label>$INFO[VideoPlayer.Artist,[LIGHT],: [/LIGHT]]$INFO[VideoPlayer.Album]$INFO[VideoPlayer.Year,[LIGHT] (,)[/LIGHT]]</label>
+							<visible>![String.IsEmpty(VideoPlayer.Album) + String.IsEmpty(VideoPlayer.Artist)]</visible>
+							<include>VisibleFadeAnimation</include>
+						</control>
+						
+						<!-- Genre -->
+						<control type="fadelabel" id="1">
+							<label>$INFO[VideoPlayer.Genre,[LIGHT],[/LIGHT]]</label>
+							<visible>!String.IsEmpty(VideoPlayer.Genre)</visible>
+							<include>VisibleFadeAnimation</include>
+						</control>
+						
+					</control>
+
+				</control>
+				
+				<!-- Audio/subtitle stream -->
+				<control type="label" id="1">
+					<include>VideoFullScreen_coords35</include>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>[LIGHT]$LOCALIZE[292]:[/LIGHT] $VAR[VideoPlayerAudioCodec,, ]$VAR[VideoPlayerAudioChannels]$INFO[VideoPlayer.AudioLanguage, [CAPITALIZE](,)[/CAPITALIZE]]$VAR[SubtitleLanguage]</label>
+					<visible>!VideoPlayer.Content(musicvideos) + ![String.IsEmpty(VideoPlayer.AudioCodec) + String.IsEmpty(VideoPlayer.AudioChannels) + String.IsEmpty(VideoPlayer.AudioLanguage)]</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+				
+				<!-- Audio information -->
+				<control type="label" id="1">
+					<include>VideoFullScreen_coords35</include>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[VideoPlayerAudioCodec,[LIGHT],[/LIGHT]  ]$VAR[VideoPlayerAudioChannels,[LIGHT],[/LIGHT]  ]$INFO[Player.Process(AudioSamplerate),[LIGHT], kHz[/LIGHT]]</label>
+					<visible>VideoPlayer.Content(musicvideos) + ![String.IsEmpty(VideoPlayer.AudioCodec) + String.IsEmpty(VideoPlayer.AudioChannels) + String.IsEmpty(VideoPlayer.AudioLanguage)]</visible>
+					<include>VisibleFadeAnimation</include>
+				</control>
+
+				<!-- Icon -->
+				<control type="image" id="1">
+					<include>VideoFullScreen_coords36</include>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture background="true">$VAR[PlayerIcon]</texture>
+					<include>VisibleFadeAnimation</include>
+				</control>
+				
+			</control>
+				
+			<!-- Live TV next information -->
+			<control type="group" id="1">
+				<include>VideoFullScreen_coords37</include>
+				<visible>Window.IsVisible(fullscreeninfo) | Player.ShowInfo | !String.IsEmpty(Window(12005).Property(videoinfostart)) | [!Pvr.IsPlayingTv + [[Integer.IsLessOrEqual(Player.TimeRemaining(secs),20) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),20s)] | [Integer.IsLessOrEqual(Player.TimeRemaining(secs),15) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),15s)] | [Integer.IsLessOrEqual(Player.TimeRemaining(secs),10) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),10s)] | [Integer.IsLessOrEqual(Player.TimeRemaining(secs),5) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfoendmovie) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfoendtvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfoendmusicvideo) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfoendfiles)] + Skin.HasSetting(videoinfoend) + String.IsEqual(Skin.String(videoinfoendduration),5s)] | [Integer.IsLessOrEqual(Player.Time(secs),20) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),20s)] | [Integer.IsLessOrEqual(Player.Time(secs),15) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),15s)] | [Integer.IsLessOrEqual(Player.Time(secs),10) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),10s)] | [Integer.IsLessOrEqual(Player.Time(secs),5) + [VideoPlayer.Content(movies) + Skin.HasSetting(videoinfostartmovies) | VideoPlayer.Content(episodes) + Skin.HasSetting(videoinfostarttvshow) | VideoPlayer.Content(musicvideos) + Skin.HasSetting(videoinfostartmusicvideo) | Pvr.IsPlayingTv + Skin.HasSetting(videoinfostartlivetv) | VideoPlayer.Content(files) + Skin.HasSetting(videoinfostartfiles)] + Skin.HasSetting(videoinfostart) + String.IsEqual(Skin.String(videoinfostartduration),5s)]]]</visible>
+				<visible>!Window.IsActive(playerprocessinfo) + !Window.IsVisible(DialogSettings.xml) + !Window.IsVisible(PVRChannelGuide) + !Window.IsVisible(pvrosdchannels) + !Window.IsVisible(teletext) + !Window.IsVisible(DialogSelect.xml) + !Window.IsVisible(DialogPVRInfo.xml) + !Window.IsVisible(shutdownmenu) + !Window.IsVisible(1105) + String.IsEmpty(Window(home).Property(service.upnext.dialog))</visible>
+				<visible>Pvr.IsPlayingTv + VideoPlayer.HasEpg</visible>
+				<include>OSDVisibleHiddenAnimation</include>
+				<include>WindowFadeAnimation</include>
+				
+				<control type="image" id="1">
+					<include>VideoFullScreen_coords38</include>
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+
+				<control type="label" id="1">
+					<include>VideoFullScreen_coords39</include>
+					<label>$VAR[VideoPlayerNext]</label>
+					<font>Font25</font>
+				</control>
+
+				<control type="label" id="1">
+					<include>VideoFullScreen_coords40</include>
+					<align>right</align>
+					<label>31171</label>
+					<font>Font25</font>
+				</control>
+
+			</control>
+			
+			<!-- PVR channel number input -->
+			<control type="group" id="1">
+				<include>VideoFullScreen_coords41</include>
+				<visible>!String.IsEmpty(PVR.ChannelNumberInput)</visible>
+				<include>OSDVisibleHiddenAnimation</include>
+				<include>WindowFadeAnimation</include>
+				
+				<control type="image" id="1">
+					<include>VideoFullScreen_coords40</include>
+					<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+				</control>
+				
+				<control type="label" id="1">
+					<include>VideoFullScreen_coords42</include>
+					<label>$INFO[PVR.ChannelNumberInput]</label>
+					<align>center</align>
+					<font>Font72</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<aligny>center</aligny>
+				</control>
+				
+			</control>
+			
+		</control>
+
+		<!-- Scope masking bars -->
+		<control type="image" id="1">
+			<include>MaskingBars_coords1</include>
+			<texture colordiffuse="$VAR[MaskingColor]">common/white.png</texture>
+			<visible>$EXP[Masking]</visible>
+			<animation effect="slide" end="0,287" time="200" condition="String.IsEqual(Skin.String(MaskingBars),1.78:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR178-) | String.Contains(Player.FileName,-AR178.) | String.Contains(Player.FileName,-AR178_) | String.Contains(Player.FileName,.AR178-) | String.Contains(Player.FileName,.AR178.) | String.Contains(Player.FileName,.AR178_) | String.Contains(Player.FileName,_AR178-) | String.Contains(Player.FileName,_AR178.) | String.Contains(Player.FileName,_AR178_)]">Conditional</animation>
+			<animation effect="slide" end="0,12" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.35:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR235-) | String.Contains(Player.FileName,-AR235.) | String.Contains(Player.FileName,-AR235_) | String.Contains(Player.FileName,.AR235-) | String.Contains(Player.FileName,.AR235.) | String.Contains(Player.FileName,.AR235_) | String.Contains(Player.FileName,_AR235-) | String.Contains(Player.FileName,_AR235.) | String.Contains(Player.FileName,_AR235_)]">Conditional</animation>
+			<animation effect="slide" end="0,17" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.33:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR233-) | String.Contains(Player.FileName,-AR233.) | String.Contains(Player.FileName,-AR233_) | String.Contains(Player.FileName,.AR233-) | String.Contains(Player.FileName,.AR233.) | String.Contains(Player.FileName,.AR233_) | String.Contains(Player.FileName,_AR233-) | String.Contains(Player.FileName,_AR233.) | String.Contains(Player.FileName,_AR233_)]">Conditional</animation>
+			<animation effect="slide" end="0,107" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.00:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR200-) | String.Contains(Player.FileName,-AR200.) | String.Contains(Player.FileName,-AR200_) | String.Contains(Player.FileName,.AR200-) | String.Contains(Player.FileName,.AR200.) | String.Contains(Player.FileName,.AR200_) | String.Contains(Player.FileName,_AR200-) | String.Contains(Player.FileName,_AR200.) | String.Contains(Player.FileName,_AR200_)]">Conditional</animation>
+			<include>WindowDepth</include>
+		</control>
+		<control type="image" id="1">
+			<include>MaskingBars_coords2</include>
+			<texture colordiffuse="$VAR[MaskingColor]">common/white.png</texture>
+			<visible>$EXP[Masking]</visible>
+			<animation effect="slide" end="0,-287" time="200" condition="String.IsEqual(Skin.String(MaskingBars),1.78:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR178-) | String.Contains(Player.FileName,-AR178.) | String.Contains(Player.FileName,-AR178_) | String.Contains(Player.FileName,.AR178-) | String.Contains(Player.FileName,.AR178.) | String.Contains(Player.FileName,.AR178_) | String.Contains(Player.FileName,_AR178-) | String.Contains(Player.FileName,_AR178.) | String.Contains(Player.FileName,_AR178_)]">Conditional</animation>
+			<animation effect="slide" end="0,-12" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.35:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR235-) | String.Contains(Player.FileName,-AR235.) | String.Contains(Player.FileName,-AR235_) | String.Contains(Player.FileName,.AR235-) | String.Contains(Player.FileName,.AR235.) | String.Contains(Player.FileName,.AR235_) | String.Contains(Player.FileName,_AR235-) | String.Contains(Player.FileName,_AR235.) | String.Contains(Player.FileName,_AR235_)]">Conditional</animation>
+			<animation effect="slide" end="0,-17" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.33:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR233-) | String.Contains(Player.FileName,-AR233.) | String.Contains(Player.FileName,-AR233_) | String.Contains(Player.FileName,.AR233-) | String.Contains(Player.FileName,.AR233.) | String.Contains(Player.FileName,.AR233_) | String.Contains(Player.FileName,_AR233-) | String.Contains(Player.FileName,_AR233.) | String.Contains(Player.FileName,_AR233_)]">Conditional</animation>
+			<animation effect="slide" end="0,-107" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.00:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR200-) | String.Contains(Player.FileName,-AR200.) | String.Contains(Player.FileName,-AR200_) | String.Contains(Player.FileName,.AR200-) | String.Contains(Player.FileName,.AR200.) | String.Contains(Player.FileName,.AR200_) | String.Contains(Player.FileName,_AR200-) | String.Contains(Player.FileName,_AR200.) | String.Contains(Player.FileName,_AR200_)]">Conditional</animation>
+			<include>WindowDepth</include>
+		</control>
+
+	</controls>
+
+</window>

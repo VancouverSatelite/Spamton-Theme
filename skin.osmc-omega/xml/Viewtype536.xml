@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype536">
+
+		<!-- Wall info (videos) -->
+		<control type="group">
+			<visible>Control.IsVisible(536)</visible>
+
+			<!-- Video info -->
+			<control type="group">
+				<include>Viewtype536_coords1</include>
+				<visible>Container.Content(videos) | [Container.Content(episodes) | Container.Content(movies)] + String.StartsWith(Container.FolderPath,plugin://plugin.video)</visible>
+				
+				<!-- Title -->
+				<control type="fadelabel">
+					<include>Viewtype536_coords2</include>
+					<font>Font42</font>
+					<align>center</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[Label1]</label>
+					<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)</visible>
+				</control>
+				
+				<!-- Details -->
+				<control type="fadelabel">
+					<include>Viewtype536_coords3</include>
+					<font>Font27</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$VAR[Label2]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)</visible>
+				</control>
+				
+				<!-- User Rating -->
+				<control type="fadelabel">
+					<include>Viewtype536_coords4</include>
+					<font>Font27</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$INFO[ListItem.UserRating,$LOCALIZE[38018]: ,]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<visible>[!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)] + Skin.HasSetting(UserRating) + !String.IsEmpty(ListItem.UserRating)</visible>
+				</control>
+				
+				<!-- Title -->
+				<control type="fadelabel">
+					<include>Viewtype536_coords5</include>
+					<font>Font42</font>
+					<align>center</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[Label1]</label>
+					<visible>String.IsEmpty(ListItem.Plot) + String.IsEmpty(ListItem.PlotOutline)</visible>
+				</control>
+				
+				<!-- Plot -->
+				<control type="group">
+					<include>Viewtype536_coords6</include>
+					<visible>[!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)] + Skin.HasSetting(UserRating) + !String.IsEmpty(ListItem.UserRating)</visible>
+					<control type="textbox">
+						<include>Viewtype536_coords7</include>
+						<align>left</align>
+						<font>Font27</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,S)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype536_coords8</include>
+						<align>left</align>
+						<font>Font30</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1300" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,M)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype536_coords9</include>
+						<align>left</align>
+						<font>Font33</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1200" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,L)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype536_coords10</include>
+						<align>left</align>
+						<font>Font36</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1100" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,XL)</visible>
+					</control>
+				</control>
+				
+				<!-- Plot -->
+				<control type="group">
+					<include>Viewtype536_coords11</include>
+					<visible>[!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)] + [!Skin.HasSetting(UserRating) | String.IsEmpty(ListItem.UserRating)]</visible>
+					<control type="textbox">
+						<include>Viewtype536_coords12</include>
+						<align>left</align>
+						<font>Font27</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,S)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype536_coords13</include>
+						<align>left</align>
+						<font>Font30</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1300" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,M)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype536_coords14</include>
+						<align>left</align>
+						<font>Font33</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1200" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,L)</visible>
+					</control>
+					<control type="textbox">
+						<include>Viewtype536_coords15</include>
+						<align>left</align>
+						<font>Font36</font>
+						<label>$INFO[ListItem.Plot]$INFO[Window(Home).Property(ResetScroll.536)]</label>
+						<textcolor>$VAR[TextColorFO]</textcolor>
+						<autoscroll delay="5000" time="1100" repeat="10000">true</autoscroll>
+						<visible>Skin.String(PlotFont,XL)</visible>
+					</control>
+				</control>
+
+			</control>
+			
+			<!-- Thumbs -->
+			<control type="panel" id="536">
+				<include>Viewtype536_coords16</include>
+				<onleft>60</onleft>
+				<onup>536</onup>
+				<ondown>536</ondown>
+				<pagecontrol>60</pagecontrol>
+				<viewtype label="$LOCALIZE[31133]">bigicon</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible>[Container.Content(episodes) | Container.Content(movies)] + String.StartsWith(Container.FolderPath,plugin://plugin.video) | Container.Content(videos)</visible>
+				<include>DefaultView</include>
+
+				<include>Viewtype536_coords17</include>
+
+				<include>Viewtype536_coords18</include>
+				
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>

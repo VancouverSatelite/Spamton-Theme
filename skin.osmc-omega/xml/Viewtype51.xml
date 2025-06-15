@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype51">
+
+		<!-- List -->
+		<control type="group">
+			<visible>Control.IsVisible(51)</visible>
+
+			<!-- Media images -->
+			
+			<!-- Movies -->
+			<include content="image-51">
+				<param name="fallback">DefaultMovies.png</param>
+				<param name="visible">Container.Content(movies)</param>
+			</include>
+			<!-- Sets -->
+			<include content="image-51">
+				<param name="fallback">DefaultSets.png</param>
+				<param name="visible">Container.Content(sets)</param>
+			</include>
+			<!-- TV shows/seasons/episodes -->
+			<include content="image-51">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.StartsWith(Container.FolderPath,plugin://plugin.video)</param>
+			</include>
+			<!-- Albums -->
+			<include content="image-51">
+				<param name="fallback">DefaultAlbumCover.png</param>
+				<param name="visible">Container.Content(albums)</param>
+			</include>
+			<!-- Videos -->
+			<include content="image-51">
+				<param name="fallback">DefaultVideo.png</param>
+				<param name="visible">Container.Content(videos)</param>
+			</include>
+			<!-- Addons -->
+			<include content="image-51">
+				<param name="fallback">DefaultAddon.png</param>
+				<param name="visible">Container.Content(addons)</param>
+			</include>
+			<!-- Pictures -->
+			<include content="image-51">
+				<param name="fallback">DefaultPicture.png</param>
+				<param name="visible">Container.Content(images)</param>
+			</include>
+			<!-- Games -->
+			<include content="image-51">
+				<param name="fallback">DefaultGameAddons.png</param>
+				<param name="visible">Container.Content(games)</param>
+			</include>
+		
+		</control>
+
+		<!-- List -->
+		<control type="fixedlist" id="51">
+			<include>Viewtype51_coords1</include>
+			<onup>51</onup>
+			<ondown>51</ondown>
+			<onleft>60</onleft>
+			<pagecontrol>60</pagecontrol>
+			<focusposition>4</focusposition>
+			<orientation>vertical</orientation>
+			<viewtype label="$LOCALIZE[535]">list</viewtype>
+			<scrolltime tween="sine" easing="out">240</scrolltime>
+			<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) + String.StartsWith(Container.FolderPath,plugin://plugin.video) | Container.Content(albums) | Container.Content(videos) | Container.Content(addons) | Container.Content(images) | Container.Content(games)</visible>
+			<include>DefaultView</include>
+
+			<include>Viewtype51_coords2</include>
+
+			<include>Viewtype51_coords3</include>
+
+		</control>
+		
+		<!-- Hidden label -->
+		<control type="label" id="5100">
+			<font></font>
+			<label>$VAR[Label2]</label>
+		</control>
+
+	</include>
+
+	<include name="image-51">
+		<param name="fallback">DefaultVideo.png</param>
+		<param name="visible">False</param>
+		<definition>
+			<control type="image">
+				<include>Viewtype51_coords4</include>
+				<fadetime>200</fadetime>
+				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>$PARAM[visible]</visible>
+				<visible>!Integer.IsEqual(Container.NumItems,0) | [Integer.IsEqual(Container.NumItems,0) + ListItem.IsParentFolder]</visible>
+			</control>
+		</definition>
+	</include>
+
+</includes>

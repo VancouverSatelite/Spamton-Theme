@@ -1,0 +1,1004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	
+	<include name="Viewtype535_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords1_4:3</include>
+	</include>
+	<include name="Viewtype535_coords1_16:9">
+		<left>152</left>
+		<top>175</top>
+		<width>1617</width>
+		<height>666</height>
+		<preloaditems>4</preloaditems>
+	</include>
+	<include name="Viewtype535_coords1_21:9">
+		<left>150</left>
+		<top>175</top>
+		<width>2260</width>
+		<height>666</height>
+		<preloaditems>5</preloaditems>
+	</include>
+	<include name="Viewtype535_coords1_21:9_masked">
+		<left>150</left>
+		<top>355</top>
+		<width>2260</width>
+		<height>666</height>
+		<preloaditems>5</preloaditems>
+	</include>
+	<include name="Viewtype535_coords1_4:3">
+		<left>150</left>
+		<top>175</top>
+		<width>1140</width>
+		<height>666</height>
+		<preloaditems>3</preloaditems>
+	</include>
+	
+	<include name="Viewtype535_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords2_4:3</include>
+	</include>
+	<include name="Viewtype535_coords2_16:9">
+		<itemlayout width="231" height="222">
+			<!-- Image - Albums -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAlbumCover.png</param>
+				<param name="visible">Container.Content(albums)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Addons -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddon.png</param>
+				<param name="visible">Container.Content(addons)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Artists -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultArtist.png</param>
+				<param name="visible">Container.Content(artists)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Images -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultPicture.png</param>
+				<param name="visible">Container.Content(images)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Games -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddonGame.png</param>
+				<param name="visible">Container.Content(games)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Episodes -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(episodes)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovies.png</param>
+				<param name="visible">Container.Content(movies)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Videos -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultVideo.png</param>
+				<param name="visible">Container.Content(videos)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Favourites -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultFavourites.png</param>
+				<param name="visible">Container.Content(favourites)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	<include name="Viewtype535_coords2_21:9">
+		<itemlayout width="226" height="222">
+			<!-- Image - Albums -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAlbumCover.png</param>
+				<param name="visible">Container.Content(albums)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Addons -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddon.png</param>
+				<param name="visible">Container.Content(addons)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Artists -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultArtist.png</param>
+				<param name="visible">Container.Content(artists)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Images -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultPicture.png</param>
+				<param name="visible">Container.Content(images)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Games -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddonGame.png</param>
+				<param name="visible">Container.Content(games)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Episodes -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(episodes)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovies.png</param>
+				<param name="visible">Container.Content(movies)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Videos -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultVideo.png</param>
+				<param name="visible">Container.Content(videos)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Favourites -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultFavourites.png</param>
+				<param name="visible">Container.Content(favourites)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	<include name="Viewtype535_coords2_21:9_masked">
+		<itemlayout width="226" height="222">
+			<!-- Image - Albums -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAlbumCover.png</param>
+				<param name="visible">Container.Content(albums)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Addons -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddon.png</param>
+				<param name="visible">Container.Content(addons)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Artists -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultArtist.png</param>
+				<param name="visible">Container.Content(artists)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Images -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultPicture.png</param>
+				<param name="visible">Container.Content(images)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Games -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddonGame.png</param>
+				<param name="visible">Container.Content(games)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Episodes -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(episodes)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovies.png</param>
+				<param name="visible">Container.Content(movies)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Videos -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultVideo.png</param>
+				<param name="visible">Container.Content(videos)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Favourites -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultFavourites.png</param>
+				<param name="visible">Container.Content(favourites)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	<include name="Viewtype535_coords2_4:3">
+		<itemlayout width="228" height="222">
+			<!-- Image - Albums -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAlbumCover.png</param>
+				<param name="visible">Container.Content(albums)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Addons -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddon.png</param>
+				<param name="visible">Container.Content(addons)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Artists -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultArtist.png</param>
+				<param name="visible">Container.Content(artists)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Images -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultPicture.png</param>
+				<param name="visible">Container.Content(images)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Games -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultAddonGame.png</param>
+				<param name="visible">Container.Content(games)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Episodes -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(episodes)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovies.png</param>
+				<param name="visible">Container.Content(movies)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Videos -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultVideo.png</param>
+				<param name="visible">Container.Content(videos)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+			<!-- Image - Favourites -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultFavourites.png</param>
+				<param name="visible">Container.Content(favourites)</param>
+				<param name="id">535</param>
+				<param name="coords">Viewtype535_coords7</param>
+				<param name="coords2">Viewtype535_coords8</param>
+				<param name="coords3">Viewtype535_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	
+	<include name="Viewtype535_coords3">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords3_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords3_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords3_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords3_4:3</include>
+	</include>
+	<include name="Viewtype535_coords3_16:9">
+		<focusedlayout width="231" height="222">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Albums -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAlbumCover.png</param>
+					<param name="visible">Container.Content(albums)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Addons -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddon.png</param>
+					<param name="visible">Container.Content(addons)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Artists -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultArtist.png</param>
+					<param name="visible">Container.Content(artists)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Images -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultPicture.png</param>
+					<param name="visible">Container.Content(images)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Games -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddonGame.png</param>
+					<param name="visible">Container.Content(games)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Episodes -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(episodes)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovies.png</param>
+					<param name="visible">Container.Content(movies)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Videos -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultVideo.png</param>
+					<param name="visible">Container.Content(videos)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Favourites -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultFavourites.png</param>
+					<param name="visible">Container.Content(favourites)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype535_coords3_21:9">
+		<focusedlayout width="226" height="222">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Albums -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAlbumCover.png</param>
+					<param name="visible">Container.Content(albums)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Addons -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddon.png</param>
+					<param name="visible">Container.Content(addons)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Artists -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultArtist.png</param>
+					<param name="visible">Container.Content(artists)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Images -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultPicture.png</param>
+					<param name="visible">Container.Content(images)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Games -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddonGame.png</param>
+					<param name="visible">Container.Content(games)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Episodes -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(episodes)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovies.png</param>
+					<param name="visible">Container.Content(movies)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Videos -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultVideo.png</param>
+					<param name="visible">Container.Content(videos)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Favourites -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultFavourites.png</param>
+					<param name="visible">Container.Content(favourites)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype535_coords3_21:9_masked">
+		<focusedlayout width="226" height="222">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Albums -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAlbumCover.png</param>
+					<param name="visible">Container.Content(albums)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Addons -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddon.png</param>
+					<param name="visible">Container.Content(addons)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Artists -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultArtist.png</param>
+					<param name="visible">Container.Content(artists)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Images -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultPicture.png</param>
+					<param name="visible">Container.Content(images)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Games -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddonGame.png</param>
+					<param name="visible">Container.Content(games)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Episodes -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(episodes)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovies.png</param>
+					<param name="visible">Container.Content(movies)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Videos -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultVideo.png</param>
+					<param name="visible">Container.Content(videos)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Favourites -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultFavourites.png</param>
+					<param name="visible">Container.Content(favourites)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype535_coords3_4:3">
+		<focusedlayout width="228" height="222">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Albums -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAlbumCover.png</param>
+					<param name="visible">Container.Content(albums)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Addons -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddon.png</param>
+					<param name="visible">Container.Content(addons)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Artists -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultArtist.png</param>
+					<param name="visible">Container.Content(artists)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Images -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultPicture.png</param>
+					<param name="visible">Container.Content(images)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Games -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultAddonGame.png</param>
+					<param name="visible">Container.Content(games)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Episodes -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(episodes)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovies.png</param>
+					<param name="visible">Container.Content(movies)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Videos -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultVideo.png</param>
+					<param name="visible">Container.Content(videos)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+				<!-- Image - Favourites -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultFavourites.png</param>
+					<param name="visible">Container.Content(favourites)</param>
+					<param name="id">535</param>
+					<param name="coords">Viewtype535_coords10</param>
+					<param name="coords2">Viewtype535_coords11</param>
+					<param name="coords3">Viewtype535_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="Viewtype535_coords4">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords4_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords4_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords4_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords4_4:3</include>
+	</include>
+	<include name="Viewtype535_coords4_16:9">
+		<centerleft>50%</centerleft>
+		<top>877</top>
+		<width>1680</width>
+		<height>115</height>
+	</include>
+	<include name="Viewtype535_coords4_21:9">
+		<centerleft>50%</centerleft>
+		<top>877</top>
+		<width>2320</width>
+		<height>115</height>
+	</include>
+	<include name="Viewtype535_coords4_21:9_masked">
+		<centerleft>50%</centerleft>
+		<top>1057</top>
+		<width>2320</width>
+		<height>115</height>
+	</include>
+	<include name="Viewtype535_coords4_4:3">
+		<centerleft>50%</centerleft>
+		<top>877</top>
+		<width>1200</width>
+		<height>115</height>
+	</include>
+	
+	<include name="Viewtype535_coords5">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords5_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords5_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords5_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords5_4:3</include>
+	</include>
+	<include name="Viewtype535_coords5_16:9">
+		<centerleft>50%</centerleft>
+		<width>1680</width>
+		<height>45</height>
+	</include>
+	<include name="Viewtype535_coords5_21:9">
+		<centerleft>50%</centerleft>
+		<width>2320</width>
+		<height>45</height>
+	</include>
+	<include name="Viewtype535_coords5_21:9_masked">
+		<centerleft>50%</centerleft>
+		<width>2320</width>
+		<height>45</height>
+	</include>
+	<include name="Viewtype535_coords5_4:3">
+		<centerleft>50%</centerleft>
+		<width>1200</width>
+		<height>45</height>
+	</include>
+	
+	<include name="Viewtype535_coords6">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords6_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords6_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords6_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords6_4:3</include>
+	</include>
+	<include name="Viewtype535_coords6_16:9">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>800</width>
+		<height>54</height>
+	</include>
+	<include name="Viewtype535_coords6_21:9">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>1440</width>
+		<height>54</height>
+	</include>
+	<include name="Viewtype535_coords6_21:9_masked">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>1440</width>
+		<height>54</height>
+	</include>
+	<include name="Viewtype535_coords6_4:3">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>320</width>
+		<height>54</height>
+	</include>
+	
+	<include name="Viewtype535_coords7">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords7_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords7_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords7_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords7_4:3</include>
+	</include>
+	<include name="Viewtype535_coords7_16:9">
+		<bottom>11</bottom>
+		<left>16</left>
+		<width>200</width>
+		<height>200</height>
+	</include>
+	<include name="Viewtype535_coords7_21:9">
+		<bottom>11</bottom>
+		<left>13</left>
+		<width>200</width>
+		<height>200</height>
+	</include>
+	<include name="Viewtype535_coords7_21:9_masked">
+		<bottom>11</bottom>
+		<left>13</left>
+		<width>200</width>
+		<height>200</height>
+	</include>
+	<include name="Viewtype535_coords7_4:3">
+		<bottom>11</bottom>
+		<left>14</left>
+		<width>200</width>
+		<height>200</height>
+	</include>
+	
+	<include name="Viewtype535_coords8">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords8_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords8_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords8_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords8_4:3</include>
+	</include>
+	<include name="Viewtype535_coords8_16:9">
+		<left>16</left>
+		<bottom>11</bottom>
+		<width>200</width>
+		<height>22</height>
+	</include>
+	<include name="Viewtype535_coords8_21:9">
+		<left>13</left>
+		<bottom>11</bottom>
+		<width>200</width>
+		<height>22</height>
+	</include>
+	<include name="Viewtype535_coords8_21:9_masked">
+		<left>13</left>
+		<bottom>11</bottom>
+		<width>200</width>
+		<height>22</height>
+	</include>
+	<include name="Viewtype535_coords8_4:3">
+		<left>14</left>
+		<bottom>11</bottom>
+		<width>200</width>
+		<height>22</height>
+	</include>
+	
+	<include name="Viewtype535_coords9">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords9_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords9_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords9_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords9_4:3</include>
+	</include>
+	<include name="Viewtype535_coords9_16:9">
+		<width>22</width>
+		<centerleft>100</centerleft>
+	</include>
+	<include name="Viewtype535_coords9_21:9">
+		<width>22</width>
+		<centerleft>100</centerleft>
+	</include>
+	<include name="Viewtype535_coords9_21:9_masked">
+		<width>22</width>
+		<centerleft>100</centerleft>
+	</include>
+	<include name="Viewtype535_coords9_4:3">
+		<width>22</width>
+		<centerleft>100</centerleft>
+	</include>
+	
+	<include name="Viewtype535_coords10">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords10_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords10_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords10_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords10_4:3</include>
+	</include>
+	<include name="Viewtype535_coords10_16:9">
+		<bottom>0</bottom>
+		<left>5</left>
+		<width>222</width>
+		<height>222</height>
+	</include>
+	<include name="Viewtype535_coords10_21:9">
+		<bottom>0</bottom>
+		<left>2</left>
+		<width>222</width>
+		<height>222</height>
+	</include>
+	<include name="Viewtype535_coords10_21:9_masked">
+		<bottom>0</bottom>
+		<left>2</left>
+		<width>222</width>
+		<height>222</height>
+	</include>
+	<include name="Viewtype535_coords10_4:3">
+		<bottom>0</bottom>
+		<left>3</left>
+		<width>222</width>
+		<height>222</height>
+	</include>
+	
+	<include name="Viewtype535_coords11">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords11_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords11_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords11_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords11_4:3</include>
+	</include>
+	<include name="Viewtype535_coords11_16:9">
+		<left>5</left>
+		<bottom>0</bottom>
+		<width>222</width>
+		<height>24</height>
+	</include>
+	<include name="Viewtype535_coords11_21:9">
+		<left>2</left>
+		<bottom>0</bottom>
+		<width>222</width>
+		<height>24</height>
+	</include>
+	<include name="Viewtype535_coords11_21:9_masked">
+		<left>2</left>
+		<bottom>0</bottom>
+		<width>222</width>
+		<height>24</height>
+	</include>
+	<include name="Viewtype535_coords11_4:3">
+		<left>3</left>
+		<bottom>0</bottom>
+		<width>222</width>
+		<height>24</height>
+	</include>
+	
+	<include name="Viewtype535_coords12">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype535_coords12_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype535_coords12_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype535_coords12_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype535_coords12_4:3</include>
+	</include>
+	<include name="Viewtype535_coords12_16:9">
+		<width>24</width>
+		<centerleft>111</centerleft>
+	</include>
+	<include name="Viewtype535_coords12_21:9">
+		<width>24</width>
+		<centerleft>111</centerleft>
+	</include>
+	<include name="Viewtype535_coords12_21:9_masked">
+		<width>24</width>
+		<centerleft>111</centerleft>
+	</include>
+	<include name="Viewtype535_coords12_4:3">
+		<width>24</width>
+		<centerleft>111</centerleft>
+	</include>
+
+</includes>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- subtitlesearch -->
+	<defaultcontrol always="true">9001</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+	
+	<controls>
+		
+		<!-- Black background image -->
+		<control type="image">
+			<include>FullscreenDimensions</include>
+			<texture background="true">common/white.png</texture>
+			<colordiffuse>FF000000</colordiffuse>
+			<aspectratio>scale</aspectratio>
+			<include>DialogZoomAnimation</include>
+			<include>DialogBackgroundDepth</include>
+		</control>
+		
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+
+		<control type="group">
+			<include>DialogDepth</include>
+		
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$LOCALIZE[24134]</param>
+				<param name="secondary">False</param>
+			</include>
+			
+			<control type="label" id="100">
+				<font></font>
+			</control>
+
+			<!-- Left heading -->
+			<control type="fadelabel">
+				<include>DialogSubtitles_coords1</include>
+				<label>24018</label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+
+			<!-- Seperator -->
+			<control type="image">
+				<include>DialogSubtitles_coords2</include>
+				<texture border="5,0,5,0" colordiffuse="$VAR[OverlayColorNF]">common/ScrollBackgroundHorizontal.png</texture>
+			</control>
+
+			<!-- Left list -->
+			<control type="list" id="150">
+				<include>DialogSubtitles_coords3</include>
+				<onleft>60</onleft>
+				<onright>70</onright>
+				<onup>150</onup>
+				<ondown>150</ondown>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<include>DialogSubtitles_coords4</include>
+				
+				<include>DialogSubtitles_coords5</include>
+
+			</control>
+
+			<!-- Scrollbar (Left list) -->
+			<control type="scrollbar" id="60">
+				<include>DialogSubtitles_coords6</include>
+				<onleft>9001</onleft>
+				<onright>150</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+			</control>
+
+			<!-- Video label -->
+			<control type="fadelabel">
+				<include>DialogSubtitles_coords7</include>
+				<label>$INFO[Player.Filename]</label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+
+			<!-- Number label -->
+			<control type="fadelabel" id="140">
+				<include>DialogSubtitles_coords8</include>
+				<align>right</align>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+
+			<!-- Seperator -->
+			<control type="image">
+				<include>DialogSubtitles_coords9</include>
+				<texture border="5,0,5,0" colordiffuse="$VAR[OverlayColorNF]">common/ScrollBackgroundHorizontal.png</texture>
+			</control>
+
+			<!-- Right list -->
+			<control type="list" id="120">
+				<include>DialogSubtitles_coords10</include>
+				<onleft>70</onleft>
+				<onright>9001</onright>
+				<onup>120</onup>
+				<ondown>120</ondown>
+				<pagecontrol>70</pagecontrol>
+				<orientation>vertical</orientation>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<include>DialogSubtitles_coords11</include>
+
+				<include>DialogSubtitles_coords12</include>
+
+			</control>
+			
+			<!-- Scrollbar (Right list) -->
+			<control type="scrollbar" id="70">
+				<include>DialogSubtitles_coords13</include>
+				<onleft>150</onleft>
+				<onright>120</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9001">
+				<include>DialogButtons</include>
+				<itemgap>30</itemgap>
+				<onup>150</onup>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+
+				<!-- Manual search button -->
+				<control type="button" id="160">
+					<width>Auto</width>
+					<label>24120</label>
+				</control>
+
+			</control>
+			
+			<!-- Button indicator -->
+			<include content="dialogButtonIndicator">
+				<param name="visibility">!Control.HasFocus(9001) + !Window.IsVisible(shutdownmenu)</param>
+			</include>
+
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

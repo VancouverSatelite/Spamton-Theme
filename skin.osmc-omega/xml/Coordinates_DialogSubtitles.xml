@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="DialogSubtitles_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords1_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords1_16:9">
+		<left>150</left>
+		<top>228</top>
+		<width>360</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords1_21:9">
+		<left>150</left>
+		<top>228</top>
+		<width>360</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords1_21:9_masked">
+		<left>150</left>
+		<top>408</top>
+		<width>360</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords1_4:3">
+		<left>150</left>
+		<top>228</top>
+		<width>360</width>
+		<height>66</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords2_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords2_16:9">
+		<left>150</left>
+		<top>294</top>
+		<width>360</width>
+		<height>20</height>
+	</include>
+	<include name="DialogSubtitles_coords2_21:9">
+		<left>150</left>
+		<top>294</top>
+		<width>360</width>
+		<height>20</height>
+	</include>
+	<include name="DialogSubtitles_coords2_21:9_masked">
+		<left>150</left>
+		<top>474</top>
+		<width>360</width>
+		<height>20</height>
+	</include>
+	<include name="DialogSubtitles_coords2_4:3">
+		<left>150</left>
+		<top>294</top>
+		<width>360</width>
+		<height>20</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords3">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords3_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords3_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords3_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords3_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords3_16:9">
+		<left>150</left>
+		<top>314</top>
+		<width>360</width>
+		<height>528</height>
+	</include>
+	<include name="DialogSubtitles_coords3_21:9">
+		<left>150</left>
+		<top>314</top>
+		<width>360</width>
+		<height>528</height>
+	</include>
+	<include name="DialogSubtitles_coords3_21:9_masked">
+		<left>150</left>
+		<top>494</top>
+		<width>360</width>
+		<height>528</height>
+	</include>
+	<include name="DialogSubtitles_coords3_4:3">
+		<left>150</left>
+		<top>314</top>
+		<width>360</width>
+		<height>528</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords4">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords4_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords4_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords4_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords4_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords4_16:9">
+		<itemlayout width="360" height="66">
+				<control type="label">
+					<width>360</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+	</include>
+	<include name="DialogSubtitles_coords4_21:9">
+		<itemlayout width="360" height="66">
+				<control type="label">
+					<width>360</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+	</include>
+	<include name="DialogSubtitles_coords4_21:9_masked">
+		<itemlayout width="360" height="66">
+				<control type="label">
+					<width>360</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+				</control>
+			</itemlayout>
+	</include>
+	<include name="DialogSubtitles_coords4_4:3">
+		<itemlayout width="360" height="66">
+			<control type="label">
+				<width>360</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</itemlayout>
+	</include>
+	
+	<include name="DialogSubtitles_coords5">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords5_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords5_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords5_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords5_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords5_16:9">
+		<focusedlayout width="360" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">150</param>
+				</include>
+				<control type="label">
+					<width>360</width>
+					<height>66</height>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>360</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogSubtitles_coords5_21:9">
+		<focusedlayout width="360" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">150</param>
+				</include>
+				<control type="label">
+					<width>360</width>
+					<height>66</height>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>360</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogSubtitles_coords5_21:9_masked">
+		<focusedlayout width="360" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">150</param>
+				</include>
+				<control type="label">
+					<width>360</width>
+					<height>66</height>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>360</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogSubtitles_coords5_4:3">
+		<focusedlayout width="360" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">150</param>
+				</include>
+				<control type="fadelabel">
+					<width>360</width>
+					<height>66</height>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>360</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="DialogSubtitles_coords6">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords6_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords6_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords6_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords6_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords6_16:9">
+		<left>120</left>
+		<top>334</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	<include name="DialogSubtitles_coords6_21:9">
+		<left>120</left>
+		<top>334</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	<include name="DialogSubtitles_coords6_21:9_masked">
+		<left>120</left>
+		<top>514</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	<include name="DialogSubtitles_coords6_4:3">
+		<left>120</left>
+		<top>334</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords7">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords7_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords7_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords7_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords7_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords7_16:9">
+		<left>600</left>
+		<top>228</top>
+		<width>800</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords7_21:9">
+		<left>600</left>
+		<top>228</top>
+		<width>1120</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords7_21:9_masked">
+		<left>600</left>
+		<top>408</top>
+		<width>1120</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords7_4:3">
+		<left>578</left>
+		<top>228</top>
+		<width>342</width>
+		<height>66</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords8">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords8_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords8_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords8_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords8_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords8_16:9">
+		<left>1400</left>
+		<top>228</top>
+		<width>370</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords8_21:9">
+		<left>1720</left>
+		<top>228</top>
+		<width>690</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords8_21:9_masked">
+		<left>1720</left>
+		<top>408</top>
+		<width>690</width>
+		<height>66</height>
+	</include>
+	<include name="DialogSubtitles_coords8_4:3">
+		<left>920</left>
+		<top>228</top>
+		<width>370</width>
+		<height>66</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords9">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords9_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords9_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords9_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords9_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords9_16:9">
+		<left>600</left>
+		<top>294</top>
+		<width>1170</width>
+		<height>20</height>
+	</include>
+	<include name="DialogSubtitles_coords9_21:9">
+		<left>600</left>
+		<top>294</top>
+		<width>1810</width>
+		<height>20</height>
+	</include>
+	<include name="DialogSubtitles_coords9_21:9_masked">
+		<left>600</left>
+		<top>474</top>
+		<width>1810</width>
+		<height>20</height>
+	</include>
+	<include name="DialogSubtitles_coords9_4:3">
+		<left>578</left>
+		<top>294</top>
+		<width>712</width>
+		<height>20</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords10">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords10_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords10_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords10_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords10_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords10_16:9">
+		<left>600</left>
+		<top>314</top>
+		<width>1170</width>
+		<height>528</height>
+	</include>
+	<include name="DialogSubtitles_coords10_21:9">
+		<left>600</left>
+		<top>314</top>
+		<width>1840</width>
+		<height>528</height>
+	</include>
+	<include name="DialogSubtitles_coords10_21:9_masked">
+		<left>600</left>
+		<top>494</top>
+		<width>1840</width>
+		<height>528</height>
+	</include>
+	<include name="DialogSubtitles_coords10_4:3">
+		<left>578</left>
+		<top>314</top>
+		<width>712</width>
+		<height>528</height>
+	</include>
+	
+	<include name="DialogSubtitles_coords11">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords11_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords11_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords11_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords11_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords11_16:9">
+		<itemlayout width="1170" height="66">
+			<control type="image">
+				<top>9</top>
+				<width>48</width>
+				<height>48</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+			</control>
+			<control type="label">
+				<left>77</left>
+				<width>120</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<left>217</left>
+				<width>754</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$VAR[SubtitleDownload]</label>
+			</control>
+			<control type="image">
+				<left>988</left>
+				<top>17</top>
+				<width>182</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="DialogSubtitles_coords11_21:9">
+		<itemlayout width="1810" height="66">
+			<control type="image">
+				<top>9</top>
+				<width>48</width>
+				<height>48</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+			</control>
+			<control type="label">
+				<left>77</left>
+				<width>120</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<left>217</left>
+				<width>1393</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$VAR[SubtitleDownload]</label>
+			</control>
+			<control type="image">
+				<left>1628</left>
+				<top>17</top>
+				<width>182</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="DialogSubtitles_coords11_21:9_masked">
+		<itemlayout width="1810" height="66">
+			<control type="image">
+				<top>9</top>
+				<width>48</width>
+				<height>48</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+			</control>
+			<control type="label">
+				<left>77</left>
+				<width>120</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<left>217</left>
+				<width>1393</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$VAR[SubtitleDownload]</label>
+			</control>
+			<control type="image">
+				<left>1628</left>
+				<top>17</top>
+				<width>182</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="DialogSubtitles_coords11_4:3">
+		<itemlayout width="712" height="66">
+			<control type="image">
+				<top>9</top>
+				<width>48</width>
+				<height>48</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+			</control>
+			<control type="label">
+				<left>77</left>
+				<width>120</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<left>217</left>
+				<width>295</width>
+				<height>66</height>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<label>$VAR[SubtitleDownload]</label>
+			</control>
+			<control type="image">
+				<left>530</left>
+				<top>17</top>
+				<width>182</width>
+				<height>33</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	
+	<include name="DialogSubtitles_coords12">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords12_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords12_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords12_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords12_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords12_16:9">
+		<focusedlayout width="1170" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">120</param>
+				</include>
+				<control type="image">
+					<top>9</top>
+					<width>48</width>
+					<height>48</height>
+					<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+				</control>
+				<control type="label">
+					<left>77</left>
+					<width>120</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="label">
+					<left>217</left>
+					<width>754</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[SubtitleDownload]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="image">
+					<width>1170</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="image">
+					<left>988</left>
+					<top>17</top>
+					<width>182</width>
+					<height>33</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogSubtitles_coords12_21:9">
+		<focusedlayout width="1810" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">120</param>
+				</include>
+				<control type="image">
+					<top>9</top>
+					<width>48</width>
+					<height>48</height>
+					<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+				</control>
+				<control type="label">
+					<left>77</left>
+					<width>120</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="label">
+					<left>217</left>
+					<width>1393</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[SubtitleDownload]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="image">
+					<width>1810</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="image">
+					<left>1628</left>
+					<top>17</top>
+					<width>182</width>
+					<height>33</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogSubtitles_coords12_21:9_masked">
+		<focusedlayout width="1810" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">120</param>
+				</include>
+				<control type="image">
+					<top>9</top>
+					<width>48</width>
+					<height>48</height>
+					<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+				</control>
+				<control type="label">
+					<left>77</left>
+					<width>120</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="label">
+					<left>217</left>
+					<width>1393</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[SubtitleDownload]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="image">
+					<width>1810</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="image">
+					<left>1628</left>
+					<top>17</top>
+					<width>182</width>
+					<height>33</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogSubtitles_coords12_4:3">
+		<focusedlayout width="712" height="66">
+			<control type="group">
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">120</param>
+				</include>
+				<control type="image">
+					<top>9</top>
+					<width>48</width>
+					<height>48</height>
+					<texture>$INFO[ListItem.Thumb,language/,.png]</texture>
+				</control>
+				<control type="label">
+					<left>77</left>
+					<width>120</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="label">
+					<left>217</left>
+					<width>295</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[SubtitleDownload]</label>
+					<scroll>True</scroll>
+				</control>
+				<control type="image">
+					<left>9</left>
+					<width>703</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="image">
+					<left>530</left>
+					<top>17</top>
+					<width>182</width>
+					<height>33</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$INFO[ListItem.ActualIcon,rating,.png]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="DialogSubtitles_coords13">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogSubtitles_coords13_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogSubtitles_coords13_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogSubtitles_coords13_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogSubtitles_coords13_4:3</include>
+	</include>
+	<include name="DialogSubtitles_coords13_16:9">
+		<left>570</left>
+		<top>334</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	<include name="DialogSubtitles_coords13_21:9">
+		<left>570</left>
+		<top>334</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	<include name="DialogSubtitles_coords13_21:9_masked">
+		<left>570</left>
+		<top>514</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+	<include name="DialogSubtitles_coords13_4:3">
+		<left>570</left>
+		<top>334</top>
+		<width>20</width>
+		<height>488</height>
+	</include>
+
+</includes>

@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	
+	<include name="SettingsProfile_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords1_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords1_16:9">
+		<left>550</left>
+		<top>228</top>
+		<width>1250</width>
+		<height>660</height>
+	</include>
+	<include name="SettingsProfile_coords1_21:9">
+		<left>550</left>
+		<top>228</top>
+		<width>1890</width>
+		<height>660</height>
+	</include>
+	<include name="SettingsProfile_coords1_21:9_masked">
+		<left>550</left>
+		<top>408</top>
+		<width>1890</width>
+		<height>660</height>
+	</include>
+	<include name="SettingsProfile_coords1_4:3">
+		<left>550</left>
+		<top>228</top>
+		<width>770</width>
+		<height>660</height>
+	</include>
+	
+	<include name="SettingsProfile_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords2_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords2_16:9">
+		<width>1250</width>
+		<height>66</height>
+		<textwidth>1212</textwidth>
+	</include>
+	<include name="SettingsProfile_coords2_21:9">
+		<width>1890</width>
+		<height>66</height>
+		<textwidth>1852</textwidth>
+	</include>
+	<include name="SettingsProfile_coords2_21:9_masked">
+		<width>1890</width>
+		<height>66</height>
+		<textwidth>1852</textwidth>
+	</include>
+	<include name="SettingsProfile_coords2_4:3">
+		<width>770</width>
+		<height>66</height>
+		<textwidth>732</textwidth>
+	</include>
+	
+	<include name="SettingsProfile_coords3">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords3_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords3_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords3_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords3_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords3_16:9">
+		<width>1250</width>
+		<height>66</height>
+	</include>
+	<include name="SettingsProfile_coords3_21:9">
+		<width>1890</width>
+		<height>66</height>
+	</include>
+	<include name="SettingsProfile_coords3_21:9_masked">
+		<width>1890</width>
+		<height>66</height>
+	</include>
+	<include name="SettingsProfile_coords3_4:3">
+		<width>770</width>
+		<height>66</height>
+	</include>
+	
+	<include name="SettingsProfile_coords4">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords4_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords4_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords4_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords4_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords4_16:9">
+		<top>11</top>
+		<width>1250</width>
+		<height>20</height>
+	</include>
+	<include name="SettingsProfile_coords4_21:9">
+		<top>11</top>
+		<width>1890</width>
+		<height>20</height>
+	</include>
+	<include name="SettingsProfile_coords4_21:9_masked">
+		<top>11</top>
+		<width>1890</width>
+		<height>20</height>
+	</include>
+	<include name="SettingsProfile_coords4_4:3">
+		<top>11</top>
+		<width>770</width>
+		<height>20</height>
+	</include>
+	
+	<include name="SettingsProfile_coords5">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords5_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords5_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords5_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords5_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords5_16:9">
+		<left>550</left>
+		<top>404</top>
+		<width>1250</width>
+		<height>456</height>
+	</include>
+	<include name="SettingsProfile_coords5_21:9">
+		<left>550</left>
+		<top>404</top>
+		<width>1890</width>
+		<height>456</height>
+	</include>
+	<include name="SettingsProfile_coords5_21:9_masked">
+		<left>550</left>
+		<top>584</top>
+		<width>1890</width>
+		<height>456</height>
+	</include>
+	<include name="SettingsProfile_coords5_4:3">
+		<left>550</left>
+		<top>404</top>
+		<width>770</width>
+		<height>456</height>
+	</include>
+	
+	<include name="SettingsProfile_coords6">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords6_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords6_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords6_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords6_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords6_16:9">
+		<itemlayout height="76" width="1250">
+			<control type="label">
+				<width>1170</width>
+				<height>76</height>
+				<font>Font33</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<top>2</top>
+				<width>72</width>
+				<height>72</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="SettingsProfile_coords6_21:9">
+		<itemlayout height="76" width="1890">
+			<control type="label">
+				<width>1810</width>
+				<height>76</height>
+				<font>Font33</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<top>2</top>
+				<width>72</width>
+				<height>72</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="SettingsProfile_coords6_21:9_masked">
+		<itemlayout height="76" width="1890">
+			<control type="label">
+				<width>1810</width>
+				<height>76</height>
+				<font>Font33</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<top>2</top>
+				<width>72</width>
+				<height>72</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="SettingsProfile_coords6_4:3">
+		<itemlayout height="76" width="770">
+			<control type="label">
+				<width>690</width>
+				<height>76</height>
+				<font>Font33</font>
+				<label>$INFO[ListItem.Label]</label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<top>2</top>
+				<width>72</width>
+				<height>72</height>
+				<include>NonFocusImageFadeAnimation</include>
+				<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+			</control>
+		</itemlayout>
+	</include>
+	
+	<include name="SettingsProfile_coords7">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords7_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords7_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords7_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords7_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords7_16:9">
+		<focusedlayout height="76" width="1250">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">2</param>
+				</include>
+				<control type="label">
+					<width>1170</width>
+					<height>76</height>
+					<font>Font33</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>1170</width>
+					<height>76</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus76]</texture>
+				</control>
+				<control type="image">
+					<right>0</right>
+					<top>2</top>
+					<width>72</width>
+					<height>72</height>
+					<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="SettingsProfile_coords7_21:9">
+		<focusedlayout height="76" width="1890">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">2</param>
+				</include>
+				<control type="label">
+					<width>1810</width>
+					<height>76</height>
+					<font>Font33</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>1810</width>
+					<height>76</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus76]</texture>
+				</control>
+				<control type="image">
+					<right>0</right>
+					<top>2</top>
+					<width>72</width>
+					<height>72</height>
+					<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="SettingsProfile_coords7_21:9_masked">
+		<focusedlayout height="76" width="1890">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">2</param>
+				</include>
+				<control type="label">
+					<width>1810</width>
+					<height>76</height>
+					<font>Font33</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>1810</width>
+					<height>76</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus76]</texture>
+				</control>
+				<control type="image">
+					<right>0</right>
+					<top>2</top>
+					<width>72</width>
+					<height>72</height>
+					<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="SettingsProfile_coords7_4:3">
+		<focusedlayout height="76" width="770">
+			<control type="group">
+				<include content="NonFocusWindowFadeAnimation">
+					<param name="id">2</param>
+				</include>
+				<control type="label">
+					<width>690</width>
+					<height>76</height>
+					<font>Font33</font>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="image">
+					<width>690</width>
+					<height>76</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus76]</texture>
+				</control>
+				<control type="image">
+					<right>0</right>
+					<top>2</top>
+					<width>72</width>
+					<height>72</height>
+					<texture fallback="DefaultUser.png">$INFO[ListItem.Icon]</texture>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="SettingsProfile_coords8">
+		<include condition="$EXP[NonMaskedCoordinates]">SettingsProfile_coords8_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">SettingsProfile_coords8_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">SettingsProfile_coords8_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">SettingsProfile_coords8_4:3</include>
+	</include>
+	<include name="SettingsProfile_coords8_16:9">
+		<left>490</left>
+		<top>417</top>
+		<width>20</width>
+		<height>431</height>
+	</include>
+	<include name="SettingsProfile_coords8_21:9">
+		<left>490</left>
+		<top>417</top>
+		<width>20</width>
+		<height>431</height>
+	</include>
+	<include name="SettingsProfile_coords8_21:9_masked">
+		<left>490</left>
+		<top>598</top>
+		<width>20</width>
+		<height>431</height>
+	</include>
+	<include name="SettingsProfile_coords8_4:3">
+		<left>490</left>
+		<top>417</top>
+		<width>20</width>
+		<height>431</height>
+	</include>
+
+</includes>

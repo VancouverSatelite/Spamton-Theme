@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- addonsettings -->
+	<defaultcontrol always="true">3</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+
+		<control type="group">
+			<include>DialogDepth</include>
+
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$INFO[Control.GetLabel(2)]</param>
+				<param name="secondary">False</param>
+			</include>
+			
+			<control type="label" id="2">
+				<font></font>
+				<label></label>
+			</control>
+
+			<!-- Left grouplist -->
+			<control type="grouplist" id="3">
+				<include>DialogAddonSettings_coords1</include>
+				<itemgap>0</itemgap>
+				<onleft>70</onleft>
+				<onright>80</onright>
+				<onup>3</onup>
+				<ondown>20</ondown>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<pagecontrol>70</pagecontrol>
+			</control>
+			
+			<!-- Default group button -->
+			<control type="button" id="10">
+				<include>DialogAddonSettings_coords2</include>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<focusedcolor>$VAR[addonsettingsbuttonunfocusdim]</focusedcolor>
+				<invalidcolor>$VAR[InvalidColor]</invalidcolor>
+				<disabledcolor>$VAR[DisabledColor]</disabledcolor>
+			</control>
+			
+			<!-- Scrollbar (Left grouplist) -->
+			<control type="scrollbar" id="70">
+				<include>DialogAddonSettings_coords3</include>
+				<onleft>9001</onleft>
+				<onright>3</onright>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+			</control>
+			
+			<!-- Settings Level -->
+			<control type="label">
+				<include>DialogAddonSettings_coords4</include>
+				<align>center</align>
+				<label>$LOCALIZE[31016]:</label>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+			<control type="button" id="20">
+				<include>DialogAddonSettings_coords5</include>
+				<align>center</align>
+				<font>Font33</font>
+				<onup>3</onup>
+				<onclick>SettingsLevelChange</onclick>
+				<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus66c.png</texturefocus>
+			</control>
+
+			<!-- Right grouplist -->
+			<control type="grouplist" id="5">
+				<include>DialogAddonSettings_coords6</include>
+				<itemgap>0</itemgap>
+				<onleft>80</onleft>
+				<onright>9001</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<orientation>vertical</orientation>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<pagecontrol>80</pagecontrol>
+			</control>
+			
+			<!-- Scrollbar (Right grouplist) -->
+			<control type="scrollbar" id="80">
+				<include>DialogAddonSettings_coords7</include>
+				<onright>5</onright>
+				<onleft>3</onleft>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+			</control>
+			
+			<!-- Default label -->
+			<control type="label" id="14">
+				<include>DialogAddonSettings_coords8</include>
+				<font>Font33</font>
+				<align>center</align>
+				<label></label>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+			</control>
+
+			<!-- Default button -->
+			<control type="button" id="7">
+				<include>DialogAddonSettings_coords8</include>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<focusedcolor>$VAR[TextColorFO]</focusedcolor>
+				<invalidcolor>$VAR[InvalidColor]</invalidcolor>
+				<disabledcolor>$VAR[DisabledColor]</disabledcolor>
+			</control>
+
+			<!-- Default radiobutton -->
+			<control type="radiobutton" id="8">
+				<include>DialogAddonSettings_coords9</include>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<focusedcolor>$VAR[TextColorFO]</focusedcolor>
+				<disabledcolor>$VAR[DisabledColor]</disabledcolor>
+			</control>
+
+			<!-- Default spincontrolex -->
+			<control type="spincontrolex" id="9">
+				<include>DialogAddonSettings_coords10</include>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<focusedcolor>$VAR[TextColorFO]</focusedcolor>
+				<disabledcolor>$VAR[DisabledColor]</disabledcolor>
+			</control>
+
+			<!-- Default seperator -->
+			<control type="image" id="11">
+				<include>DialogAddonSettings_coords12</include>
+				<texture border="2" colordiffuse="$VAR[OverlayColorNF]">common/Divider.png</texture>
+			</control>
+			
+			<!-- Default edit -->
+			<control type="label" id="12">
+				<include>DialogAddonSettings_coords8</include>
+			</control>
+
+			<!-- Default slider -->
+			<control type="sliderex" id="13">
+				<include>DialogAddonSettings_coords11</include>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<focusedcolor>$VAR[TextColorFO]</focusedcolor>
+				<disabledcolor>$VAR[DisabledColor]</disabledcolor>
+			</control>
+				
+			<!-- Default color button -->
+			<control type="colorbutton" id="15">
+				<include>DialogAddonSettings_coords8</include>
+				<font>Font33</font>
+				<textcolor>$VAR[TextColorNF]</textcolor>
+				<focusedcolor>$VAR[TextColorFO]</focusedcolor>
+				<disabledcolor>$VAR[DisabledColor]</disabledcolor>
+			</control>
+			
+			<!-- Settings description -->
+			<control type="fadelabel" id="6">
+				<include>DialogAddonSettings_coords13</include>
+				<font>Font27</font>
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9001">
+				<include>DialogButtons</include>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>30</itemgap>
+				<onup>3</onup>
+				<defaultcontrol always="true">0</defaultcontrol>
+
+				<!-- OK Button -->
+				<control type="button" id="28">
+					<width>auto</width>
+					<label>186</label>
+				</control>
+
+				<!-- Cancel Button -->
+				<control type="button" id="29">
+					<width>auto</width>
+					<label>222</label>
+				</control>
+
+				<!-- Defaults Button -->
+				<control type="button" id="30">
+					<width>auto</width>
+					<label>409</label>
+				</control>
+
+			</control>
+			
+			<!-- Button indicator -->
+			<include content="dialogButtonIndicator">
+				<param name="visibility">!ControlGroup(9001).HasFocus + !Control.HasFocus(20) + !Window.IsVisible(shutdownmenu)</param>
+			</include>
+
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- busydialog -->
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+	
+		<control type="group">
+			<include>BusyDepth</include>
+
+			<!-- Background -->
+			<include>DialogFadeBackgroundImage</include>
+
+			<!-- Main group -->
+			<control type="group">
+				<include>DialogZoomAnimation</include>
+				<include>DialogBusy_coords1</include>
+
+				<!-- Spinner -->
+				<control type="image">
+					<texture colordiffuse="$VAR[OverlayColorFO]">$VAR[BusySpinner]</texture>
+				</control>
+
+			</control>
+			
+		</control>
+
+	</controls>
+
+</window>

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="DialogPVRChannelManager_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords1_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords1_16:9">
+		<left>150</left>
+		<top>228</top>
+		<width>800</width>
+		<height>660</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords1_21:9">
+		<left>150</left>
+		<top>228</top>
+		<width>1120</width>
+		<height>660</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords1_21:9_masked">
+		<left>150</left>
+		<top>408</top>
+		<width>1120</width>
+		<height>660</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords1_4:3">
+		<left>150</left>
+		<top>228</top>
+		<width>560</width>
+		<height>660</height>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords2_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords2_16:9">
+		<itemlayout width="800" height="66">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>720</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>720</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<selectedcolor>$VAR[TextColorNF]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="DialogPVRChannelManager_coords2_21:9">
+		<itemlayout width="1120" height="66">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<selectedcolor>$VAR[TextColorNF]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="DialogPVRChannelManager_coords2_21:9_masked">
+		<itemlayout width="1120" height="66">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<selectedcolor>$VAR[TextColorNF]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	<include name="DialogPVRChannelManager_coords2_4:3">
+		<itemlayout width="560" height="66">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>480</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>480</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorNF]</textcolor>
+					<selectedcolor>$VAR[TextColorNF]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</itemlayout>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords3">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords3_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords3_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords3_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords3_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords3_16:9">
+		<focusedlayout width="800" height="132">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">20</param>
+				</include>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>720</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>800</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="image">
+					<left>80</left>
+					<width>720</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>720</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>800</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogPVRChannelManager_coords3_21:9">
+		<focusedlayout width="1120" height="132">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">20</param>
+				</include>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>1120</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="image">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>1120</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogPVRChannelManager_coords3_21:9_masked">
+		<focusedlayout width="1120" height="132">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">20</param>
+				</include>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>1120</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="image">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>1040</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>1120</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="DialogPVRChannelManager_coords3_4:3">
+		<focusedlayout width="560" height="132">
+			<control type="group">
+				<animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="out" reversible="false" condition="!ListItem.Property(ActiveChannel)">Conditional</animation>
+				<include content="NonFocusDialogFadeAnimation">
+					<param name="id">20</param>
+				</include>
+				<control type="image">
+					<left>3</left>
+					<top>3</top>
+					<width>60</width>
+					<height>60</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>480</width>
+					<height>66</height>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>560</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<selectedcolor>$VAR[TextColorFO]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>!ListItem.Property(Changed)</visible>
+				</control>
+				<control type="image">
+					<left>80</left>
+					<width>500</width>
+					<height>66</height>
+					<texture colordiffuse="$VAR[TextColorFO]">$VAR[focus66]</texture>
+				</control>
+				<control type="label">
+					<left>80</left>
+					<width>480</width>
+					<height>66</height>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$INFO[ListItem.Property(Number),(,) ]$INFO[ListItem.Property(Name)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+				<control type="label">
+					<top>80</top>
+					<width>560</width>
+					<height>27</height>
+					<font>Font27</font>
+					<textcolor>$VAR[SelectedColor]</textcolor>
+					<selectedcolor>$VAR[SelectedColor]</selectedcolor>
+					<label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
+					<visible>ListItem.Property(Changed)</visible>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords4">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords4_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords4_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords4_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords4_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords4_16:9">
+		<left>120</left>
+		<top>248</top>
+		<width>20</width>
+		<height>620</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords4_21:9">
+		<left>120</left>
+		<top>248</top>
+		<width>20</width>
+		<height>620</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords4_21:9_masked">
+		<left>120</left>
+		<top>428</top>
+		<width>20</width>
+		<height>620</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords4_4:3">
+		<left>120</left>
+		<top>248</top>
+		<width>20</width>
+		<height>620</height>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords5">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords5_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords5_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords5_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords5_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords5_16:9">
+		<left>970</left>
+		<top>228</top>
+		<width>800</width>
+		<height>660</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords5_21:9">
+		<left>1290</left>
+		<top>228</top>
+		<width>1120</width>
+		<height>660</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords5_21:9_masked">
+		<left>1290</left>
+		<top>408</top>
+		<width>1120</width>
+		<height>660</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords5_4:3">
+		<left>730</left>
+		<top>228</top>
+		<width>560</width>
+		<height>660</height>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords6">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords6_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords6_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords6_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords6_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords6_16:9">
+		<width>800</width>
+		<height>66</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords6_21:9">
+		<width>1120</width>
+		<height>66</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords6_21:9_masked">
+		<width>1120</width>
+		<height>66</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords6_4:3">
+		<width>560</width>
+		<height>66</height>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords7">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords7_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords7_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords7_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords7_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords7_16:9">
+		<width>800</width>
+		<textwidth>768</textwidth>
+	</include>
+	<include name="DialogPVRChannelManager_coords7_21:9">
+		<width>1120</width>
+		<textwidth>1082</textwidth>
+	</include>
+	<include name="DialogPVRChannelManager_coords7_21:9_masked">
+		<width>1120</width>
+		<textwidth>1082</textwidth>
+	</include>
+	<include name="DialogPVRChannelManager_coords7_4:3">
+		<width>560</width>
+		<textwidth>522</textwidth>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords8">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords8_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords8_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords8_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords8_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords8_16:9">
+		<width>800</width>
+	</include>
+	<include name="DialogPVRChannelManager_coords8_21:9">
+		<width>1120</width>
+	</include>
+	<include name="DialogPVRChannelManager_coords8_21:9_masked">
+		<width>1120</width>
+	</include>
+	<include name="DialogPVRChannelManager_coords8_4:3">
+		<width>560</width>
+	</include>
+	
+	<include name="DialogPVRChannelManager_coords9">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogPVRChannelManager_coords9_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogPVRChannelManager_coords9_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogPVRChannelManager_coords9_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogPVRChannelManager_coords9_4:3</include>
+	</include>
+	<include name="DialogPVRChannelManager_coords9_16:9">
+		<top>-63</top>
+		<left>737</left>
+		<width>60</width>
+		<height>60</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords9_21:9">
+		<top>-63</top>
+		<left>1057</left>
+		<width>60</width>
+		<height>60</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords9_21:9_masked">
+		<top>-63</top>
+		<left>1057</left>
+		<width>60</width>
+		<height>60</height>
+	</include>
+	<include name="DialogPVRChannelManager_coords9_4:3">
+		<top>-63</top>
+		<left>497</left>
+		<width>60</width>
+		<height>60</height>
+	</include>
+
+</includes>

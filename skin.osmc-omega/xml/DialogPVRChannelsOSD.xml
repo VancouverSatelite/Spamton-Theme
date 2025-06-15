@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- pvrosdchannels -->
+	<defaultcontrol always="true">11</defaultcontrol>
+	<zorder>0</zorder>
+	
+	<!-- Textbox scroll reset -->
+	<include>10608ResetScroll</include>
+
+	<controls>
+
+		<control type="group">
+			<include>DialogDepth</include>
+			<include>DialogPVRChannelsOSD_coords1</include>
+			
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+
+			<!-- Background -->
+			<control type="image">
+				<include>DialogPVRChannelsOSD_coords2</include>
+				<texture colordiffuse="$VAR[MenuOSDColor]">$VAR[MenuOSDBackground]</texture>
+			</control>
+			
+			<!-- Icon -->
+			<control type="image">
+				<include>DialogPVRChannelsOSD_coords3</include>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>200</fadetime>
+				<texture background="true" fallback="DefaultLiveTV.png">$VAR[PVRChannelIconDialogOSD]</texture>
+			</control>
+
+			<!-- Episode Information -->
+			<control type="group">
+				<include>DialogPVRChannelsOSD_coords4</include>
+				<control type="textbox">
+					<include>DialogPVRChannelsOSD_coords5</include>
+					<align>left</align>
+					<font>Font27</font>
+					<label>$VAR[PVRDescriptionDialogGuide]$INFO[Window(Home).Property(ResetScroll.10608)]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<autoscroll delay="5000" time="1400" repeat="10000">true</autoscroll>
+					<visible>Skin.String(PlotFont,S)</visible>
+				</control>
+				<control type="textbox">
+					<include>DialogPVRChannelsOSD_coords6</include>
+					<align>left</align>
+					<font>Font30</font>
+					<label>$VAR[PVRDescriptionDialogGuide]$INFO[Window(Home).Property(ResetScroll.10608)]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<autoscroll delay="5000" time="1300" repeat="10000">true</autoscroll>
+					<visible>Skin.String(PlotFont,M)</visible>
+				</control>
+				<control type="textbox">
+					<include>DialogPVRChannelsOSD_coords7</include>
+					<align>left</align>
+					<font>Font33</font>
+					<label>$VAR[PVRDescriptionDialogGuide]$INFO[Window(Home).Property(ResetScroll.10608)]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<autoscroll delay="5000" time="1200" repeat="10000">true</autoscroll>
+					<visible>Skin.String(PlotFont,L)</visible>
+				</control>
+				<control type="textbox">
+					<include>DialogPVRChannelsOSD_coords8</include>
+					<align>left</align>
+					<font>Font36</font>
+					<label>$VAR[PVRDescriptionDialogGuide]$INFO[Window(Home).Property(ResetScroll.10608)]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<autoscroll delay="5000" time="1100" repeat="10000">true</autoscroll>
+					<visible>Skin.String(PlotFont,XL)</visible>
+				</control>
+			</control>
+			
+			<!-- Channel group -->
+			<control type="fadelabel">
+				<include>DialogPVRChannelsOSD_coords9</include>
+				<align>center</align>
+				<aligny>top</aligny>
+				<label>$INFO[VideoPlayer.ChannelGroup,$LOCALIZE[19141]: ,]</label>
+				<font>Font33</font>
+			</control>
+
+			<!-- List -->
+			<control type="fixedlist" id="11">
+				<include>DialogPVRChannelsOSD_coords10</include>
+				<onleft>60</onleft>
+				<onright>NextChannelGroup</onright>
+				<pagecontrol>60</pagecontrol>
+				<focusposition>2</focusposition>
+				<orientation>vertical</orientation>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+
+				<include>DialogPVRChannelsOSD_coords11</include>
+
+				<include>DialogPVRChannelsOSD_coords12</include>
+
+			</control>
+
+			<!-- Scrollbar (list) -->
+			<control type="scrollbar" id="60">
+				<include>DialogPVRChannelsOSD_coords13</include>
+				<onright>11</onright>
+				<onleft>PreviousChannelGroup</onleft>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+			</control>
+			
+			<!-- Channel group button indicator -->
+			<control type="image">
+				<include>DialogPVRChannelsOSD_coords14</include>
+				<texture colordiffuse="$VAR[OverlayColorNF]">sub-menu-left.png</texture>
+			</control>
+			<control type="image">
+				<include>DialogPVRChannelsOSD_coords15</include>
+				<texture colordiffuse="$VAR[OverlayColorNF]">sub-menu-right.png</texture>
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

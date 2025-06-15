@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- fullscreeninfo -->
+	<defaultcontrol always="true">100</defaultcontrol>
+	<onload>ClearProperty(FullScreenInfo,True,12005)</onload>
+	<onload>SetProperty(FullScreenInfo,True,12005)</onload>
+	<onunload>ClearProperty(FullScreenInfo,12005)</onunload>
+	
+	<!-- Textbox scroll reset -->
+	<include>12005ResetScroll</include>
+
+	<controls>
+	
+		<control type="button" id="100">
+			<include>DialogFullScreenInfo_coords</include>
+			<onright condition="Pvr.IsPlayingTv + VideoPlayer.HasEpg + String.IsEmpty(Window(12005).Property(shownext))">SetProperty(shownext,True,12005)</onright>
+			<onleft condition="Pvr.IsPlayingTv + VideoPlayer.HasEpg + String.IsEmpty(Window(12005).Property(shownext))">SetProperty(shownext,True,12005)</onleft>
+			<onright condition="Pvr.IsPlayingTv + VideoPlayer.HasEpg + !String.IsEmpty(Window(12005).Property(shownext))">ClearProperty(shownext,12005)</onright>
+			<onleft condition="Pvr.IsPlayingTv + VideoPlayer.HasEpg + !String.IsEmpty(Window(12005).Property(shownext))">ClearProperty(shownext,12005)</onleft>
+			<onclick condition="Window.IsActive(VideoOSD)">Dialog.Close(fullscreeninfo)</onclick>
+			<texturefocus></texturefocus>
+		</control>
+
+	</controls>
+
+</window>

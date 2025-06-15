@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="DialogConfirm_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogConfirm_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogConfirm_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogConfirm_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogConfirm_coords1_4:3</include>
+	</include>
+	<include name="DialogConfirm_coords1_16:9">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>1620</width>
+		<height>559</height>
+	</include>
+	<include name="DialogConfirm_coords1_21:9">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>2260</width>
+		<height>559</height>
+	</include>
+	<include name="DialogConfirm_coords1_21:9_masked">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>2260</width>
+		<height>559</height>
+	</include>
+	<include name="DialogConfirm_coords1_4:3">
+		<centerleft>50%</centerleft>
+		<centertop>50%</centertop>
+		<width>1140</width>
+		<height>559</height>
+	</include>
+	
+	<include name="DialogConfirm_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">DialogConfirm_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">DialogConfirm_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">DialogConfirm_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">DialogConfirm_coords2_4:3</include>
+	</include>
+	<include name="DialogConfirm_coords2_16:9">
+		<centerleft>50%</centerleft>
+		<top>867</top>
+		<width>760</width>
+		<height>20</height>
+	</include>
+	<include name="DialogConfirm_coords2_21:9">
+		<centerleft>50%</centerleft>
+		<top>867</top>
+		<width>1400</width>
+		<height>20</height>
+	</include>
+	<include name="DialogConfirm_coords2_21:9_masked">
+		<centerleft>50%</centerleft>
+		<top>1047</top>
+		<width>1400</width>
+		<height>20</height>
+	</include>
+	<include name="DialogConfirm_coords2_4:3">
+		<centerleft>50%</centerleft>
+		<top>867</top>
+		<width>760</width>
+		<height>20</height>
+	</include>
+
+</includes>

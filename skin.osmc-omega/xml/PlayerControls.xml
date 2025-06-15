@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- playercontrols -->
+	<defaultcontrol always="true">5</defaultcontrol>
+	<visible>Player.HasMedia + Window.IsActive(PlayerControls) + !VideoPlayer.IsFullscreen + !Window.IsActive(Visualisation)</visible>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+
+		<control type="group">
+			<include>DialogDepth</include>
+			<include>PlayerControls_coords1</include>
+			<animation type="WindowOpen">
+				<effect type="zoom" start="90" end="100" center="auto" tween="back" easing="out" time="200"/>
+				<effect type="fade" start="0" end="100" time="200"/>
+			</animation>
+			<animation type="WindowClose">
+				<effect type="zoom" start="100" end="90" center="auto" easing="in" time="200"/>
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
+
+			<!-- Background -->
+			<control type="image">
+				<include>PlayerControls_coords2</include>
+				<texture colordiffuse="$VAR[BackgroundColor]">$VAR[Background2]</texture>
+			</control>
+
+			<!-- Controls -->
+			<control type="grouplist">
+				<include>PlayerControls_coords3</include>
+				<itemgap>0</itemgap>
+				<onleft>21</onleft>
+				<onright>20</onright>
+				<onup>Close</onup>
+				<ondown>Close</ondown>
+				<orientation>horizontal</orientation>
+
+				<!-- Spacer -->
+				<control type="image" id="40">
+					<include>PlayerControls_coords4</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Skip Back -->
+				<control type="button" id="1">
+					<include>PlayerControls_coords5</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackwardEnd.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickBackwardEnd.png</texturenofocus>
+					<onclick>PlayerControl(Previous)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				<!-- Rewind -->
+				<control type="togglebutton" id="2">
+					<include>PlayerControls_coords6</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickBackward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(1)</usealttexture>
+					<onclick>PlayerControl(Rewind)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				<!-- Tempo Down -->
+				<control type="togglebutton" id="3">
+					<include>PlayerControls_coords6</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickBackward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickBackward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(1) | Control.HasFocus(2)</usealttexture>
+					<onclick>PlayerControl(TempoDown)</onclick>
+					<visible>Player.SeekEnabled</visible>
+					<enable>Player.TempoEnabled</enable>
+				</control>
+
+				<!-- Spacer -->
+				<control type="image" id="41">
+					<include>PlayerControls_coords4</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Up -->
+				<control type="button" id="4">
+					<include>PlayerControls_coords7</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDUpNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDUpNF.png</texturenofocus>
+					<onclick>Action(ChannelUp)</onclick>
+					<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio</visible>
+				</control>
+
+				<!-- Play / Pause -->
+				<control type="togglebutton" id="5">
+					<include>PlayerControls_coords7</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDPauseNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDPauseNF.png</texturenofocus>
+					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo</usealttexture>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDPlayNF.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDPlayNF.png</alttexturenofocus>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>
+
+				<!-- Stop -->
+				<control type="button" id="6">
+					<include>PlayerControls_coords7</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDStopNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDStopNF.png</texturenofocus>
+					<onclick>PlayerControl(Stop)</onclick>
+				</control>
+
+				<!-- Down -->
+				<control type="button" id="7">
+					<include>PlayerControls_coords7</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDDownNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDDownNF.png</texturenofocus>
+					<onclick>Action(ChannelDown)</onclick>
+					<visible>Pvr.IsPlayingTv | Pvr.IsPlayingRadio</visible>
+				</control>
+
+				<!-- Spacer -->
+				<control type="image" id="42">
+					<include>PlayerControls_coords4</include>
+					<texture>transparent.png</texture>
+				</control>
+
+				<!-- Tempo Up -->
+				<control type="togglebutton" id="8">
+					<include>PlayerControls_coords6</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickForward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(9) | Control.HasFocus(10)</usealttexture>
+					<onclick>PlayerControl(TempoUp)</onclick>
+					<visible>Player.SeekEnabled</visible>
+					<enable>Player.TempoEnabled</enable>
+				</control>
+				<!-- Fast Forward -->
+				<control type="togglebutton" id="9">
+					<include>PlayerControls_coords6</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickForward.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForward.png</alttexturenofocus>
+					<usealttexture>Control.HasFocus(10)</usealttexture>
+					<onclick>PlayerControl(Forward)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+				<!-- Next -->
+				<control type="button" id="10">
+					<include>PlayerControls_coords5</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDTrickForwardEnd.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDTrickForwardEnd.png</texturenofocus>
+					<onclick>PlayerControl(Next)</onclick>
+					<visible>Player.SeekEnabled</visible>
+				</control>
+
+			</control>
+
+			<!-- Options -->
+			<control type="grouplist">
+				<include>PlayerControls_coords8</include>
+				<align>right</align>
+				<itemgap>0</itemgap>
+				<onleft>10</onleft>
+				<onright>1</onright>
+				<onup>Close</onup>
+				<ondown>Close</ondown>
+				<orientation>horizontal</orientation>
+
+				<!-- Repeat -->
+				<control type="button" id="20">
+					<include>PlayerControls_coords7</include>
+					<texturefocus></texturefocus>
+					<texturenofocus></texturenofocus>
+					<onclick>PlayerControl(Repeat)</onclick>
+				</control>
+				<!-- Random -->
+				<control type="togglebutton" id="21">
+					<include>PlayerControls_coords7</include>
+					<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDRandomOffNF.png</texturefocus>
+					<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDRandomOffNF.png</texturenofocus>
+					<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDRandomOnNF.png</alttexturefocus>
+					<alttexturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDRandomOnNF.png</alttexturenofocus>
+					<onclick>PlayerControl(Random)</onclick>
+				</control>
+			</control>
+
+			<!-- Repeat images -->
+			<control type="group">
+				<include>PlayerControls_coords9</include>
+
+				<control type="image">
+					<include>PlayerControls_coords7</include>
+					<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDRepeatNF.png</texture>
+					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					<visible>!Control.HasFocus(20)</visible>
+				</control>
+				<control type="image">
+					<include>PlayerControls_coords7</include>
+					<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDRepeatNF.png</texture>
+					<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
+					<visible>Control.HasFocus(20)</visible>
+				</control>
+				<control type="image">
+					<include>PlayerControls_coords7</include>
+					<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDRepeatOneNF.png</texture>
+					<visible>Playlist.IsRepeatOne</visible>
+					<visible>!Control.HasFocus(20)</visible>
+				</control>
+				<control type="image">
+					<include>PlayerControls_coords7</include>
+					<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDRepeatOneNF.png</texture>
+					<visible>Playlist.IsRepeatOne</visible>
+					<visible>Control.HasFocus(20)</visible>
+				</control>
+				<control type="image">
+					<include>PlayerControls_coords7</include>
+					<texture colordiffuse="$VAR[OverlayColorNF]">osd/OSDRepeatAllNF.png</texture>
+					<visible>Playlist.IsRepeat</visible>
+					<visible>!Control.HasFocus(20)</visible>
+				</control>
+				<control type="image">
+					<include>PlayerControls_coords7</include>
+					<texture colordiffuse="$VAR[OverlayColorFO]">osd/OSDRepeatAllNF.png</texture>
+					<visible>Playlist.IsRepeat</visible>
+					<visible>Control.HasFocus(20)</visible>
+				</control>
+
+			</control>
+
+		</control>
+
+	</controls>
+
+</window>

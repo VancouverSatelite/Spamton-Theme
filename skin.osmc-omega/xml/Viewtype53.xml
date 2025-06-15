@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype53">
+
+		<!-- Wall -->
+		<control type="group">
+			<visible>Control.IsVisible(53)</visible>
+
+			<!-- Thumbs -->
+			<control type="panel" id="53">
+				<include>Viewtype53_coords1</include>
+				<onleft>63</onleft>
+				<onup>53</onup>
+				<ondown>53</ondown>
+				<pagecontrol>63</pagecontrol>
+				<preloaditems>4</preloaditems>
+				<viewtype label="$LOCALIZE[31078]">bigicon</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible>Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+
+				<include>Viewtype53_coords2</include>
+
+				<include>Viewtype53_coords3</include>
+				
+			</control>
+
+			<control type="group">
+				<include>Viewtype53_coords4</include>
+
+				<!-- Title -->
+				<control type="fadelabel">
+					<include>Viewtype53_coords5</include>
+					<font>Font42</font>
+					<align>center</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[Label1]</label>
+				</control>
+
+				<!-- Details -->
+				<control type="fadelabel">
+					<include>Viewtype53_coords6</include>
+					<font>Font27</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$VAR[Label2]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+
+			</control>
+
+		</control>
+
+	</include>
+
+	<include name="image-53">
+		<param name="fallback">DefaultVideo.png</param>
+		<param name="visible">False</param>
+		<definition>
+			<control type="image">
+				<include>Viewtype53_coords7</include>
+				<colordiffuse>$VAR[DiffusePosterNF]</colordiffuse>
+				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>$PARAM[visible]</visible>
+				<visible>!Integer.IsEqual(Container.NumItems,0) | [Integer.IsEqual(Container.NumItems,0) + ListItem.IsParentFolder]</visible>
+			</control>
+		</definition>
+	</include>
+	
+	<include name="image-53-focused">
+		<param name="fallback">DefaultVideo.png</param>
+		<param name="visible">False</param>
+		<definition>
+			<control type="image">
+				<include>Viewtype53_coords8</include>
+				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>$PARAM[visible]</visible>
+				<visible>[!Integer.IsEqual(Container.NumItems,0) | [Integer.IsEqual(Container.NumItems,0) + ListItem.IsParentFolder]] + !System.HasActiveModalDialog + Control.HasFocus(53)</visible>
+			</control>
+			<control type="image">
+				<include>Viewtype53_coords8</include>
+				<colordiffuse>$VAR[DiffusePosterNF]</colordiffuse>
+				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>$PARAM[visible]</visible>
+				<visible>[!Integer.IsEqual(Container.NumItems,0) | [Integer.IsEqual(Container.NumItems,0) + ListItem.IsParentFolder]] + [System.HasActiveModalDialog | !Control.HasFocus(53)]</visible>
+			</control>
+		</definition>
+	</include>
+
+</includes>

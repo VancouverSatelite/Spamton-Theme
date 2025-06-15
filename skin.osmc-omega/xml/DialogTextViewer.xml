@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- textviewer -->
+	<defaultcontrol always="true">61</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+
+	<controls>
+
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+
+		<control type="group">
+			<include>DialogDepth</include>
+
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$INFO[Control.GetLabel(1)]</param>
+				<param name="secondary">False</param>
+			</include>
+
+			<!-- Heading -->
+			<control type="label" id="1">
+				<font></font>
+			</control>
+
+			<!-- Info -->
+			<control type="textbox" id="5">
+				<include>DialogTextViewer_coords1</include>
+				<pagecontrol>61</pagecontrol>
+			</control>
+
+			<!-- Scrollbar -->
+			<control type="scrollbar" id="61">
+				<include>DialogTextViewer_coords2</include>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+				<texturesliderbackground border="0,5,0,5">common/ScrollBackground.png</texturesliderbackground>
+				<texturesliderbar border="0,5,0,5" colordiffuse="$VAR[OverlayColorNF]">common/ScrollbarGripNF.png</texturesliderbar>
+				<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+				<textureslidernib></textureslidernib>
+				<textureslidernibfocus></textureslidernibfocus>
+				<visible>!Skin.HasSetting(Scrollbars)</visible>
+			</control>
+
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

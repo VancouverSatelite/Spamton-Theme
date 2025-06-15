@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1107">
+	<!-- Confirm skin settings reset -->
+	<defaultcontrol always="true">10</defaultcontrol>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+	
+	<controls>
+
+		<!-- Dialog fanart -->
+		<include>DialogBackgroundImage</include>
+		
+		<control type="group">
+
+			<!-- Animation -->
+			<include>DialogZoomAnimation</include>
+			
+			<!-- Heading -->
+			<include content="Time">
+				<param name="heading">$LOCALIZE[31058]</param>
+			</include>
+
+			<!-- Heading -->
+			<control type="label" id="1">
+				<left>-15000</left>
+				<top>40</top>
+				<width>600</width>
+				<height>48</height>
+				<align>center</align>
+				<font>Font48</font>
+				<textcolor>$VAR[TextColorFO]</textcolor>
+			</control>
+
+			<!-- Details -->
+			<control type="group">
+				<control type="textbox">
+					<include>Custom_Confirm_Reset_Skin_Settings_coords</include>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>Font36</font>
+					<autoscroll delay="10000" time="1700" repeat="12000">True</autoscroll>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$LOCALIZE[31394]</label>
+				</control>
+			</control>
+
+			<!-- Buttons -->
+			<control type="grouplist" id="9001">
+				<include>DialogButtons</include>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>30</itemgap>
+				
+				<!-- Close -->
+				<control type="button" id="10">
+					<width>auto</width>
+					<font>Font36</font>
+					<align>center</align>
+					<onclick>Dialog.Close(1107)</onclick>
+					<label>$LOCALIZE[106]</label>
+				</control>
+				
+				<!-- OK -->
+				<control type="button" id="11">
+					<width>auto</width>
+					<font>Font36</font>
+					<align>center</align>
+					<onclick>Skin.ResetSettings</onclick>
+					<onclick>ReloadSkin()</onclick>
+					<onclick>Dialog.Close(1107)</onclick>
+					<onclick>Control.SetFocus(9000,7,absolute)</onclick>
+					<onclick>Control.SetFocus(803,absolute)</onclick>
+					<onclick>Skin.SetString(WelcomeDialogShown,true)</onclick>
+					<label>$LOCALIZE[107]</label>
+				</control>
+				
+			</control>
+		
+		</control>
+
+		<include>MaskingBars</include>
+
+	</controls>
+
+</window>

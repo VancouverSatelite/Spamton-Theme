@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype50">
+
+		<!-- List (songs & files) -->
+		<control type="group">
+			<visible>Control.IsVisible(50)</visible>
+
+			<!-- Media images -->
+
+			<!-- Files/Others -->
+			<include content="image-50">
+				<param name="fallback">DefaultFile.png</param>
+				<param name="visible">![Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | Container.Content(files) | Container.Content(songs) | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(genres) | Container.Content(years) | Container.Content(actors) | Container.Content(playlists) | Container.Content(plugins) | Container.Content(studios) | Container.Content(directors) | Container.Content(tags) | Container.Content(countries) | Container.Content(roles) | Container.Content(favourites) | Container.Content(addons) | Container.Content(albums) | Container.Content(videos) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(images) | Container.Content(games)]</param>
+			</include>
+			<!-- Playlist songs -->
+			<include content="image-50">
+				<param name="fallback">DefaultMusicSongs.png</param>
+				<param name="visible">Window.IsVisible(musicplaylist)</param>
+			</include>
+			<!-- Playlist videos -->
+			<include content="image-50">
+				<param name="fallback">DefaultVideo.png</param>
+				<param name="visible">Window.IsVisible(videoplaylist)</param>
+			</include>
+			<!-- Files -->
+			<include content="image-50">
+				<param name="fallback">DefaultFile.png</param>
+				<param name="visible">Container.Content(files)</param>
+			</include>
+			<!-- Songs -->
+			<include content="image-50">
+				<param name="fallback">DefaultMusicSongs.png</param>
+				<param name="visible">Container.Content(songs)</param>
+			</include>
+			<!-- Artists -->
+			<include content="image-50">
+				<param name="fallback">DefaultArtist.png</param>
+				<param name="visible">Container.Content(artists)</param>
+			</include>
+			<!-- Music videos -->
+			<include content="image-50">
+				<param name="fallback">DefaultMusicVideos.png</param>
+				<param name="visible">Container.Content(musicvideos)</param>
+			</include>
+			<!-- Genres -->
+			<include content="image-50">
+				<param name="fallback">DefaultGenre.png</param>
+				<param name="visible">Container.Content(genres)</param>
+			</include>
+			<!-- Years -->
+			<include content="image-50">
+				<param name="fallback">DefaultYear.png</param>
+				<param name="visible">Container.Content(years)</param>
+			</include>
+			<!-- Actors -->
+			<include content="image-50">
+				<param name="fallback">DefaultActor.png</param>
+				<param name="visible">Container.Content(actors)</param>
+			</include>
+			<!-- Playlists -->
+			<include content="image-50">
+				<param name="fallback">DefaultPlaylist.png</param>
+				<param name="visible">Container.Content(playlists)</param>
+			</include>
+			<!-- Plugins -->
+			<include content="image-50">
+				<param name="fallback">DefaultAddon.png</param>
+				<param name="visible">Container.Content(plugins)</param>
+			</include>
+			<!-- Studios -->
+			<include content="image-50">
+				<param name="fallback">DefaultStudios.png</param>
+				<param name="visible">Container.Content(studios)</param>
+			</include>
+			<!-- Directors -->
+			<include content="image-50">
+				<param name="fallback">DefaultDirector.png</param>
+				<param name="visible">Container.Content(directors)</param>
+			</include>
+			<!-- Tags -->
+			<include content="image-50">
+				<param name="fallback">DefaultTags.png</param>
+				<param name="visible">Container.Content(tags)</param>
+			</include>
+			<!-- Favourites -->
+			<include content="image-50">
+				<param name="fallback">DefaultFavourites.png</param>
+				<param name="visible">Container.Content(favourites)</param>
+			</include>
+			
+			<!-- Song Info -->
+			<control type="group">
+				<include>Viewtype50_coords1</include>
+				<visible>Container.Content(songs)</visible>
+				
+				<!-- Album & Artist Info -->
+				<control type="fadelabel">
+					<include>Viewtype50_coords2</include>
+					<font>Font42</font>
+					<label>$INFO[ListItem.Album]$INFO[ListItem.Year,[LIGHT] (,)[/LIGHT]]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+				<control type="fadelabel">
+					<include>Viewtype50_coords3</include>
+					<font>Font33</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$INFO[ListItem.Artist]</label>
+				</control>
+				<control type="fadelabel">
+					<include>Viewtype50_coords4</include>
+					<font>Font27</font>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$INFO[ListItem.UserRating,$LOCALIZE[38018]: ,]</label>
+					<visible>Skin.HasSetting(UserRating)</visible>
+				</control>
+				
+			</control>
+
+			<!-- List -->
+			<control type="fixedlist" id="50">
+				<include>Viewtype50_coords5</include>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<onleft>60</onleft>
+				<pagecontrol>60</pagecontrol>
+				<focusposition>5</focusposition>
+				<orientation>vertical</orientation>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible>Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | Container.Content(files) | Container.Content(songs) | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(genres) | Container.Content(years) | Container.Content(actors) | Container.Content(playlists) | Container.Content(plugins) | Container.Content(studios) | Container.Content(directors) | Container.Content(tags) | Container.Content(countries) | Container.Content(roles) | Container.Content(favourites) | ![Window.IsVisible(musicplaylist) | Window.IsVisible(videoplaylist) | Container.Content(files) | Container.Content(songs) | Container.Content(artists) | Container.Content(musicvideos) | Container.Content(genres) | Container.Content(years) | Container.Content(actors) | Container.Content(playlists) | Container.Content(plugins) | Container.Content(studios) | Container.Content(directors) | Container.Content(tags) | Container.Content(countries) | Container.Content(roles) | Container.Content(favourites) | Container.Content(addons) | Container.Content(albums) | Container.Content(videos) | Container.Content(movies) | Container.Content(sets) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(images)]</visible>
+				
+				<include>Viewtype50_coords6</include>
+
+				<include>Viewtype50_coords7</include>
+
+			</control>
+
+		</control>
+
+	</include>
+
+	<include name="image-50">
+		<param name="fallback">DefaultVideo.png</param>
+		<param name="visible">False</param>
+		<definition>
+			<control type="image">
+				<include>Viewtype50_coords8</include>
+				<texture fallback="$PARAM[fallback]" background="true">$VAR[mediaImages]</texture>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>200</fadetime>
+				<visible>$PARAM[visible]</visible>
+				<visible>!Integer.IsEqual(Container.NumItems,0) | [Integer.IsEqual(Container.NumItems,0) + ListItem.IsParentFolder]</visible>
+			</control>
+		</definition>
+	</include>
+
+</includes>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<!-- addonbrowser -->
+	<defaultcontrol always="true">51</defaultcontrol>
+	<views>50,51</views>
+	
+	<!-- Textbox scroll reset -->
+	<include>ResetScroll</include>
+	
+	<!-- Sub menu menucontrol -->
+	<include condition="!Skin.HasSetting(KioskMode)">SubMenuMenucontrol</include>
+	
+	<!--Welcome screen -->
+	<onload condition="String.IsEmpty(Skin.String(WelcomeDialogShown)) + !System.HasAddon(service.osmc.settings)">ActivateWindow(1101)</onload>
+	
+	<!-- Skin Shortcuts -->
+	<onunload condition="System.HasAddon(script.skinshortcuts)">RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=mainmenu&amp;levels=1&amp;options=noGroups)</onunload>
+	
+	<!-- Skin settings, background + colors -->
+	<include>Onloads</include>
+
+	<controls>
+		
+		<control type="group">
+			<include>WindowFullscreenDialogFadeAnimation</include>
+
+			<!-- Background -->
+			<include>WindowBackgroundImageVertical</include>
+			
+			<!-- Time -->
+			<include>Time</include>
+
+			<!-- Main group -->
+			<control type="group">
+				<include>WindowFadeAnimation</include>
+				
+				<!-- Views -->
+				<include>Viewtype50</include>
+				<include>Viewtype51</include>
+
+				<!-- Scrollbar (list) -->
+				<control type="scrollbar" id="60">
+					<include>AddonBrowser_coords1</include>
+					<onleft condition="!Skin.HasSetting(KioskMode)">3001</onleft>
+					<onright>50</onright>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<colordiffuse>$VAR[OverlayColorNF]</colordiffuse>
+					<include>BackgroundOverlayStyleScrollbarVertical</include>
+					<texturesliderbarfocus border="0,5,0,5" colordiffuse="$VAR[OverlayColorFO]">common/ScrollbarGripFO.png</texturesliderbarfocus>
+					<textureslidernib></textureslidernib>
+					<textureslidernibfocus></textureslidernibfocus>
+					<visible>!Skin.HasSetting(Scrollbars) + [Control.IsVisible(50) | Control.IsVisible(51)]</visible>
+				</control>
+
+				<!-- Item count -->
+				<include>ItemCount</include>
+				
+				<!-- Sub menu indicator -->
+				<include>SubMenuIndicator</include>
+				
+				<!-- Sub menu -->
+				<include>SubMenu</include>
+				
+			</control>
+
+			<include>MaskingBars</include>
+			
+		</control>
+
+	</controls>
+
+</window>

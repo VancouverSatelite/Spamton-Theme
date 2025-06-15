@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<!-- Includes/variables files -->
+	<include file="Coordinates_AddonBrowser.xml" />
+	<include file="Coordinates_Custom_Cache_Progress.xml" />
+	<include file="Coordinates_Custom_ColorPicker_Slider.xml" />
+	<include file="Coordinates_Custom_Confirm_Reset_Skin_Settings.xml" />
+	<include file="Coordinates_Custom_DialogMasking.xml" />
+	<include file="Coordinates_Custom_Debug_Grid.xml" />
+	<include file="Coordinates_Custom_Debug_Info.xml" />
+	<include file="Coordinates_Custom_Skin_Shortcuts_Help.xml" />
+	<include file="Coordinates_Custom_Welcome.xml" />
+	<include file="Coordinates_DialogAddonInfo.xml" />
+	<include file="Coordinates_DialogAddonSettings.xml" />
+	<include file="Coordinates_DialogBusy.xml" />
+	<include file="Coordinates_DialogButtonMenu.xml" />
+	<include file="Coordinates_DialogColorPicker.xml" />
+	<include file="Coordinates_DialogConfirm.xml" />
+	<include file="Coordinates_DialogContextMenu.xml" />
+	<include file="Coordinates_DialogExtendedProgressBar.xml" />
+	<include file="Coordinates_DialogFullScreenInfo.xml" />
+	<include file="Coordinates_DialogGameControllers.xml" />
+	<include file="Coordinates_DialogKeyboard.xml" />
+	<include file="Coordinates_DialogMediaSource.xml" />
+	<include file="Coordinates_DialogMusicInfo.xml" />
+	<include file="Coordinates_DialogNotification.xml" />
+	<include file="Coordinates_DialogNumeric.xml" />
+	<include file="Coordinates_DialogPictureInfo.xml" />
+	<include file="Coordinates_DialogPlayerProcessInfo.xml" />
+	<include file="Coordinates_DialogPVRChannelGuide.xml" />
+	<include file="Coordinates_DialogPVRChannelManager.xml" />
+	<include file="Coordinates_DialogPVRChannelsOSD.xml" />
+	<include file="Coordinates_DialogPVRGroupManager.xml" />
+	<include file="Coordinates_DialogPVRGuideControls.xml" />
+	<include file="Coordinates_DialogPVRGuideSearch.xml" />
+	<include file="Coordinates_DialogPVRInfo.xml" />
+	<include file="Coordinates_DialogSelect.xml" />
+	<include file="Coordinates_DialogSeekBar.xml" />
+	<include file="Coordinates_DialogSettings.xml" />
+	<include file="Coordinates_DialogSlider.xml" />
+	<include file="Coordinates_DialogSubtitles.xml" />
+	<include file="Coordinates_DialogTextViewer.xml" />
+	<include file="Coordinates_DialogVideoInfo.xml" />
+	<include file="Coordinates_DialogVideoManager.xml" />
+	<include file="Coordinates_DialogVolumeBar.xml" />
+	<include file="Coordinates_EventLog.xml" />
+	<include file="Coordinates_FileBrowser.xml" />
+	<include file="Coordinates_FileManager.xml" />
+	<include file="Coordinates_GameOSD.xml" />
+	<include file="Coordinates_Home.xml" />
+	<include file="Coordinates_Includes.xml" />
+	<include file="Coordinates_Includes_MediaFlags.xml" />
+	<include file="Coordinates_Includes_SubMenu.xml" />
+	<include file="Coordinates_Includes_Time_NowPlaying.xml" />
+	<include file="Coordinates_Includes_Widgets.xml" />
+	<include file="Coordinates_Includes_Windows_Dialogs.xml" />
+	<include file="Coordinates_LoginScreen.xml" />
+	<include file="Coordinates_MusicOSD.xml" />
+	<include file="Coordinates_MusicVisualisation.xml" />
+	<include file="Coordinates_MyFavourites.xml" />
+	<include file="Coordinates_MyGames.xml" />
+	<include file="Coordinates_MyMusicNav.xml" />
+	<include file="Coordinates_MyMusicPlaylistEditor.xml" />
+	<include file="Coordinates_MyPics.xml" />
+	<include file="Coordinates_MyPlaylist.xml" />
+	<include file="Coordinates_MyPrograms.xml" />
+	<include file="Coordinates_MyPVRChannels.xml" />
+	<include file="Coordinates_MyPVRGuide.xml" />
+	<include file="Coordinates_MyPVRRecordings.xml" />
+	<include file="Coordinates_MyPVRSearch.xml" />
+	<include file="Coordinates_MyPVRTimers.xml" />
+	<include file="Coordinates_MyVideoNav.xml" />
+	<include file="Coordinates_MyWeather.xml" />
+	<include file="Coordinates_PlayerControls.xml" />
+	<include file="Coordinates_script-skinshortcuts.xml" />
+	<include file="Coordinates_script-upnext-stillwatching.xml" />
+	<include file="Coordinates_script-upnext-stillwatching-simple.xml" />
+	<include file="Coordinates_script-upnext-upnext.xml" />
+	<include file="Coordinates_script-upnext-upnext-simple.xml" />
+	<include file="Coordinates_Settings.xml" />
+	<include file="Coordinates_SettingsCategory.xml" />
+	<include file="Coordinates_SettingsProfile.xml" />
+	<include file="Coordinates_SettingsScreenCalibration.xml" />
+	<include file="Coordinates_SettingsSystemInfo.xml" />
+	<include file="Coordinates_SkinSettings.xml" />
+	<include file="Coordinates_SmartPlaylistEditor.xml" />
+	<include file="Coordinates_SmartPlaylistRule.xml" />
+	<include file="Coordinates_Viewtype50.xml" />
+	<include file="Coordinates_Viewtype51.xml" />
+	<include file="Coordinates_Viewtype511.xml" />
+	<include file="Coordinates_Viewtype52.xml" />
+	<include file="Coordinates_Viewtype521.xml" />
+	<include file="Coordinates_Viewtype522.xml" />
+	<include file="Coordinates_Viewtype523.xml" />
+	<include file="Coordinates_Viewtype524.xml" />
+	<include file="Coordinates_Viewtype525.xml" />
+	<include file="Coordinates_Viewtype53.xml" />
+	<include file="Coordinates_Viewtype531.xml" />
+	<include file="Coordinates_Viewtype532.xml" />
+	<include file="Coordinates_Viewtype533.xml" />
+	<include file="Coordinates_Viewtype534.xml" />
+	<include file="Coordinates_Viewtype535.xml" />
+	<include file="Coordinates_Viewtype536.xml" />
+	<include file="Coordinates_Viewtype537.xml" />
+	<include file="Coordinates_Viewtype538.xml" />
+	<include file="Coordinates_Viewtype539.xml" />
+	<include file="Coordinates_VideoFullScreen.xml" />
+	<include file="Coordinates_VideoOSD.xml" />
+	<include file="Coordinates_VideoOSDBookmarks.xml" />
+	<include file="Defaults.xml" />
+	<include file="Includes_DialogSettings.xml" />
+	<include file="Includes_GameControllers.xml" />
+	<include file="Includes_Home.xml" />
+	<include file="Includes_MediaFlags.xml" />
+	<include file="Includes_ResetScroll.xml" />
+	<include file="Includes_SubMenu.xml" />
+	<include file="Includes_Time_NowPlaying.xml" />
+	<include file="Includes_Widgets.xml" />
+	<include file="Includes_Windows_Dialogs.xml" />
+	<include condition="System.HasAddon(script.skinshortcuts)" file="script-skinshortcuts-includes.xml" />
+	<include condition="!System.HasAddon(script.skinshortcuts)" file="script-skinshortcuts-static.xml" />
+	<include file="Variables.xml" />
+	<include file="Variables_Colours.xml" />
+	<include file="Variables_Skinshortcuts.xml" />
+	<include file="Variables_Settings.xml" />
+	<include file="Viewtype50.xml" />
+	<include file="Viewtype51.xml" />
+	<include file="Viewtype511.xml" />
+	<include file="Viewtype52.xml" />
+	<include file="Viewtype521.xml" />
+	<include file="Viewtype522.xml" />
+	<include file="Viewtype523.xml" />
+	<include file="Viewtype524.xml" />
+	<include file="Viewtype525.xml" />
+	<include file="Viewtype53.xml" />
+	<include file="Viewtype531.xml" />
+	<include file="Viewtype532.xml" />
+	<include file="Viewtype533.xml" />
+	<include file="Viewtype534.xml" />
+	<include file="Viewtype535.xml" />
+	<include file="Viewtype536.xml" />
+	<include file="Viewtype537.xml" />
+	<include file="Viewtype538.xml" />
+	<include file="Viewtype539.xml" />
+
+	<!-- Onloads/onunloads -->
+	<include name="Onloads">
+		<onload>ClearProperty(scriptdialog,10000)</onload>
+		<onunload>ClearProperty(scriptdialog,10000)</onunload>
+		<onload condition="String.IsEmpty(Skin.String(PlotFont))">Skin.SetString(PlotFont,S)</onload>
+		<onload condition="String.IsEqual(Skin.String(PlotFont),S light)">Skin.SetString(PlotFont,S)</onload>
+		<onload condition="String.IsEqual(Skin.String(PlotFont),M light)">Skin.SetString(PlotFont,M)</onload>
+		<onload condition="String.IsEqual(Skin.String(PlotFont),L light)">Skin.SetString(PlotFont,L)</onload>
+		<onload condition="String.IsEqual(Skin.String(PlotFont),XL light)">Skin.SetString(PlotFont,XL)</onload>
+		<onload condition="String.IsEmpty(Skin.String(HideOSD))">Skin.SetString(HideOSD,Always)</onload>
+		<onload condition="String.IsEqual(Skin.String(HideOSD),Off)">Skin.SetString(HideOSD,Always)</onload>
+		<onload condition="String.IsEmpty(Skin.String(NFDimOpac))">Skin.SetString(NFDimOpac,100)</onload>
+		<onload condition="String.IsEqual(Skin.String(BackgroundImage),custom) + !String.IsEmpty(Skin.String(CustomBackground))">Skin.SetString(BackgroundDefaultImage,no)</onload>
+		<onload condition="String.IsEqual(Skin.String(BackgroundImage),custom) + String.IsEmpty(Skin.String(CustomBackground))">Skin.SetString(BackgroundDefaultImage,yes)</onload>
+		<onload condition="String.IsEmpty(Skin.String(BackgroundSingleImage))">Skin.SetString(BackgroundSingleImage,yes)</onload>
+		<onload condition="String.IsEmpty(Skin.String(BackgroundImage))">Skin.SetString(BackgroundDefaultImage,yes)</onload>
+		<onload condition="String.IsEmpty(Skin.String(BackgroundImage))">Skin.SetString(BackgroundImage,1)</onload>
+		<onload condition="String.IsEqual(Skin.String(BackgroundImage),custom)">Skin.SetString(BackgroundImage,1)</onload>
+		<onload condition="String.IsEqual(Skin.String(BackgroundDefaultImage),no) + String.IsEqual(Skin.String(BackgroundSingleImage),yes) + String.IsEmpty(Skin.String(CustomBackground))">Skin.SetString(BackgroundDefaultImage,yes)</onload>
+		<onload condition="String.IsEqual(Skin.String(BackgroundDefaultImage),no) + String.IsEqual(Skin.String(BackgroundSingleImage),no) + String.IsEmpty(Skin.String(CustomBackgroundFolder))">Skin.SetString(BackgroundDefaultImage,yes)</onload>
+		<onload condition="![Skin.HasSetting(DefaultColorSetOSMCBlue) | Skin.HasSetting(DefaultColorSetOSMCLightblue) | Skin.HasSetting(DefaultColorSetOSMCBlack) | Skin.HasSetting(DefaultColorSetOSMCRosered) | Skin.HasSetting(DefaultColorSetOSMCSunsetYellow) | Skin.HasSetting(DefaultColorSetOSMCLimegreen) | Skin.HasSetting(DefaultColorSetDarkBlue) | Skin.HasSetting(DefaultColorSetOrange) | Skin.HasSetting(DefaultColorSetRed) | Skin.HasSetting(DefaultColorSetPurple)]">Skin.SetBool(DefaultColorSetOSMCLightblue)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.textfo),None) | String.IsEmpty(Skin.String(color.textfo))">Skin.SetString(color.textfo,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.textnf),None) | String.IsEmpty(Skin.String(color.textnf))">Skin.SetString(color.textnf,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.darken),None) | String.IsEmpty(Skin.String(color.darken))">Skin.SetString(color.darken,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.overlayfo),None) | String.IsEmpty(Skin.String(color.overlayfo))">Skin.SetString(color.overlayfo,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.overlaynf),None) | String.IsEmpty(Skin.String(color.overlaynf))">Skin.SetString(color.overlaynf,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.selected),None) | String.IsEmpty(Skin.String(color.selected))">Skin.SetString(color.selected,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.disabled),None) | String.IsEmpty(Skin.String(color.disabled))">Skin.SetString(color.disabled,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.invalid),None) | String.IsEmpty(Skin.String(color.invalid))">Skin.SetString(color.invalid,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.osdcache),None) | String.IsEmpty(Skin.String(color.osdcache))">Skin.SetString(color.osdcache,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.masking),None) | String.IsEmpty(Skin.String(color.masking))">Skin.SetString(color.masking,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.background),None) | String.IsEmpty(Skin.String(color.background))">Skin.SetString(color.background,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.menuosd),None) | String.IsEmpty(Skin.String(color.menuosd))">Skin.SetString(color.menuosd,Default)</onload>
+		<onload condition="String.IsEqual(Skin.String(color.backgroundsolid),None) | String.IsEmpty(Skin.String(color.backgroundsolid))">Skin.SetString(color.backgroundsolid,Default)</onload>
+		<onload condition="String.IsEmpty(Skin.String(DefaultColors))">Skin.SetString(DefaultColors,yes)</onload>
+		<onload condition="String.IsEmpty(Skin.String(DefaultBackgroundOpacity))">Skin.SetString(DefaultBackgroundOpacity,High)</onload>
+		<onload condition="String.IsEmpty(Skin.String(DefaultMenuOSDOpacity))">Skin.SetString(DefaultMenuOSDOpacity,High)</onload>
+		<onload condition="String.IsEmpty(Skin.String(videoinfostartduration))">Skin.SetString(videoinfostartduration,10s)</onload>
+		<onload condition="String.IsEmpty(Skin.String(videoinfoendduration))">Skin.SetString(videoinfoendduration,10s)</onload>
+		<onload condition="String.IsEmpty(Skin.String(videodurationformat))">Skin.SetString(videodurationformat,Minutes)</onload>
+		<onload condition="String.IsEmpty(Skin.String(CustomBackgroundFolderDuration))">Skin.SetString(CustomBackgroundFolderDuration,30s)</onload>
+		<onload condition="String.IsEmpty(Skin.String(IndividualBackgroundFolderDuration))">Skin.SetString(IndividualBackgroundFolderDuration,30s)</onload>
+		<onload condition="String.IsEqual(Skin.String(AutoMusicVisPlaybackDuration),60s)">Skin.SetString(AutoMusicVisPlaybackDuration,1 min)</onload>
+		<onload condition="String.IsEmpty(Skin.String(AutoMusicVisPlaybackDuration))">Skin.SetString(AutoMusicVisPlaybackDuration,1 min)</onload>
+		<onload condition="String.IsEmpty(Skin.String(infodialogfirstpage))">Skin.SetString(infodialogfirstpage,Details)</onload>
+		<onload condition="String.IsEmpty(Skin.String(mediaflags))">Skin.SetString(mediaflags,File first)</onload>
+		<onload condition="String.IsEqual(Skin.String(mediaflags),File)">Skin.SetString(mediaflags,File first)</onload>
+		<onload condition="String.IsEqual(Skin.String(mediaflags),Language)">Skin.SetString(mediaflags,Language first)</onload>
+		<onload condition="String.IsEmpty(Skin.String(MaskingBars))">Skin.SetString(MaskingBars,2.40:1)</onload>
+		<onload condition="![Skin.HasSetting(DefaultVideosViewList) | Skin.HasSetting(DefaultVideosViewListinfo) | Skin.HasSetting(DefaultVideosViewWide) | Skin.HasSetting(DefaultVideosViewWidelow) | Skin.HasSetting(DefaultVideosViewWidelowinfo) | Skin.HasSetting(DefaultVideosViewWall) | Skin.HasSetting(DefaultVideosViewWallinfo) | Skin.HasSetting(DefaultVideosViewWallsmall) | Skin.HasSetting(DefaultVideosViewWallsmallinfo) | Skin.HasSetting(DefaultVideosViewWalllow)]">Skin.SetBool(DefaultVideosViewList)</onload>
+		<onload condition="String.IsEmpty(Skin.String(WidgetOnClickAlbum))">Skin.SetString(WidgetOnClickAlbum,AlbumWidgetBrowse)</onload>
+		<onload condition="String.IsEmpty(Skin.String(WidgetOnClickTVShow))">Skin.SetString(WidgetOnClickTVShow,TVShowWidgetBrowse)</onload>
+		<onload condition="String.IsEmpty(Skin.String(WidgetOnClickMovieSet))">Skin.SetString(WidgetOnClickMovieSet,MovieSetWidgetBrowse)</onload>
+	</include>
+	
+	<!-- Default forced views -->
+	<include name="DefaultView">
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewList)">Container.SetViewMode(51)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewListinfo)">Container.SetViewMode(511)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWide)">Container.SetViewMode(523)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWidelow)">Container.SetViewMode(524)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWidelowinfo)">Container.SetViewMode(525)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWall)">Container.SetViewMode(535)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWallinfo)">Container.SetViewMode(536)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWallsmall)">Container.SetViewMode(537)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWallsmallinfo)">Container.SetViewMode(538)</onfocus>
+		<onfocus condition="String.StartsWith(Container.FolderPath,plugin://plugin.video) + Skin.HasSetting(FixedVideosView) + Skin.HasSetting(DefaultVideosViewWalllow)">Container.SetViewMode(539)</onfocus>
+	</include>
+
+	<!-- Keyboard buttons -->
+	<include name="KeyboardButtons">
+		<include>KeyboardButtons_coords</include>
+		<font>Font48</font>
+		<align>center</align>
+		<textoffsetx>10</textoffsetx>
+		<fadetime>200</fadetime>
+		<texturefocus colordiffuse="$VAR[buttonfocus]">common/focus66c.png</texturefocus>
+	</include>
+
+	<!-- OSD Play buttons -->
+	<include name="OSDPlayStopButtons">
+		<control type="togglebutton" id="5">
+			<include>OSDButtons_coords</include>
+			<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDPauseNF.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDPauseNF.png</texturenofocus>
+			<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding | Player.IsTempo</usealttexture>
+			<alttexturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDPlayNF.png</alttexturefocus>
+			<alttexturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDPlayNF.png</alttexturenofocus>
+			<onclick>PlayerControl(Play)</onclick>
+			<oninfo condition="!Window.IsVisible(fullscreeninfo)">ActivateWindow(fullscreeninfo)</oninfo>
+			<oninfo condition="Window.IsVisible(fullscreeninfo)">Dialog.Close(fullscreeninfo)</oninfo>
+		</control>
+		<control type="button" id="6">
+			<include>OSDButtons_coords</include>
+			<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDStopNF.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDStopNF.png</texturenofocus>
+			<onclick>PlayerControl(Stop)</onclick>
+			<oninfo condition="!Window.IsVisible(fullscreeninfo)">ActivateWindow(fullscreeninfo)</oninfo>
+			<oninfo condition="Window.IsVisible(fullscreeninfo)">Dialog.Close(fullscreeninfo)</oninfo>
+		</control>
+	</include>
+
+	<!-- OSD Stop buttons -->
+	<include name="OSDStopButton">
+		<control type="button" id="5">
+			<include>OSDButtons_coords</include>
+			<texturefocus colordiffuse="$VAR[OverlayColorFO]">osd/OSDStopNF.png</texturefocus>
+			<texturenofocus colordiffuse="$VAR[OverlayColorNF]">osd/OSDStopNF.png</texturenofocus>
+			<onclick>PlayerControl(Stop)</onclick>
+			<oninfo condition="!Window.IsVisible(fullscreeninfo)">ActivateWindow(fullscreeninfo)</oninfo>
+			<oninfo condition="Window.IsVisible(fullscreeninfo)">Dialog.Close(fullscreeninfo)</oninfo>
+		</control>
+	</include>
+	
+	<!-- List indicators -->
+	<include name="Indicators">
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>$PARAM[top]</top>
+				<width>30</width>
+				<height>$PARAM[height]</height>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>30</width>
+					<height>16</height>
+					<colordiffuse>$VAR[TextColorNF]</colordiffuse>
+					<texture colordiffuse="$VAR[OverlayColorNF]">up.png</texture>
+
+					<visible>Container($PARAM[container]).HasPrevious</visible>
+
+					<animation type="Visible">
+						<effect type="Fade" start="0" end="100" time="200"/>
+						<effect type="slide" start="0,10" end="0,0" time="200"/>
+					</animation>
+					<animation type="Hidden">
+						<effect type="Fade" start="100" end="0" time="200"/>
+						<effect type="slide" start="0,0" end="0,-10" time="200"/>
+					</animation>
+
+				</control>
+				<control type="image">
+					<left>0</left>
+					<bottom>0</bottom>
+					<width>30</width>
+					<height>16</height>
+					<texture colordiffuse="$VAR[OverlayColorNF]">down.png</texture>
+
+					<visible>Container($PARAM[container]).HasNext</visible>
+
+					<animation type="Visible">
+						<effect type="Fade" start="0" end="100" time="200"/>
+						<effect type="slide" start="0,-10" end="0,0" time="200"/>
+					</animation>
+					<animation type="Hidden">
+						<effect type="Fade" start="100" end="0" time="200"/>
+						<effect type="slide" start="0,0" end="0,10" time="200"/>
+					</animation>
+				</control>
+			</control>
+		</definition>
+	</include>
+
+	<!-- Scope masking bars -->
+	<include name="MaskingBars">
+		<definition>
+			<!-- Top bar -->
+			<control type="image">
+				<include>MaskingBars_coords1</include>
+				<texture colordiffuse="$VAR[MaskingColor]">common/white.png</texture>
+				<visible>$EXP[Masking]</visible>
+				<animation effect="slide" end="0,287" time="200" condition="String.IsEqual(Skin.String(MaskingBars),1.78:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR178-) | String.Contains(Player.FileName,-AR178.) | String.Contains(Player.FileName,-AR178_) | String.Contains(Player.FileName,.AR178-) | String.Contains(Player.FileName,.AR178.) | String.Contains(Player.FileName,.AR178_) | String.Contains(Player.FileName,_AR178-) | String.Contains(Player.FileName,_AR178.) | String.Contains(Player.FileName,_AR178_)]">Conditional</animation>
+				<animation effect="slide" end="0,12" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.35:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR235-) | String.Contains(Player.FileName,-AR235.) | String.Contains(Player.FileName,-AR235_) | String.Contains(Player.FileName,.AR235-) | String.Contains(Player.FileName,.AR235.) | String.Contains(Player.FileName,.AR235_) | String.Contains(Player.FileName,_AR235-) | String.Contains(Player.FileName,_AR235.) | String.Contains(Player.FileName,_AR235_)]">Conditional</animation>
+				<animation effect="slide" end="0,17" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.33:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR233-) | String.Contains(Player.FileName,-AR233.) | String.Contains(Player.FileName,-AR233_) | String.Contains(Player.FileName,.AR233-) | String.Contains(Player.FileName,.AR233.) | String.Contains(Player.FileName,.AR233_) | String.Contains(Player.FileName,_AR233-) | String.Contains(Player.FileName,_AR233.) | String.Contains(Player.FileName,_AR233_)]">Conditional</animation>
+				<animation effect="slide" end="0,107" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.00:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR200-) | String.Contains(Player.FileName,-AR200.) | String.Contains(Player.FileName,-AR200_) | String.Contains(Player.FileName,.AR200-) | String.Contains(Player.FileName,.AR200.) | String.Contains(Player.FileName,.AR200_) | String.Contains(Player.FileName,_AR200-) | String.Contains(Player.FileName,_AR200.) | String.Contains(Player.FileName,_AR200_)]">Conditional</animation>
+				<include>WindowDepth</include>
+			</control>
+			<!-- Bottom bar -->
+			<control type="image">
+				<include>MaskingBars_coords2</include>
+				<texture colordiffuse="$VAR[MaskingColor]">common/white.png</texture>
+				<visible>$EXP[Masking]</visible>
+				<animation effect="slide" end="0,-287" time="200" condition="String.IsEqual(Skin.String(MaskingBars),1.78:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR178-) | String.Contains(Player.FileName,-AR178.) | String.Contains(Player.FileName,-AR178_) | String.Contains(Player.FileName,.AR178-) | String.Contains(Player.FileName,.AR178.) | String.Contains(Player.FileName,.AR178_) | String.Contains(Player.FileName,_AR178-) | String.Contains(Player.FileName,_AR178.) | String.Contains(Player.FileName,_AR178_)]">Conditional</animation>
+				<animation effect="slide" end="0,-12" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.35:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR235-) | String.Contains(Player.FileName,-AR235.) | String.Contains(Player.FileName,-AR235_) | String.Contains(Player.FileName,.AR235-) | String.Contains(Player.FileName,.AR235.) | String.Contains(Player.FileName,.AR235_) | String.Contains(Player.FileName,_AR235-) | String.Contains(Player.FileName,_AR235.) | String.Contains(Player.FileName,_AR235_)]">Conditional</animation>
+				<animation effect="slide" end="0,-17" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.33:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR233-) | String.Contains(Player.FileName,-AR233.) | String.Contains(Player.FileName,-AR233_) | String.Contains(Player.FileName,.AR233-) | String.Contains(Player.FileName,.AR233.) | String.Contains(Player.FileName,.AR233_) | String.Contains(Player.FileName,_AR233-) | String.Contains(Player.FileName,_AR233.) | String.Contains(Player.FileName,_AR233_)]">Conditional</animation>
+				<animation effect="slide" end="0,-107" time="200" condition="String.IsEqual(Skin.String(MaskingBars),2.00:1) + [!Skin.HasSetting(AutomaticMasking) | Skin.HasSetting(AutomaticMasking) + [!Player.HasVideo | !String.Contains(Player.FileName,-AR178-) + !String.Contains(Player.FileName,-AR178.) + !String.Contains(Player.FileName,-AR178_) + !String.Contains(Player.FileName,.AR178-) + !String.Contains(Player.FileName,.AR178.) + !String.Contains(Player.FileName,.AR178_) + !String.Contains(Player.FileName,_AR178-) + !String.Contains(Player.FileName,_AR178.) + !String.Contains(Player.FileName,_AR178_) + !String.Contains(Player.FileName,-AR200-) + !String.Contains(Player.FileName,-AR200.) + !String.Contains(Player.FileName,-AR200_) + !String.Contains(Player.FileName,.AR200-) + !String.Contains(Player.FileName,.AR200.) + !String.Contains(Player.FileName,.AR200_) + !String.Contains(Player.FileName,_AR200-) + !String.Contains(Player.FileName,_AR200.) + !String.Contains(Player.FileName,_AR200_) + !String.Contains(Player.FileName,-AR233-) + !String.Contains(Player.FileName,-AR233.) + !String.Contains(Player.FileName,-AR233_) + !String.Contains(Player.FileName,.AR233-) + !String.Contains(Player.FileName,.AR233.) + !String.Contains(Player.FileName,.AR233_) + !String.Contains(Player.FileName,_AR233-) + !String.Contains(Player.FileName,_AR233.) + !String.Contains(Player.FileName,_AR233_) + !String.Contains(Player.FileName,-AR235-) + !String.Contains(Player.FileName,-AR235.) + !String.Contains(Player.FileName,-AR235_) + !String.Contains(Player.FileName,.AR235-) + !String.Contains(Player.FileName,.AR235.) + !String.Contains(Player.FileName,.AR235_) + !String.Contains(Player.FileName,_AR235-) + !String.Contains(Player.FileName,_AR235.) + !String.Contains(Player.FileName,_AR235_) + !String.Contains(Player.FileName,-AR240-) + !String.Contains(Player.FileName,-AR240.) + !String.Contains(Player.FileName,-AR240_) + !String.Contains(Player.FileName,.AR240-) + !String.Contains(Player.FileName,.AR240.) + !String.Contains(Player.FileName,.AR240_) + !String.Contains(Player.FileName,_AR240-) + !String.Contains(Player.FileName,_AR240.) + !String.Contains(Player.FileName,_AR240_)]] | Skin.HasSetting(AutomaticMasking) + Player.HasVideo + [String.Contains(Player.FileName,-AR200-) | String.Contains(Player.FileName,-AR200.) | String.Contains(Player.FileName,-AR200_) | String.Contains(Player.FileName,.AR200-) | String.Contains(Player.FileName,.AR200.) | String.Contains(Player.FileName,.AR200_) | String.Contains(Player.FileName,_AR200-) | String.Contains(Player.FileName,_AR200.) | String.Contains(Player.FileName,_AR200_)]">Conditional</animation>
+				<include>WindowDepth</include>
+			</control>
+		</definition>
+	</include>
+
+</includes>

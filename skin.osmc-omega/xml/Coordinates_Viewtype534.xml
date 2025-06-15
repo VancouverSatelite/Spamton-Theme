@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	
+	<include name="Viewtype534_coords1">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords1_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords1_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords1_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords1_4:3</include>
+	</include>
+	<include name="Viewtype534_coords1_16:9">
+		<left>150</left>
+		<top>420</top>
+		<width>1620</width>
+		<height>400</height>
+	</include>
+	<include name="Viewtype534_coords1_21:9">
+		<left>150</left>
+		<top>420</top>
+		<width>2260</width>
+		<height>400</height>
+	</include>
+	<include name="Viewtype534_coords1_21:9_masked">
+		<left>150</left>
+		<top>600</top>
+		<width>2260</width>
+		<height>400</height>
+	</include>
+	<include name="Viewtype534_coords1_4:3">
+		<left>150</left>
+		<top>420</top>
+		<width>1140</width>
+		<height>400</height>
+	</include>
+	
+	<include name="Viewtype534_coords2">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords2_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords2_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords2_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords2_4:3</include>
+	</include>
+	<include name="Viewtype534_coords2_16:9">
+		<itemlayout width="162" height="200">
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovie.png</param>
+				<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+			<!-- Image - TV shows -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	<include name="Viewtype534_coords2_21:9">
+		<itemlayout width="161" height="200">
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovie.png</param>
+				<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+			<!-- Image - TV shows -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	<include name="Viewtype534_coords2_21:9_masked">
+		<itemlayout width="161" height="200">
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovie.png</param>
+				<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+			<!-- Image - TV shows -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	<include name="Viewtype534_coords2_4:3">
+		<itemlayout width="162" height="200">
+			<!-- Image - Movies -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultMovie.png</param>
+				<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+			<!-- Image - TV shows -->
+			<include content="MediaViewImageNF">
+				<param name="fallback">DefaultTVShows.png</param>
+				<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+				<param name="id">534</param>
+				<param name="coords">Viewtype534_coords7</param>
+				<param name="coords2">Viewtype534_coords8</param>
+				<param name="coords3">Viewtype534_coords9</param>
+			</include>
+		</itemlayout>
+	</include>
+	
+	<include name="Viewtype534_coords3">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords3_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords3_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords3_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords3_4:3</include>
+	</include>
+	<include name="Viewtype534_coords3_16:9">
+		<focusedlayout width="162" height="200">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovie.png</param>
+					<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+				<!-- Image - TV shows -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype534_coords3_21:9">
+		<focusedlayout width="161" height="200">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovie.png</param>
+					<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+				<!-- Image - TV shows -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype534_coords3_21:9_masked">
+		<focusedlayout width="161" height="200">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovie.png</param>
+					<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+				<!-- Image - TV shows -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="Viewtype534_coords3_4:3">
+		<focusedlayout width="162" height="200">
+			<control type="group">
+				<animation effect="zoom" start="90" end="100" center="auto" time="300" tween="back" easing="out" reversible="false">Focus</animation>
+				<!-- Image - Movies -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultMovie.png</param>
+					<param name="visible">Container.Content(movies) | Container.Content(sets)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+				<!-- Image - TV shows -->
+				<include content="MediaViewImageFO">
+					<param name="fallback">DefaultTVShows.png</param>
+					<param name="visible">Container.Content(tvshows) | Container.Content(seasons)</param>
+					<param name="id">534</param>
+					<param name="coords">Viewtype534_coords10</param>
+					<param name="coords2">Viewtype534_coords11</param>
+					<param name="coords3">Viewtype534_coords12</param>
+				</include>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="Viewtype534_coords4">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords4_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords4_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords4_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords4_4:3</include>
+	</include>
+	<include name="Viewtype534_coords4_16:9">
+		<centerleft>50%</centerleft>
+		<top>877</top>
+		<width>1680</width>
+		<height>115</height>
+	</include>
+	<include name="Viewtype534_coords4_21:9">
+		<centerleft>50%</centerleft>
+		<top>877</top>
+		<width>2320</width>
+		<height>115</height>
+	</include>
+	<include name="Viewtype534_coords4_21:9_masked">
+		<centerleft>50%</centerleft>
+		<top>1057</top>
+		<width>2320</width>
+		<height>115</height>
+	</include>
+	<include name="Viewtype534_coords4_4:3">
+		<centerleft>50%</centerleft>
+		<top>877</top>
+		<width>1200</width>
+		<height>115</height>
+	</include>
+	
+	<include name="Viewtype534_coords5">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords5_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords5_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords5_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords5_4:3</include>
+	</include>
+	<include name="Viewtype534_coords5_16:9">
+		<centerleft>50%</centerleft>
+		<width>1680</width>
+		<height>45</height>
+	</include>
+	<include name="Viewtype534_coords5_21:9">
+		<centerleft>50%</centerleft>
+		<width>2320</width>
+		<height>45</height>
+	</include>
+	<include name="Viewtype534_coords5_21:9_masked">
+		<centerleft>50%</centerleft>
+		<width>2320</width>
+		<height>45</height>
+	</include>
+	<include name="Viewtype534_coords5_4:3">
+		<centerleft>50%</centerleft>
+		<width>1200</width>
+		<height>45</height>
+	</include>
+	
+	<include name="Viewtype534_coords6">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords6_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords6_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords6_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords6_4:3</include>
+	</include>
+	<include name="Viewtype534_coords6_16:9">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>800</width>
+		<height>54</height>
+	</include>
+	<include name="Viewtype534_coords6_21:9">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>1440</width>
+		<height>54</height>
+	</include>
+	<include name="Viewtype534_coords6_21:9_masked">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>1440</width>
+		<height>54</height>
+	</include>
+	<include name="Viewtype534_coords6_4:3">
+		<centerleft>50%</centerleft>
+		<top>55</top>
+		<width>320</width>
+		<height>54</height>
+	</include>
+	
+	<include name="Viewtype534_coords7">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords7_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords7_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords7_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords7_4:3</include>
+	</include>
+	<include name="Viewtype534_coords7_16:9">
+		<bottom>10</bottom>
+		<left>21</left>
+		<width>120</width>
+		<height>180</height>
+	</include>
+	<include name="Viewtype534_coords7_21:9">
+		<bottom>10</bottom>
+		<left>21</left>
+		<width>120</width>
+		<height>180</height>
+	</include>
+	<include name="Viewtype534_coords7_21:9_masked">
+		<bottom>10</bottom>
+		<left>21</left>
+		<width>120</width>
+		<height>180</height>
+	</include>
+	<include name="Viewtype534_coords7_4:3">
+		<bottom>10</bottom>
+		<left>21</left>
+		<width>120</width>
+		<height>180</height>
+	</include>
+	
+	<include name="Viewtype534_coords8">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords8_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords8_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords8_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords8_4:3</include>
+	</include>
+	<include name="Viewtype534_coords8_16:9">
+		<left>21</left>
+		<bottom>10</bottom>
+		<width>120</width>
+		<height>13</height>
+	</include>
+	<include name="Viewtype534_coords8_21:9">
+		<left>21</left>
+		<bottom>10</bottom>
+		<width>120</width>
+		<height>13</height>
+	</include>
+	<include name="Viewtype534_coords8_21:9_masked">
+		<left>21</left>
+		<bottom>10</bottom>
+		<width>120</width>
+		<height>13</height>
+	</include>
+	<include name="Viewtype534_coords8_4:3">
+		<left>21</left>
+		<bottom>10</bottom>
+		<width>120</width>
+		<height>13</height>
+	</include>
+	
+	<include name="Viewtype534_coords9">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords9_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords9_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords9_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords9_4:3</include>
+	</include>
+	<include name="Viewtype534_coords9_16:9">
+		<width>13</width>
+		<centerleft>60</centerleft>
+	</include>
+	<include name="Viewtype534_coords9_21:9">
+		<width>13</width>
+		<centerleft>60</centerleft>
+	</include>
+	<include name="Viewtype534_coords9_21:9_masked">
+		<width>13</width>
+		<centerleft>60</centerleft>
+	</include>
+	<include name="Viewtype534_coords9_4:3">
+		<width>13</width>
+		<centerleft>60</centerleft>
+	</include>
+	
+	<include name="Viewtype534_coords10">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords10_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords10_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords10_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords10_4:3</include>
+	</include>
+	<include name="Viewtype534_coords10_16:9">
+		<bottom>0</bottom>
+		<left>15</left>
+		<width>133</width>
+		<height>200</height>
+	</include>
+	<include name="Viewtype534_coords10_21:9">
+		<bottom>0</bottom>
+		<left>14</left>
+		<width>133</width>
+		<height>200</height>
+	</include>
+	<include name="Viewtype534_coords10_21:9_masked">
+		<bottom>0</bottom>
+		<left>14</left>
+		<width>133</width>
+		<height>200</height>
+	</include>
+	<include name="Viewtype534_coords10_4:3">
+		<bottom>0</bottom>
+		<left>15</left>
+		<width>133</width>
+		<height>200</height>
+	</include>
+	
+	<include name="Viewtype534_coords11">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords11_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords11_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords11_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords11_4:3</include>
+	</include>
+	<include name="Viewtype534_coords11_16:9">
+		<left>15</left>
+		<bottom>0</bottom>
+		<width>133</width>
+		<height>15</height>
+	</include>
+	<include name="Viewtype534_coords11_21:9">
+		<left>14</left>
+		<bottom>0</bottom>
+		<width>133</width>
+		<height>15</height>
+	</include>
+	<include name="Viewtype534_coords11_21:9_masked">
+		<left>14</left>
+		<bottom>0</bottom>
+		<width>133</width>
+		<height>15</height>
+	</include>
+	<include name="Viewtype534_coords11_4:3">
+		<left>15</left>
+		<bottom>0</bottom>
+		<width>133</width>
+		<height>15</height>
+	</include>
+	
+	<include name="Viewtype534_coords12">
+		<include condition="$EXP[NonMaskedCoordinates]">Viewtype534_coords12_16:9</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,21:9)">Viewtype534_coords12_21:9</include>
+		<include condition="$EXP[MaskedCoordinates]">Viewtype534_coords12_21:9_masked</include>
+		<include condition="String.IsEqual(Skin.AspectRatio,4:3)">Viewtype534_coords12_4:3</include>
+	</include>
+	<include name="Viewtype534_coords12_16:9">
+		<width>15</width>
+		<centerleft>67</centerleft>
+	</include>
+	<include name="Viewtype534_coords12_21:9">
+		<width>15</width>
+		<centerleft>67</centerleft>
+	</include>
+	<include name="Viewtype534_coords12_21:9_masked">
+		<width>15</width>
+		<centerleft>67</centerleft>
+	</include>
+	<include name="Viewtype534_coords12_4:3">
+		<width>15</width>
+		<centerleft>67</centerleft>
+	</include>
+
+</includes>

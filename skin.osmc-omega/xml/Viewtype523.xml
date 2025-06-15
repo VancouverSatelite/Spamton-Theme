@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+
+	<include name="Viewtype523">
+		
+		<!-- Wide (music/videos) -->
+		<control type="group">
+			<visible>Control.IsVisible(523)</visible>
+
+			<!-- List -->
+			<control type="fixedlist" id="523">
+				<include>Viewtype523_coords1</include>
+				<ondown>61</ondown>
+				<onleft>523</onleft>
+				<onright>523</onright>
+				<pagecontrol>61</pagecontrol>
+				<orientation>horizontal</orientation>
+				<viewtype label="$LOCALIZE[31241]">wide</viewtype>
+				<scrolltime tween="sine" easing="out">240</scrolltime>
+				<visible>Container.Content(albums) | Container.Content(addons) | Container.Content(artists) | Container.Content(images) | Container.Content(games) | [Container.Content(episodes) | Container.Content(movies)] + String.StartsWith(Container.FolderPath,plugin://plugin.video) | Container.Content(videos) | Container.Content(favourites)</visible>
+				<include>DefaultView</include>
+
+				<include>Viewtype523_coords2</include>
+
+				<include>Viewtype523_coords3</include>
+
+			</control>
+
+			<control type="group">
+				<include>Viewtype523_coords4</include>
+
+				<!-- Title -->
+				<control type="fadelabel">
+					<include>Viewtype523_coords5</include>
+					<font>Font72</font>
+					<align>center</align>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+					<label>$VAR[Label1]</label>
+					<scrollspeed>120</scrollspeed>
+				</control>
+
+				<!-- Details -->
+				<control type="fadelabel">
+					<include>Viewtype523_coords6</include>
+					<font>Font27</font>
+					<align>center</align>
+					<aligny>top</aligny>
+					<label>$VAR[Label2]</label>
+					<textcolor>$VAR[TextColorFO]</textcolor>
+				</control>
+
+			</control>
+
+		</control>
+
+	</include>
+
+</includes>
