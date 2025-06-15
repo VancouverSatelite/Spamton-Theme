@@ -4,7 +4,7 @@ My spamton skin for OSMC.
 
 
 
-For original skin:
+### For original skin:
 
 
 For further information, check out the wiki here: https://osmc.tv/wiki/general/the-osmc-skin/
