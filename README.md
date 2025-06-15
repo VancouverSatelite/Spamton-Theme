@@ -2,6 +2,8 @@
 
 My spamton skin for OSMC.
 
+Reskinned by HalpCorgi (https://github.com/VancouverSatelite)
+
 
 
 ### For original skin:
